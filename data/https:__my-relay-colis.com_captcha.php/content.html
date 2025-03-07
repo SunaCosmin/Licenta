@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="fr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mondial Relay CAPTCHA</title>
+    <style>
+        :root {
+            --primary-color: #8B1850;
+            --primary-hover: #751545;
+            --primary-light: rgba(139, 24, 80, 0.1);
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --background: #f5f3f7;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --error: #dc2626;
+            --success: #059669;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius-lg: 12px;
+            --radius-md: 8px;
+            --radius-sm: 4px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--background);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .captcha-container {
+            background: var(--white);
+            width: 100%;
+            max-width: 440px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+
+        .header {
+            background: var(--white);
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .logo {
+            width: 140px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            color: var(--text-dark);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .content {
+            padding: 32px;
+        }
+
+        .instruction {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .math-problem {
+            background: var(--background);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-dark);
+            box-shadow: var(--shadow-sm);
+            letter-spacing: 0.02em;
+        }
+
+        .math-problem span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 40px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .result-input {
+            flex: 1;
+            padding: 12px 16px;
+            font-size: 16px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-md);
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .result-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .feedback {
+            text-align: center;
+            min-height: 24px;
+            margin-bottom: 20px;
+            font-size: 15px;
+            color: var(--error);
+            font-weight: 500;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .refresh-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: var(--primary-color);
+            background: transparent;
+            border: none;
+            padding: 8px 16px;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 0 auto;
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+        }
+
+        .refresh-btn:hover {
+            background: var(--primary-light);
+        }
+
+        .refresh-btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .refresh-btn:hover svg {
+            transform: rotate(180deg);
+        }
+
+        .footer {
+            padding: 16px 32px;
+            background: var(--background);
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-text {
+            color: var(--text-light);
+            font-size: 13px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .shake {
+            animation: shake 0.4s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="captcha-container">
+        <div class="header">
+            <img src="./colis/files/img/logo_MR.png" alt="Mondial Relay Logo" class="logo">
+            <h2 class="title">Verification de sécurité</h2>
+        </div>
+        
+        <div class="content">
+            <p class="instruction">
+                Veuillez résoudre ce simple calcul mathématique pour confirmer que vous êtes un humain et non un robot.
+            </p>
+
+            <div class="math-problem" id="mathProblem">
+                <span id="firstNumber">6</span>
+                <span id="operator">-</span>
+                <span id="secondNumber">5</span>
+                <span>=</span>
+            </div>
+
+            <form method="post" id="captchaForm">
+                <div class="input-group">
+                    <input type="number" name="result" id="result" class="result-input" placeholder="Tapez le résultat" required="" autocomplete="off">
+                    <button type="submit" name="submit" class="submit-btn">Vérifier</button>
+                </div>
+            </form>
+
+            
+            <form method="post" id="refreshForm">
+                <button type="submit" name="refresh" class="refresh-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21.5 2v6h-6M2.5 22v-6h6M2 12c0-4.4 3.6-8 8-8 3.3 0 6.2 2 7.4 4.9M22 12c0 4.4-3.6 8-8 8-3.3 0-6.2-2-7.4-4.9"></path>
+                    </svg>
+                    Nouveau calcul
+                </button>
+            </form>
+        </div>
+
+        <div class="footer">
+            <p class="footer-text">
+                Cette page est protégée par reCAPTCHA pour assurer la sécurité et prévenir les abus.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const mathProblem = document.getElementById('mathProblem');
+        const resultInput = document.getElementById('result');
+        const feedback = document.getElementById('feedback');
+
+        // Handle incorrect answers with animation
+        if (feedback) {
+            mathProblem.classList.add('shake');
+            setTimeout(() => {
+                mathProblem.classList.remove('shake');
+            }, 400);
+        }
+
+        // Clear input on refresh
+        document.querySelector('.refresh-btn').addEventListener('click', () => {
+            resultInput.value = '';
+            if (feedback) feedback.style.display = 'none';
+        });
+
+        // Add enter key support
+        resultInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.getElementById('captchaForm').submit();
+            }
+        });
+
+        // Auto-focus input
+        resultInput.focus();
+    </script>
+
+</body></html>

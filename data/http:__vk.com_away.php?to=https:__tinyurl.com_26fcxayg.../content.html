@@ -1,0 +1,1678 @@
+<!DOCTYPE html><html lang="en" data-previous-scroll-y="-0px" class="sp-message-open"><head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>URL Shortener, Branded Short Links &amp; Analytics | TinyURL</title>
+    <link rel="stylesheet" href="/css/front.css?id=e2eddbc8e812099b661cd910af668140">
+    <link rel="stylesheet" href="/css/external.css?id=a8cf0d48ccf1a2ae0e68bd682fa11ca4">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-64.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-192.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/images/icons/favicon-167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/favicon-180.png">
+
+            <!-- Freestar -->
+        <link rel="stylesheet" href="https://a.pub.network/core/pubfig/cls.css">
+        <style>
+            /* resurfacing link style */
+            #pmLink {
+                visibility: hidden;
+                text-decoration: none;
+                cursor: pointer;
+                background: transparent;
+                border: none;
+                color: #8290A1;
+                font-weight: 600;
+            }
+            #pmLink:hover {
+                visibility: visible;
+            }
+        </style>
+        <script data-cfasync="false" type="text/javascript">
+            var freestar = freestar || {};
+            freestar.queue = freestar.queue || [];
+            freestar.config = freestar.config || {};
+            freestar.config.enabled_slots = [];
+            freestar.initCallback = function () {
+                freestar.config.enabled_slots.length === 0 ? (freestar.initCallbackCalled = false) : freestar.newAdSlots(freestar.config.enabled_slots);
+            };
+            freestar.queue.push(function () {
+                googletag.pubads().set('page_url', 'https://tinyurl.com/');
+            });
+        </script>
+        <script src="https://a.pub.network/tinyurl-com/pubfig.min.js" type="text/javascript" async=""></script>
+    
+<script src="https://a.pub.network/tinyurl-com/prod/history/885f97d5-a767-4dbe-8e04-3739dfe28fad/pubfig.min.js?bypass=true" id="fs-ab-tests-script"></script><script src="https://a.pub.network/tinyurl-com/prod/history/885f97d5-a767-4dbe-8e04-3739dfe28fad/prebid.js" data-owner="freestar" async="" type="text/javascript"></script><script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js?network_code=15184186" data-owner="freestar" async="" type="text/javascript"></script><script src="https://a.pub.network/tinyurl-com/prod/history/885f97d5-a767-4dbe-8e04-3739dfe28fad/pubfig.engine.js" data-owner="freestar" async="" type="text/javascript"></script><style type="text/css">.fs-sticky-footer {
+    display: block;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    z-index: 2147483647;
+}
+.fs-sticky-slot-element > div > iframe {
+    margin: 0 !important;
+}
+.fs-sticky-slot-element > div {
+    position: relative;
+}
+.fs-sticky-parent {
+    z-index: 2147483647;
+    bottom: 0;
+    padding-top: 0px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.fs-sticky-wrapper {
+    background-color: #f6f3f3;
+    display: inline-block;
+    margin: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    visibility: inherit;
+    z-index: inherit;
+}
+.fs-overlay {
+    width: 0%;
+    height: 100%;
+    position: fixed;
+    z-index: 5000000;
+    top: 0;
+    left: 0;
+    background: #888888;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.canvas-boxes {
+    width: 100px;
+    height: 100px;
+}
+.captcha-styles {
+    text-align: center;
+    width: 100%;
+}
+.fs-dynamic {
+    text-align: center;
+    clear: both;
+}
+.fs-iai {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    clear: both;
+}
+.fs-x-btn {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+.fs-l-btn {
+    display: block;
+    position: absolute;
+    top: 14px;
+    left: 5px;
+    pointer-events: none;
+    border-radius: 2px;
+    width: 20px;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+.fs-r-btn {
+    display: block;
+    pointer-events: none;
+    border-radius: 2px;
+    width: 20px;
+    height: 2px;
+    background-color: #ffffff;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+.fs-btn-wrapper {
+    display: inline-block;
+}
+.fs-pdu-x {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+    background-image: url('https://a.pub.network/core/imgs/freestar_close_button.svg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    -webkit-box-shadow:
+        0 0 0 1px #888888,
+        0 0 0 6px rgba(247, 247, 247, 0.75);
+            box-shadow:
+        0 0 0 1px #888888,
+        0 0 0 6px rgba(247, 247, 247, 0.75);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    outline: none;
+    padding: 0px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    transition: all 0.3s ease-in-out;
+    width: 20px;
+}
+.fs-close-button {
+    all: unset;
+    -moz-appearance: none !important;
+    -webkit-appearance: none !important;
+    -webkit-transition: all 0.3s ease-in-out !important;
+    appearance: none !important;
+    background-color: #ffffff !important;
+    background-image: url('https://a.pub.network/core/imgs/freestar_close_button.svg') !important;
+    background-position: 50% !important;
+    background-repeat: no-repeat !important;
+    border: none !important;
+    border-radius: 50% !important;
+    -webkit-box-shadow:
+        0 0 0 1px #888888,
+        0 0 0 1px rgba(247, 247, 247, 0.75) !important;
+            box-shadow:
+        0 0 0 1px #888888,
+        0 0 0 1px rgba(247, 247, 247, 0.75) !important;
+    -webkit-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+    cursor: pointer !important;
+    display: block !important;
+    height: 20px !important;
+    outline: none !important;
+    padding: 0px !important;
+    position: absolute !important;
+    right: 25px !important;
+    top: 25px !important;
+    transition: all 0.3s ease-in-out !important;
+    width: 20px !important;
+}
+.fs-close-button:hover,
+.fs-close-button:focus {
+    background-color: #000 !important;
+}
+.fs-sticky-popup-container {
+    font-size: 0.8em;
+    text-align: center;
+    font-family: 'arial';
+    white-space: nowrap;
+    width: auto;
+    height: auto;
+    padding: 7px;
+    z-index: 2147483647 !important;
+    -webkit-filter: drop-shadow(2px 2px 2px grey);
+            filter: drop-shadow(2px 2px 2px grey);
+}
+.fs-sticky-popup-container a:nth-child(2) {
+    border-top: 1px solid #999;
+}
+.fs-sticky-popup-container .fs-report-ad-button {
+    color: rgb(153, 153, 153);
+}
+.fs-close-button:hover {
+    -webkit-box-shadow:
+        0 0 0 1px #888888,
+        0 0 0 8px rgba(247, 247, 247, 0.75);
+            box-shadow:
+        0 0 0 1px #888888,
+        0 0 0 8px rgba(247, 247, 247, 0.75);
+}
+.fs-close-button-pushdown {
+    right: 12px !important;
+    top: 12px !important;
+}
+.fs-close-button-zerg-interstitial {
+    right: -5px !important;
+    top: -5px !important;
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+}
+@media screen and (min-width: 820px) {
+    .fs-close-button-sticky {
+        top: 9.3% !important;
+        right: 10px !important;
+    }
+}
+@media screen and (max-width: 820px) {
+    .fs-close-button-sticky {
+        top: 3px !important;
+        right: 10px !important;
+    }
+    .fs-close-button-pushdown {
+        top: 0 !important;
+        right: 0 !important;
+    }
+    .sticky-reportThisAd button:after {
+        right: -25px !important;
+    }
+    .pushdown-reportThisAd button:after {
+        top: 30px !important;
+        right: -38px !important;
+    }
+}
+
+.fs-branding-spacer {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+}
+
+.fs-report-ad-button {
+    font-size: 12px;
+    color: black;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    display: block;
+    border: none;
+    padding: 0;
+}
+
+.fs-report-ad-button-icon {
+    content: '';
+    background-image: url('https://a.pub.network/core/imgs/freestar_report_ad_icon.png');
+    background-size: 18px;
+    background-color: transparent;
+    moz-appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: #ffffff;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    outline: none;
+    padding: 0px;
+    width: 16px;
+}
+
+.fs-pushdown {
+    background-color: rgba(247, 247, 247, 0.9);
+    top: 0;
+    text-align: center;
+    z-index: 2147483647;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.fs-pushdown-sticky {
+    position: sticky !important;
+    background-color: rgba(247, 247, 247, 0.9);
+    top: 0;
+    left: 0 !important;
+    text-align: center;
+    z-index: 2147483647;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.freestar_report_button {
+    border: none;
+    font-family: sans-serif;
+    font-size: 9px;
+    cursor: pointer;
+    color: #646464;
+}
+._fsBranding {
+    position: relative;
+}
+._fsBranding a {
+    max-height: none;
+    max-height: initial;
+    background-color: transparent;
+    background-color: initial;
+    margin-bottom: 0;
+    margin-bottom: initial;
+    border: medium none currentcolor;
+    border: initial;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    appearance: none;
+    background-image: url('https://a.pub.network/core/imgs/fslogo-green.svg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    outline: none;
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    transition: all 0.3s ease-in-out;
+    width: 30px;
+    min-width: 0;
+    min-width: initial;
+}
+@media screen and (max-width: 820px) {
+    ._fsBranding a {
+        top: -30px;
+        background-color: rgba(247, 247, 247, 0.75);
+        background-size: 58%;
+    }
+}
+.fs-report-ad-img {
+    width: 60%;
+    margin: 9px;
+}
+#freestar_overlay {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    z-index: 2147483647;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+#freestar_overlay_flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+#freestar_report_ad {
+    width: 300px;
+    background: rgba(255, 255, 255, 1) !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+#freestar_report_ad::before {
+    width: 300px;
+    background: rgba(255, 255, 255, 1) !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+#freestar_report_ad_text_center {
+    text-align: center;
+}
+.freestar_close_btn {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 32px;
+    height: 32px;
+    background-color: rgb(255, 255, 255);
+}
+.freestar_close_btn:before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+.freestar_close_btn:after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+.freestar_report_btn {
+    background: #00c389 !important;
+    cursor: pointer !important;
+    border: none !important;
+    border-radius: 30px !important;
+    color: #fff !important;
+    padding: 10px 20px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    margin: 20px;
+    outline: 0;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+.freestar_report_btn:focus {
+    outline: 0;
+}
+#freestar_report_div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+.freestar_report_sub_header {
+    color: #00c389 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    margin: 23px;
+}
+.fs_report_container span {
+    margin-left: 10px;
+}
+.fs_checkbox {
+    cursor: pointer;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.fs_checkbox > span {
+    color: #34495e;
+    margin-left: 5px;
+    /*padding: 0.5rem 0.25rem;
+	*/
+}
+.fs_checkbox > input {
+    height: 15px;
+    width: 15px;
+    -o-appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: 1px solid #34495e;
+    border-radius: 4px;
+    outline: none;
+    -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    background-color: #41b883;
+    cursor: pointer;
+    margin-bottom: 3px;
+}
+.fs_checkbox > input:checked {
+    border: 1px solid #41b883;
+    background-color: #34495e;
+}
+.fs_checkbox > input:checked + span::before {
+    display: block;
+    text-align: center;
+    color: #41b883;
+    /*position: absolute;
+	*/
+    /*left: 0.7rem;
+	*/
+    /*top: 0.2rem;
+	*/
+}
+.fs_checkbox > input:active {
+    border: 2px solid #34495e;
+}
+.fs-new-close-container {
+    top: calc(50% - 250px);
+    right: calc(50% - 250px);
+    position: absolute;
+}
+@media screen and (max-width: 820px) {
+    .fs-new-close-container {
+        top: 15%;
+        right: calc(50% - 131px);
+    }
+}
+.fs-new-close {
+    margin-left: 30%;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+.fs-new-close:hover {
+    opacity: 1;
+}
+.fs-new-close:before,
+.fs-new-close:after {
+    position: absolute;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: rgb(255, 255, 255);
+}
+.fs-new-close:before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+.fs-new-close:after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+.__fs-ancillary {
+    --childHeight: 16px;
+    width: 100%;
+    width: var(--childWidth, 100%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin: 0 auto;
+    position: relative;
+    -webkit-box-ordinal-group: 1000;
+        -ms-flex-order: 999;
+            order: 999;
+    width: 100%;
+    height: 16px;
+    height: var(--childHeight, 16px);
+    display: flex;
+    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+/* .__fs-ancillary > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--childHeight, 16px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+.__fs-ancillary > div > .__fs-branding {
+    -webkit-box-flex: 20;
+        -ms-flex-positive: 20;
+            flex-grow: 20;
+}
+.fs-sticky-wrapper .__fs-ancillary {
+    display: none !important;
+}
+.__fs-branding {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.__fs-branding > a {
+    width: 100%;
+    max-width: var(--childWidth);
+    height: var(--childHeight);
+    display: block;
+}
+.__fs-branding > a > img {
+    height: calc(var(--childHeight) - 2px) !important;
+    display: block;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    width: auto !important;
+    width: initial !important;
+    margin: 0 auto 0 0 !important;
+}
+.fs-sticky-wrapper .__fs-branding {
+    position: absolute;
+    top: 0;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.fs-sticky-wrapper .__fs-branding {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    border: none;
+    border-radius: 50%;
+}
+.fs-mobile-tall {
+    top: 30% !important;
+}
+.fs-sticky-wrapper .__fs-branding > a {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.fs-sticky-wrapper .__fs-branding > a > img {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 1;
+}
+@media screen and (max-width: 820px) {
+    .fs-sticky-wrapper .__fs-branding > a > img {
+        width: 70% !important;
+        height: 70% !important;
+        opacity: 1;
+    }
+}
+.fs-sticky-wrapper .__fs-branding {
+    background-color: rgba(247, 247, 247, 0.75);
+    background-size: 58%;
+}
+.fs-sticky-wrapper .__fs-branding > a > img {
+    width: 90%;
+    height: 90%;
+}
+.fs-sticky-wrapper {
+    background-color: #f6f3f3;
+    padding-right: 38px;
+    display: inline-block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    visibility: inherit;
+    z-index: inherit;
+}
+.fs-interstitial-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    z-index: 2147483647;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    visibility: hidden;
+}
+.fs-interstitial-container {
+    width: 1000px;
+    height: 650px;
+    background: rgb(255, 255, 255);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+}
+.fs-interstitial-ad-space {
+    width: 970px;
+    height: 250px;
+    -ms-flex-item-align: center;
+        align-self: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    min-height: 250px;
+    overflow: hidden;
+}
+.fs-interstitial-content {
+    width: 100%;
+    height: 250px;
+    -ms-flex-item-align: center;
+        align-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+}
+.fs-interstitial-message-container {
+    width: 100%;
+    height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-item-align: center;
+        align-self: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.fs-interstitial-message {
+    color: #17181f;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    -ms-flex-item-align: center;
+        align-self: center;
+    padding: 10px;
+}
+.fs-interstitial-close-container {
+    width: 1000px;
+    height: 50px;
+    position: relative;
+}
+.fs-interstitial-branding {
+    background-image: url('https://a.pub.network/core/imgs/fslogo-green.svg');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    height: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    width: 30px;
+    min-width: 0;
+    min-width: initial;
+    margin-left: 56%;
+}
+.fs-interstitial-container .zegrow {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+}
+.fs-interstitial-container .zergentity {
+    width: 237px !important;
+    margin: 0px 8px 0px 5px !important;
+}
+.fs-interstitial-container .widget-loaded {
+    -ms-flex-item-align: center !important;
+        align-self: center !important;
+    width: 100% !important;
+    background: rgba(0, 0, 0, 0) !important;
+}
+.fs_interstitial_branding_link img {
+    width: 200px;
+    padding-bottom: 16px;
+}
+.fs_interstitial_branding_link {
+    -ms-flex-item-align: center !important;
+        align-self: center !important;
+}
+#freestar-video-parent,
+#freestar-video-child {
+    width: 100%;
+    max-width: 100vw !important;
+    overflow: hidden;
+}
+.freestar_report_comments {
+    padding-top: 10px;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+#freestar_report_comment_box_wrapper {
+    width: 100%;
+    height: 90px;
+}
+.sticky-reportThisAd button {
+    visibility: hidden;
+    position: relative;
+}
+.sticky-reportThisAd button:after {
+    content: '';
+    background-image: url('https://a.pub.network/core/imgs/freestar_report_ad_icon.png');
+    background-size: 18px;
+    visibility: visible;
+    position: absolute;
+    moz-appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: #ffffff;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    -webkit-box-shadow:
+        0 0 0 1px #888888,
+        0 0 0 6px rgba(247, 247, 247, 0.75);
+            box-shadow:
+        0 0 0 1px #888888,
+        0 0 0 6px rgba(247, 247, 247, 0.75);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    outline: none;
+    padding: 0px;
+    position: absolute;
+    right: -25px;
+    top: 0px;
+    width: 20px;
+    min-width: 0;
+    min-width: initial;
+}
+.sticky-reportThisAd {
+    content: '\127987';
+    cursor: pointer;
+    background: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: none;
+    position: absolute;
+    right: -3px;
+    top: 50%;
+    z-index: 2147483647;
+}
+.pushdown-reportThisAd button {
+    visibility: hidden;
+    position: relative;
+}
+.pushdown-reportThisAd button:after {
+    content: '';
+    background-image: url('https://a.pub.network/core/imgs/freestar_report_ad_icon.png');
+    background-size: 18px;
+    visibility: visible;
+    position: absolute;
+    moz-appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: #ffffff;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    -webkit-box-shadow:
+        0 0 0 1px #888888,
+        0 0 0 6px rgba(247, 247, 247, 0.75);
+            box-shadow:
+        0 0 0 1px #888888,
+        0 0 0 6px rgba(247, 247, 247, 0.75);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    outline: none;
+    padding: 0px;
+    position: absolute;
+    right: -37.5px;
+    top: 35px;
+    width: 20px;
+    min-width: 0;
+    min-width: initial;
+}
+.pushdown-reportThisAd {
+    content: '\127987';
+    cursor: pointer;
+    background: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: none;
+    position: absolute;
+    right: 50px;
+    top: 5px;
+    z-index: 2147483647;
+}
+.center-ad {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+._wrapper .orp-player-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+}
+</style><style type="text/css">.fs-flying-carpet {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #00c389), to(black));
+    background: linear-gradient(to bottom, #00c389 10%, black 100%);
+    position: relative;
+    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 175vh;
+    margin: 0 -1.1rem 0.5rem;
+}
+
+.fs-flying-carpet-ad-container {
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    -ms-flex-item-align: center;
+        align-self: center;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    bottom: 10vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.fs-powered-by {
+    font-size: 18px;
+    color: #00c389;
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    width: 100%;
+    height: 6vh;
+    text-align: center;
+    padding: 10px 0;
+    -webkit-box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.fs-flying-carpet-header {
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif !important;
+    color: white;
+    position: absolute;
+    top: 0;
+    background-color: #34495e;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    -webkit-box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* fc v2 */
+.fs-flying-carpet-v2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.fs-flying-carpet-v2-ad-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 300px;
+    height: 65vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.fs-flying-carpet-v2-text-border {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    padding: 5px 0;
+    letter-spacing: 1px;
+}
+</style><style type="text/css">.fs-test-mode-label {
+    background-color: rgba(0, 0, 0, 0.65);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    bottom: 40%;
+    right: 0;
+    z-index: 2147483647;
+    border-radius: 5px 0 0 5px;
+    -webkit-transform-origin: left top;
+            transform-origin: left top;
+    font-family: monospace;
+    -webkit-transform: translateX(calc(100% - 25px));
+            transform: translateX(calc(100% - 25px));
+    -webkit-transition:
+        300ms background-color ease-in, 300ms -webkit-transform ease-in;
+    transition:
+        300ms background-color ease-in, 300ms -webkit-transform ease-in;
+    transition:
+        300ms transform ease-in, 300ms background-color ease-in;
+    transition:
+        300ms transform ease-in, 300ms background-color ease-in, 300ms -webkit-transform ease-in;
+    color: white;
+}
+
+.fs-test-mode-label > span:first-of-type {
+    -webkit-writing-mode: tb-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: tb-rl;
+    border-right: 1px solid rgb(3, 195, 139);
+    padding: 5px;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.fs-test-mode-label > span:first-of-type > img {
+    width: 17px;
+    margin-top: 5px;
+}
+.fs-test-mode-label > div > button {
+    padding: 5px 10px;
+    border: none;
+    background-color: rgb(3, 195, 139);
+    border-radius: 5px;
+    font-family: monospace;
+    cursor: pointer;
+    color: white;
+}
+
+.fs-test-mode-label > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 5px;
+}
+
+.fs-test-mode-label > input[type='checkbox'] {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.fs-test-mode-label:has(input[type='checkbox']:checked) {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+@media only screen and (max-width: 450px) {
+    .fs-test-mode-label {
+        -webkit-transform: translateX(calc(100% - 30px));
+                transform: translateX(calc(100% - 30px));
+    }
+
+    .fs-test-mode-label > span:first-of-type {
+        font-size: 18px;
+        padding: 7px 5px;
+    }
+    .fs-test-mode-label > span:first-of-type > img {
+        width: 20px;
+    }
+}
+</style><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script src="https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202503040101/pubads_impl.js" async=""></script><link href="https://securepubads.g.doubleclick.net/pagead/managed/dict/m202503060101/gpt" rel="compression-dictionary"><script src="https://cdn.privacy-mgmt.com/unified/wrapperMessagingWithoutDetection.js" data-owner="freestar" async="" type="text/javascript"></script><script charset="utf-8" src="https://cdn.privacy-mgmt.com/unified/4.30.0/gdpr-tcf.dd3ebe35741201870339.bundle.js"></script><script charset="utf-8" src="https://cdn.privacy-mgmt.com/unified/4.30.0/usnat.afd2e423949a83a6f059.bundle.js"></script><style type="text/css">#sp_message_iframe_1230984 { display:block; width: 100%; height: 100%; border: 0 none; } #sp_message_container_1230984 { overflow:auto;-webkit-overflow-scrolling:touch; display: none; position: fixed; z-index: 2147483647; left: 0; right: 0; bottom: 0; top: 0; height: 100%; width: 100%; max-width: 100%; max-height: 100vh;}.sp-message-open { height: 100vh !important; width: 100vw !important } .sp-message-open body { overflow: hidden !important; position: fixed !important; margin-top: 0px !important; top: 0px !important; left: 0px !important; right: 0px !important; }</style></head>
+
+<body>
+
+    <div class="d-flex flex-column" style="height: 100vh" v-clock="">
+        <!-- Navbar -->
+        <header class="pl-3 pl-lg-5 pr-3 pr-lg-5 py-3">
+            <nav role="navigation" class="flex-center-between">
+                <a href="https://tinyurl.com" aria-current="page" id="home_header_button_logo" class="font-bungee font-weight-normal text-white tracking-wide text-4xl">
+                    TinyURL
+                </a>
+                <div class="d-flex d-md-none ml-auto">
+                    <button type="button" aria-label="Menu" class="btn btn-outline-light ml-2" data-toggler="open">
+                        <i class="fa fa-bars fa-lg"></i>
+                    </button>
+                </div>
+                <div class="d-none d-md-block flex-grow-1">
+                    <div class="flex-center-end flex-wrap">
+                        
+                        <div class="flex-center bg-teal rounded position-relative">
+                            
+                            <a href="https://tinyurl.com" class="navigation-link rounded home_header_button_signup px-4" aria-label="Visit TinyURL.com">
+                                Visit TinyURL.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Content -->
+        <div class="bg-white flex-grow-1">
+                <div class="layout">
+    <div class="main ">
+        <div class="text-center mt-4">
+            <i class="fa fa-warning text-danger text-8xl mb-5"></i>
+            <h3 class="font-weight-bold mb-3 text-break">404 Not Found</h3>
+            <p class="text-center">This TinyURL link does not exist.</p>
+        </div>
+        <div class="my-2 my-md-4">&nbsp;</div>
+
+        <div class="row mx-1 px-md-5">
+            <div class="col-lg-6 d-flex align-items-start py-4">
+                <img src="/images/external/check.svg" width="70px">
+                <div class="ml-4">
+                    <h5 class="font-weight-bold">Check the Link</h5>
+                    <p>Review the link if it has any typographical error.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-start py-4">
+                <img src="/images/external/resend.svg" width="70px">
+                <div class="ml-4">
+                    <h5 class="font-weight-bold">Ask for the Correct Link</h5>
+                    <p>Reach out to the sender of this link to resend the correct one.</p>
+                </div>
+            </div>
+        </div>
+        <div class="my-1 my-md-4">&nbsp;</div>
+
+        <hr>
+        <div class="my-1 my-md-4">&nbsp;</div>
+
+        <div class="mx-auto text-center" style="max-width: 550px">
+            <h3 class="font-weight-bold">
+                Our <span class="text-blue">TinyURLs</span> have one <span class="text-blue">GIANT</span>
+                mission…
+            </h3>
+            <img class="my-5" src="/images/external/giant-mission.png">
+            <p>
+                To help you <span class="font-weight-bold text-blue">grow</span>,
+                <span class="font-weight-bold text-blue">scale</span>, and
+                <span class="font-weight-bold text-blue">dominate</span>
+                through the power of link management. With our shortened
+                links, we strive to help brands fulfill their biggest ambitions.
+            </p>
+            <div class="my-3">&nbsp;</div>
+
+                            <div class="fs fs--regular position-relative" style="width: 300px; min-height: 250px">
+            <div align="center" data-freestar-ad="__300x250" id="tinyurl_mobile-multisize-2.0">
+            <script data-cfasync="false" type="application/javascript">
+                freestar.config.enabled_slots.push({
+                    placementName: "tinyurl_mobile-multisize-2.0",
+                    slotId: "tinyurl_mobile-multisize-2.0",
+                });
+            </script>
+        </div>
+    </div>
+                <div class="my-4">&nbsp;</div>
+            
+            <img class="mx-auto" src="/images/external/question-mark.png" width="120px">
+        </div>
+        <div class="my-1 my-md-3">&nbsp;</div>
+
+
+        <h3 class="font-weight-bold text-center">
+            What makes us <span class="text-blue">different</span>?
+        </h3>
+        <div class="my-1 my-md-4">&nbsp;</div>
+
+        <div class="row">
+            <div class="col-md-4 mb-5">
+                <div class="h-100 rounded-20px p-4 text-center" style="background: #e9e9ea">
+                    <p class="font-weight-bold text-blue text-2xl">Experience</p>
+                    <span>
+                        As the first URL shortener on the market, we’ve created billions of links for brands,
+                        marketers, and businesses, and we've been doing it for over 18 years.
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="h-100 rounded-20px p-4 text-center" style="background: #e9e9ea">
+                    <p class="font-weight-bold text-blue text-2xl">Reliability</p>
+                    <span>
+                        Some of the world’s biggest brands rely on us. Why? Because our links are reliable,
+                        secure, and never expire. Big brands love TinyURL.
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="h-100 rounded-20px p-4 text-center" style="background: #e9e9ea">
+                    <p class="font-weight-bold text-blue text-2xl">Ease</p>
+                    <span>Our link management platform is designed to make managing links simple—whether you’re
+                        an
+                        entrepreneur, influencer, or enterprise corporation. Our link platform works for brands
+                        of
+                        all sizes.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="my-0">&nbsp;</div>
+
+                    <div class="fs fs--regular position-relative" style="width: 300px; min-height: 250px">
+            <div align="center" data-freestar-ad="__300x250" id="tinyurl_mobile-multisize-2.0">
+            <script data-cfasync="false" type="application/javascript">
+                freestar.config.enabled_slots.push({
+                    placementName: "tinyurl_mobile-multisize-2.0",
+                    slotId: "tinyurl_mobile-multisize-2.0",
+                });
+            </script>
+        </div>
+    </div>
+            <div class="my-4">&nbsp;</div>
+        
+        <div class="text-center mb-5">
+            <h3 class="font-weight-bold">
+                Let’s <span class="text-blue">create links</span>
+                in your style!
+            </h3>
+            <div class="my-2 my-md-4">&nbsp;</div>
+            <div class="mx-auto" style="max-width: 325px">
+                <a class="btn btn-blue btn-block py-2 my-2 rounded-10px" href="/app/register">
+                    Get Started for Free
+                </a>
+                <a class="btn btn-blue btn-block py-2 my-2 rounded-10px" href="/app/pricing">
+                    Check our Plans
+                </a>
+            </div>
+        </div>
+        <div class="my-2 my-md-5">&nbsp;</div>
+
+        <div class="position-relative">
+    <hr>
+    <h3 class="bg-white font-weight-bold position-absolute text-center" style="top: -1rem; left: 0; right: 0; width: 200px; margin: auto">
+        What’s <span class="text-blue">New</span>
+    </h3>
+</div>
+<div class="my-2 my-md-5">&nbsp;</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="mb-5">
+    <a href="https://tinyurl.com/blog/branded-domains-everything-you-need-to-know" class="rounded-xl overflow-hidden">
+        <img class="w-100" src="/images/external/blog/branded-domains.png" alt="Card Image Banner">
+    </a>
+    <div class="pt-4 px-0">
+        <a href="https://tinyurl.com/blog/branded-domains-everything-you-need-to-know" class="text-center text-md-left text-dark">
+            <h4 class="font-weight-bold my-3">Branded Domains: Everything You Need to Know</h4>
+        </a>
+        <a href="https://tinyurl.com/blog/branded-domains-everything-you-need-to-know" class="d-block text-center text-md-left text-dark text-uppercase">
+            Read more
+        </a>
+    </div>
+</div>
+    </div>
+    <div class="col-md-4">
+        <div class="mb-5">
+    <a href="https://tinyurl.com/blog/why-shorten-urls-marketing" class="rounded-xl overflow-hidden">
+        <img class="w-100" src="/images/external/blog/marketing-shortened-urls.png" alt="Card Image Banner">
+    </a>
+    <div class="pt-4 px-0">
+        <a href="https://tinyurl.com/blog/why-shorten-urls-marketing" class="text-center text-md-left text-dark">
+            <h4 class="font-weight-bold my-3">Why Shorten URLs for Marketing?</h4>
+        </a>
+        <a href="https://tinyurl.com/blog/why-shorten-urls-marketing" class="d-block text-center text-md-left text-dark text-uppercase">
+            Read more
+        </a>
+    </div>
+</div>
+    </div>
+    <div class="col-md-4">
+        <div class="mb-5">
+    <a href="https://tinyurl.com/blog/sms-marketing-with-shortened-links-how-it-works" class="rounded-xl overflow-hidden">
+        <img class="w-100" src="/images/external/blog/sms-marketing-shortened-urls.png" alt="Card Image Banner">
+    </a>
+    <div class="pt-4 px-0">
+        <a href="https://tinyurl.com/blog/sms-marketing-with-shortened-links-how-it-works" class="text-center text-md-left text-dark">
+            <h4 class="font-weight-bold my-3">SMS Marketing with Shortened Links: How it Works</h4>
+        </a>
+        <a href="https://tinyurl.com/blog/sms-marketing-with-shortened-links-how-it-works" class="d-block text-center text-md-left text-dark text-uppercase">
+            Read more
+        </a>
+    </div>
+</div>
+    </div>
+</div>
+        <div class="d-none d-md-block my-5">&nbsp;</div>
+
+                    <div class="fs fs--long d-flex position-relative" style="width: 970px; min-height: 250px">
+            <div align="center" data-freestar-ad="__300x250" id="tinyurl_footer_medrec_1">
+            <script data-cfasync="false" type="application/javascript">
+                freestar.config.enabled_slots.push({
+                    placementName: "tinyurl_footer_medrec_1",
+                    slotId: "tinyurl_footer_medrec_1",
+                });
+            </script>
+        </div>
+        <div align="center" data-freestar-ad="__300x250" id="tinyurl_footer_medrec_2">
+            <script data-cfasync="false" type="application/javascript">
+                freestar.config.enabled_slots.push({
+                    placementName: "tinyurl_footer_medrec_2",
+                    slotId: "tinyurl_footer_medrec_2",
+                });
+            </script>
+        </div>
+        <div align="center" data-freestar-ad="__300x250" id="tinyurl_footer_medrec_3">
+            <script data-cfasync="false" type="application/javascript">
+                freestar.config.enabled_slots.push({
+                    placementName: "tinyurl_footer_medrec_3",
+                    slotId: "tinyurl_footer_medrec_3",
+                });
+            </script>
+        </div>
+    </div>
+            </div>
+
+            <div class="aside">
+    <div class="fs fs--regular position-relative mb-4" style="width: 300px; min-height: 250px">
+            <div align="center" data-freestar-ad="__300x250" id="tinyurl_mobile-multisize-2.0">
+            <script data-cfasync="false" type="application/javascript">
+                freestar.config.enabled_slots.push({
+                    placementName: "tinyurl_mobile-multisize-2.0",
+                    slotId: "tinyurl_mobile-multisize-2.0",
+                });
+            </script>
+        </div>
+    </div>
+    <div class="fs fs--tall position-relative mb-4" style="width: 300px; min-height: 600px">
+            <div align="center" data-freestar-ad="__300x600" id="tinyurl_right-multisize-2.0">
+            <script data-cfasync="false" type="application/javascript">
+                freestar.config.enabled_slots.push({
+                    placementName: "tinyurl_right-multisize-2.0",
+                    slotId: "tinyurl_right-multisize-2.0",
+                });
+            </script>
+        </div>
+    </div>
+    <div class="fs fs--regular position-relative mb-4" style="width: 300px; min-height: 250px">
+            <div align="center" data-freestar-ad="__300x250" id="tinyurl_mobile-multisize-2.0">
+            <script data-cfasync="false" type="application/javascript">
+                freestar.config.enabled_slots.push({
+                    placementName: "tinyurl_mobile-multisize-2.0",
+                    slotId: "tinyurl_mobile-multisize-2.0",
+                });
+            </script>
+        </div>
+    </div>
+</div>    </div>
+
+                            <div class="bg-dark-blue py-1 px-2">
+                    <button id="pmLink">Privacy Manager</button>
+                </div>
+                    </div>
+    </div>
+
+    <!-- Background SVG -->
+    <div class="background-img">
+        <svg width="510" height="227" viewBox="0 0 510 227" fill="none" xmlns="http://www.w3.org/2000/svg" class="background-img-top">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M-87.152 -39.8215C-88.9236 -97.5924 -78.1971 -154.94 -48.4234 -204.479C-20.7542 -250.517 24.1466 -281.369 72.3104 -305.144C118.507 -327.949 168.356 -332.792 219.715 -336.844C285.535 -342.038 369.083 -381.424 412.88 -332.018C457.935 -281.194 406.048 -201.31 399.82 -133.678C395.679 -88.7194 394.135 -46.317 382.55 -2.68C368.135 51.6174 373.1 123.327 324.232 151.04C275.433 178.714 218.732 122.276 162.632 122.037C93.5849 121.742 20.3777 187.044 -37.5683 149.496C-93.687 113.131 -85.1022 27.0177 -87.152 -39.8215Z" fill="url(#paint0_linear)" fill-opacity="0.4"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M-188.911 -99.6179C-180.859 -164.877 -158.829 -227.486 -116.742 -278.006C-77.6303 -324.955 -21.7855 -351.835 36.4978 -370.192C92.4006 -387.799 149.286 -384.577 207.733 -380.204C282.636 -374.6 383.414 -404.355 424.066 -341.195C465.884 -276.222 393.661 -195.431 374.9 -120.476C362.428 -70.6498 353.32 -23.2462 332.709 23.8C307.062 82.3393 300.177 163.824 240.418 186.486C180.743 209.115 126.807 135.805 63.777 125.782C-13.8004 113.447 -107.459 174.137 -166.079 121.848C-222.85 71.2077 -198.227 -24.1155 -188.911 -99.6179Z" fill="url(#paint1_linear)" fill-opacity="0.3"></path>
+            <defs>
+                <linearGradient id="paint0_linear" x1="403.713" y1="80.0373" x2="-60.6291" y2="-29.7743" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9EE6F7" stop-opacity="0"></stop>
+                    <stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46"></stop>
+                </linearGradient>
+                <linearGradient id="paint1_linear" x1="342.121" y1="120.477" x2="269" y2="-1.00001" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9EE6F7" stop-opacity="0"></stop>
+                    <stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46"></stop>
+                </linearGradient>
+            </defs>
+        </svg>
+        <svg width="576" height="657" viewBox="0 0 576 657" fill="none" xmlns="http://www.w3.org/2000/svg" class="background-img-bottom">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M119.005 490.408C104.348 426.309 103.735 359.939 126.098 298.105C146.88 240.642 190.23 196.348 238.776 159.237C285.339 123.642 339.92 107.296 396.362 91.4996C468.695 71.2562 553.312 8.95396 613.046 54.4918C674.494 101.336 634.107 201.896 641.998 278.759C647.244 329.854 654.826 377.525 651.472 428.779C647.298 492.553 668.578 571.511 620.111 613.172C571.712 654.774 496.031 604.218 433.356 616.263C356.216 631.089 288.829 720.051 215.905 690.855C145.28 662.579 135.963 564.569 119.005 490.408Z" fill="url(#paint0_linear)" fill-opacity="0.3"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M207.243 573.011C186.674 518.997 178.054 461.296 189.988 404.743C201.078 352.187 233.418 308.347 271.157 270.126C307.354 233.466 352.877 212.586 400.086 191.958C460.587 165.523 526.658 100.977 584.206 133.341C643.406 166.634 620.5 259.094 636.735 325.044C647.526 368.884 659.935 409.46 663.26 454.486C667.397 510.511 695.542 576.654 658.427 618.825C621.363 660.938 549.321 626.149 496.228 644.271C430.882 666.576 383.059 752.23 316.019 735.699C251.094 719.689 231.041 635.504 207.243 573.011Z" fill="url(#paint1_linear)" fill-opacity="0.4"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M403.49 282.211C453.064 252.494 508.362 233.896 566.131 235.735C619.816 237.444 668.646 261.602 712.889 292.059C755.324 321.272 783.858 362.431 812.44 405.295C849.068 460.228 924.193 513.966 902.414 576.295C880.011 640.412 784.967 634.064 722.882 661.603C681.612 679.91 643.839 699.238 600.092 710.401C545.658 724.291 485.472 763.592 437.449 734.441C389.492 705.33 411.119 628.307 383.973 579.211C350.563 518.785 257.854 486.712 262.381 417.812C266.766 351.086 346.134 316.591 403.49 282.211Z" fill="url(#paint2_linear)" fill-opacity="0.6"></path>
+            <defs>
+                <linearGradient id="paint0_linear" x1="693.25" y1="516.469" x2="150.817" y2="495.802" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9EE6F7" stop-opacity="0"></stop>
+                    <stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46"></stop>
+                </linearGradient>
+                <linearGradient id="paint1_linear" x1="710.313" y1="525.732" x2="235.594" y2="573.831" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9EE6F7" stop-opacity="0"></stop>
+                    <stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46"></stop>
+                </linearGradient>
+                <linearGradient id="paint2_linear" x1="538.194" y1="769.211" x2="407.651" y2="310.266" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9EE6F7" stop-opacity="0"></stop>
+                    <stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46"></stop>
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <header class="pl-3 pr-3 py-3">
+            <div class="flex-center-end">
+                <button class="btn btn-outline-dark" data-toggler="close" style="padding: 9px 12px;">
+                    <i class="fa fa-lg fa-times"></i>
+                </button>
+            </div>
+        </header>
+        <div class="flex-grow-1 overflow-y-a border-top py-2">
+            <div class="my-2"></div>
+
+            <a href="https://tinyurl.com/app/pricing" class="d-block text-dark py-2 px-4">Plans</a>
+            <hr class="my-1 mx-4">
+
+            <a href="javascript:void(0)" class="d-block text-dark py-2 px-4 home_header_button_features" data-toggle="collapse" data-target="#features-collapse">
+                <div class="flex-center-between">
+                    Features
+                    <i id="features-collapse-caret" class="fa fa-caret-down"></i>
+                </div>
+            </a>
+            <hr class="my-1 mx-4">
+
+            <div class="collapse" id="features-collapse">
+                
+                <a class="d-block text-dark text-sm py-2 px-5" href="https://tinyurl.com/app/features/link-management">Link
+                    Management</a>
+                <a class="d-block text-dark text-sm py-2 px-5" href="https://tinyurl.com/app/features/custom-links">Branded
+                    &amp; Customized Links</a>
+                <a class="d-block text-dark text-sm py-2 px-5" href="https://tinyurl.com/app/features/branded-domains">Custom
+                    Domains</a>
+                <a class="d-block text-dark text-sm py-2 px-5" href="https://tinyurl.com/app/features/link-analytics">Campaign
+                    Monitoring &amp; Analytics</a>
+                <a class="d-block text-dark text-sm py-2 px-5" href="https://tinyurl.com/app/features/how-tinyurl-works">How
+                    It Works</a>
+                <a class="d-block text-dark text-sm py-2 px-5" href="https://tinyurl.com/app/features/about-us">About
+                    TinyURL</a>
+            </div>
+
+            <a href="https://tinyurl.com/blog" class="d-block text-dark py-2 px-4">Blogs</a>
+            <hr class="my-1 mx-4">
+
+            <a href="https://tinyurl.com/app/help" class="d-block text-dark py-2 px-4">Help</a>
+        </div>
+        <div class="py-4 px-3">
+            <a href="https://tinyurl.com" class="btn btn-block btn-teal">Visit TinyURL.com</a>
+        </div>
+    </div>
+    <div id="sidebar-backdrop"></div>
+
+            <script>
+            window.freestar.queue.push(function() {
+                window.freestar.newStickyFooter("tinyurl_homepage");
+            });
+
+            window.addEventListener('scroll', () => {
+                const stickyFooter = document.querySelector("#fs-sticky-footer");
+                const stickyWrapper = document.querySelector("#fs-slot-footer-wrapper");
+
+                const { scrollHeight, clientHeight, scrollTop } = document.documentElement;
+                const remainingScrollToBottom = scrollHeight - scrollTop;
+                const isScrolledToBottom = remainingScrollToBottom === clientHeight;
+
+                const fsFooterOffset = clientHeight + 35;
+                const remainingFooterScrollToBottom = fsFooterOffset - remainingScrollToBottom;
+
+                const updateFooterStyles = (value) => {
+                    stickyFooter.style.marginBottom = `${value}px`;
+                    stickyWrapper.style.bottom = `${value}px`;
+                };
+
+                if (remainingFooterScrollToBottom > 0) {
+                    updateFooterStyles(remainingFooterScrollToBottom);
+                } else {
+                    updateFooterStyles(0);
+                }
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+
+            $(this).keyup(function(e) {
+                if (e.keyCode === 27) $("#sidebar").removeClass("open");
+            });
+
+            let toggler = $("*[data-toggler='open'], *[data-toggler='close']");
+            toggler.click(function() {
+                $("body").toggleClass("overflow-hidden");
+                $("#sidebar").toggleClass("open");
+            });
+
+            let backdrop = $("#sidebar-backdrop");
+            backdrop.click(function() {
+                $("#sidebar").removeClass("open");
+            });
+
+            let collapse = $("#features-collapse");
+            collapse.on("show.bs.collapse", function() {
+                $("#features-collapse-caret").attr("class", "fa fa-caret-up ml-auto");
+            });
+            collapse.on("hide.bs.collapse", function() {
+                $("#features-collapse-caret").attr("class", "fa fa-caret-down ml-auto");
+            });
+
+            let dropdown = $(".dropdown");
+            dropdown.on("show.bs.dropdown", function() {
+                $(this).find("#dropdown-caret").attr("class", "fa fa-caret-up ml-2");
+            });
+            dropdown.on("hide.bs.dropdown", function() {
+                $(this).find("#dropdown-caret").attr("class", "fa fa-caret-down ml-2");
+            });
+        });
+    </script>
+    
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;91c96f35debbe4ab&quot;,&quot;version&quot;:&quot;2025.1.0&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;token&quot;:&quot;8a1884ace42942b1a5cf017a4c1a7cd9&quot;,&quot;b&quot;:1}" crossorigin="anonymous"></script>
+
+
+
+<iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" id="19ffa4fd3ad137" width="0" height="0" src="about:blank" name="__pb_locator__" style="display: none; height: 0px; width: 0px; border: 0px;"></iframe><iframe name="__tcfapiLocator" style="display: none;"></iframe><iframe name="__gppLocator" style="display: none;"></iframe><div id="sp_message_container_1230984" style="display: block;"><iframe src="https://cdn.privacy-mgmt.com/index.html?hasCsp=true&amp;message_id=1230984&amp;consentUUID=null&amp;consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&amp;preload_message=true&amp;version=v1" id="sp_message_iframe_1230984" title="SP Consent Message"></iframe></div></body></html>

