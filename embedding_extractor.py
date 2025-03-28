@@ -15,7 +15,7 @@ class EmbeddingExtractor:
         self.embedding_dict = {}
         self.workers = workers
 
-    def get_html_encoding(self, html, pooling="max", use_text=True):
+    def get_html_encoding(self, html, use_text=True):
         model_input = self.processor(html, return_tensors="pt", truncation=True, max_length=512)
 
         if use_text:
@@ -33,9 +33,9 @@ class EmbeddingExtractor:
 
         embeddings = xpath_embeddings
 
-        if pooling == "avg":
+        if self.pooling == "avg":
             return np.mean(embeddings, axis=0)
-        elif pooling == "max":
+        elif self.pooling == "max":
             return np.max(embeddings, axis=0)
         else:
             raise ValueError("Unknown pooling strategy")
