@@ -1,52 +1,47 @@
-import torch
-from transformers import MarkupLMProcessor, MarkupLMModel, MarkupLMFeatureExtractor
-import Tree_Generator
+import numpy as np
+from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
+from sklearn.cluster import DBSCAN
+from sklearn.metrics import silhouette_score, calinski_harabasz_score
+import matplotlib.pyplot as plt
+from embedding_extractor import EmbeddingExtractor
 
+model_name = "microsoft/markuplm-base"
 
-processor = MarkupLMProcessor.from_pretrained("microsoft/markuplm-base")
-model = MarkupLMModel.from_pretrained("microsoft/markuplm-base")
-feature_extractor = MarkupLMFeatureExtractor()
+extractor = EmbeddingExtractor(model_name=model_name,
+                               pooling="max",
+                               workers=80,
+                               use_text=False)
 
+my_embeddings=extractor.extract_embeddings()
+all_embeddings = np.array(my_embeddings)
 
-with open("html_files/fake.html", "r", encoding="utf-8") as f:
-    html1 = f.read()
+pca = PCA(n_components=2)
+embeddings_2d = pca.fit_transform(all_embeddings)
 
-with open("html_files/legit.html", "r", encoding="utf-8") as f:
-    html2 = f.read()
+def apply_clustering(algorithm, embeddings):
 
-with open("html_files/data_viz.html", "r", encoding="utf-8") as f:
-    html_data_viz = f.read()
+    clusters = algorithm.fit_predict(embeddings)
 
+    if len(np.unique(clusters)) > 1:
+        silhouette = silhouette_score(embeddings, clusters)
+        print(f"Silhouette Score: {silhouette:.3f}")
 
-features = feature_extractor(html_data_viz)
-xpaths = features.xpaths[0]
-nodes = features.nodes[0]
+    calinski = calinski_harabasz_score(embeddings, clusters)
+    print(f"Calinski-Harabasz Score: {calinski:.3f}")
 
-my_dict={}
+    plt.figure(figsize=(12, 8))
 
-for xpath, node in zip(xpaths, nodes):
-    my_dict[xpath] = node
+    for i, (x, y) in enumerate(embeddings_2d):
+        plt.scatter(x, y, c=[plt.cm.viridis(clusters[i] / float(max(clusters) + 1))],
+                    marker='o', alpha=0.7, s=100)
 
-print(my_dict)
+    plt.grid(True, alpha=0.3)
+    plt.title(f"The number of unique clusters is {len(np.unique(clusters))} with no text")
+    plt.show()
 
+    return clusters
 
-tree = Tree_Generator.build_tree(xpaths, nodes)
+dbscan = DBSCAN(eps=0.3, min_samples=5)
+dbscan_clusters = apply_clustering(dbscan, all_embeddings)
 
-
-encoding = processor(html_data_viz, return_tensors="pt")
-
-
-with torch.no_grad():
-    outputs_1 = model(**encoding)
-
-embeddings_1 = outputs_1.last_hidden_state
-
-
-tokens = processor.tokenizer.convert_ids_to_tokens(encoding["input_ids"].squeeze().tolist())
-
-
-embedding_vectors_1 = embeddings_1.squeeze(0).tolist()
-
-
-#for token, embedding in zip(tokens, embedding_vectors_1):
-#    print(f"Token: {token} -> Embedding: {embedding}")

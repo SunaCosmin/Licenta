@@ -1,0 +1,213 @@
+<html lang="pt"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3;url=chat.php">
+    <link rel="icon" type="image/x-icon" href="cgd.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixadirecta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #006bb4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 400px;
+            background: #006bb4;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /*justify-content: space-between;*/
+            padding-bottom: env(safe-area-inset-bottom);
+            position: relative;
+        }
+
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: #ffffff;
+        }
+
+        .chat-header img {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .messages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /* Mantém a área ocupando toda a tela */
+    position: relative; /* Para centralizar a imagem corretamente */
+}
+
+.messages img {
+    max-width: 40%; /* Ajustável conforme necessário */
+    max-height: 40%; /* Ajustável conforme necessário */
+    object-fit: contain;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Começa invisível */
+    animation: fadeIn 2s ease-in-out forwards; /* Faz a imagem aparecer suavemente */
+}
+
+
+
+        .message {
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px 0;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .message.bot {
+            background: #fff;
+            align-self: flex-start;
+            color: grey;
+        }
+
+        .message.user {
+            background: #c3c3c3;
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        .input-container {
+            display: flex;
+            padding: 10px;
+            background: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 19px;
+            outline: none;
+        }
+
+        button.send {
+            padding: 10px;
+            background: #0170cc;
+            color: white;
+            border: none;
+            border-radius: 60px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container" id="chat-container">
+        
+
+        <div class="messages" id="messages">
+            <img src="cgd.png">
+        </div>
+
+        
+    </div>
+    
+    <script>
+        document.getElementById("userInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+
+        function sendMessage(msg = null) {
+            let input = document.getElementById("userInput");
+            let message = msg || input.value.trim();
+            if (message === "") return;
+
+            let messagesDiv = document.getElementById("messages");
+
+            let userMessage = document.createElement("div");
+            userMessage.classList.add("message", "user");
+            userMessage.textContent = message;
+            messagesDiv.appendChild(userMessage);
+            
+            input.value = "";
+
+            scrollToBottom();
+
+            fetch(`api.php?msg=${encodeURIComponent(message)}`)
+                .then(response => response.text())
+                .then(responseText => {
+                    let botMessage = document.createElement("div");
+                    botMessage.classList.add("message", "bot");
+                    botMessage.textContent = responseText;
+                    messagesDiv.appendChild(botMessage);
+
+                    scrollToBottom();
+                });
+        }
+
+        function scrollToBottom() {
+            let messagesDiv = document.getElementById("messages");
+            setTimeout(() => {
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }, 100);
+        }
+
+        function adjustForKeyboard() {
+            let chatContainer = document.getElementById("chat-container");
+            if (window.visualViewport) {
+                window.visualViewport.addEventListener("resize", () => {
+                    chatContainer.style.height = window.visualViewport.height + "px";
+                    scrollToBottom();
+                });
+            }
+        }
+
+        function resetKeyboard() {
+            let chatContainer = document.getElementById("chat-container");
+            chatContainer.style.height = "100vh";
+            scrollToBottom();
+        }
+
+        window.onload = scrollToBottom;
+    </script>
+
+
+
+</body></html>

